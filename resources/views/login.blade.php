@@ -11,20 +11,21 @@
 </head>
 
 <body>
-    <div class="container">
+    {{-- @include("navbar") --}}
+    <div class="container-main">
         <form action="" method="post" class="form-box">
             <div class="logo"><img src="Images/logo.png" alt="error"></div><br>
             <div class="comp"><br>
                 <p for="" class="l-login">Sign in with an Aretuza Games account</p><br>
                 <div class="input-box">
-                    <input class="inputs" type="text" placeholder="Email"><br>
+                    <input class="inputs" type="email" placeholder="Email"><br>
                     <input class="inputs" type="password" placeholder="Password" id="myInput"><br>
                 </div>
                 <div class="pwd">
                     <div class="show"><input type="checkbox" onclick="show()">Show password</div>
                     <a href="">forgot password</a>
                 </div>
-                <input type="button" value="LOG IN NOW" class="submint-btn"><br>
+                <input type="submit" value="LOG IN NOW" class="submint-btn"><br>
                 <p style="color: #e6dfdf;"> Don't have an account? <a href="" style="color: #fff;">sign up</a>
                 </p><br>
             </div>
