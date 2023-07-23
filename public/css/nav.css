@@ -13,6 +13,7 @@ header {
     justify-content: space-between;
     background: #151515;
     align-items: center;
+    padding: 10px 20px;
 }
 
 nav {
@@ -27,6 +28,34 @@ nav {
 }
 .logo img{
   height: 30px;
+}
+header ul li a {
+    margin: 10px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 6px 5px;
+    font-size: 18px;
+    /* margin-top: -10px; */
+    display: inline-block;
+}
+header ul li .nav-hover:after {
+    transition: all ease-in-out 0.2s;
+    background: none repeat scroll 0 0 #ffffff;
+    content: "";
+    display: block;
+    margin-top: 5px;
+    height: 1px;
+    width: 0;
+}
+
+header ul li .nav-hover:hover:after {
+    width: 100%;
+}
+
+/* Global css */
+.active-btn {
+    border-bottom: 1px solid #fff;
 }
 nav ul {
   display: flex;
@@ -69,7 +98,7 @@ border: 1px solid rgb(255, 255, 255);
   .nav {
     position: absolute;
     width: 100%;
-    top: 90px;
+    top: 70px;
     left: 0;
     right: 0;
     display: none;
@@ -107,24 +136,24 @@ border: 1px solid rgb(255, 255, 255);
     background: #ffffff;
     transform: translateY(-12px);
   }
-  .menutoggle :nth-child(1){
+  .header .menutoggle :nth-child(1){
     position: relative;
   transition:all .5s;
     top: 0px;
   }
-  .menutoggle :nth-child(2){
+  .header .menutoggle :nth-child(2){
     position: relative;
   transition:ease-in-out 1s;
     top: 8px;
   }
-  .menutoggle :nth-child(3){
+  .header .menutoggle :nth-child(3){
     position: relative;
   transition: all .5s;
     top: 16px;
   }
     .header.active .menutoggle :nth-child(1){
   transform: rotate(45deg);
-  top: 2px;
+  top: 1px;
   transition: all .5s;
     }
     .header.active .menutoggle :nth-child(2){
@@ -141,53 +170,8 @@ border: 1px solid rgb(255, 255, 255);
     height: 20px;
     /* width: 100px; */
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-header ul li a {
-    margin: 10px 10px;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid transparent;
-    padding: 6px 5px;
-    font-size: 18px;
-    /* margin-top: -10px; */
-    display: inline-block;
-}
-header ul li .nav-hover:after {
-    transition: all ease-in-out 0.2s;
-    background: none repeat scroll 0 0 #ffffff;
-    content: "";
-    display: block;
-    margin-top: 6px;
-    height: 1px;
-    width: 0;
-}
-
-header ul li .nav-hover:hover:after {
-    width: 100%;
-}
 
 /* Global css */
-.active-btn {
+.active {
     border-bottom: 1px solid #fff;
 }
