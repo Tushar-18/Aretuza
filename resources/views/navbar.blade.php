@@ -53,12 +53,12 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container-main">
             <header class="header active">
                 <div class="logo"><img src="Images/logo.png" alt="error"></div>
                 <nav class="nav">
                     <ul>
-                        <li ><a class="nav-hover" href="">Home</a></li>
+                        <li ><a class="nav-hover active-btn" href="">Home</a></li>
                         <li ><a class="nav-hover" href="">store</a></li>
                         <li ><a class="nav-hover" href="">Engine</a></li>
                     </ul>

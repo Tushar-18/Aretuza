@@ -188,6 +188,6 @@ header ul li .nav-hover:hover:after {
 }
 
 /* Global css */
-.active {
+.active-btn {
     border-bottom: 1px solid #fff;
 }

@@ -31,7 +31,8 @@
             <img src="images/Remnant.jpg" alt="errer">
          </div>
          <div class="games-name">
-            <p>Remnant</p>
+            <p class="big">Remnant</p>
+            <p class="small text-white"> price: ₹400</p>
          </div>
       </div>
 
@@ -41,7 +42,8 @@
             <img src="images/god_of_war.jpg" alt="errer">
          </div>
          <div class="games-name">
-            <p>God of War</p>
+            <p class="big">God Of War</p>
+            <p class="small text-white"> price: ₹400</p>
          </div>
       </div>
 
@@ -51,20 +53,64 @@
             <img src="images/red_dead_redemption.jpg" alt="errer">
          </div>
          <div class="games-name">
-            <p>Red Dead Redemption 2</p>
+            <p class="big">Red Dead Redemption</p>
+            <p class="small text-white"> price: ₹400</p>
          </div>
       </div>
 
+      <div class="box-border games">
+         <div class="games-img">
+            <img src="images/watch_dogs_2.jpg" alt="errer">
+         </div>
+         <div class="games-name">
+            <p class="big">Watch Dogs 2</p>
+            <p class="small text-white"> price: <del style="margin-right: 10px">₹3599</del>₹524.85</p>
+         </div>
+      </div>
 
       <div class="box-border games">
          <div class="games-img">
             <img src="images/the_hunter.png" alt="errer">
          </div>
          <div class="games-name">
-            <p>The Hunter</p>
+            <p class="big">The Hunter</p>
+            <p class="small text-white"> price: ₹400</p>
+         </div>
+      </div>
+
+      <div class="box-border games">
+         <div class="games-img">
+            <img src="images/valorant.avif" alt="errer">
+         </div>
+         <div class="games-name">
+            <p class="big">Valorant</p>
+            <p class="small text-white"> price: free</p>
+         </div>
+      </div>
+
+      <div class="box-border games">
+         <div class="games-img">
+            <img src="images/Destiny_2.jpg" alt="errer">
+         </div>
+         <div class="games-name">
+            <p class="big">Destiny 2</p>
+            <p class="small text-white"> price: free</p>
+         </div>
+      </div>
+
+      <div class="box-border games">
+         <div class="games-img">
+            <img src="images/eyes.gif" alt="errer">
+         </div>
+         <div class="games-name">
+            <p class="big">ARK</p>
+            <p class="small text-white"> price: free</p>
          </div>
       </div>
     </div>
+    </div>
+    </div>    
+ </div>
     
 </body>
 </html>
