@@ -36,7 +36,7 @@
 
 .first-part{
       display: flex;
-      /* flex-wrap: wrap; */
+      flex-wrap: wrap;
       padding: 50px;
       width: 100%;
       background-color: rgb(18, 18, 18);
@@ -67,8 +67,9 @@
       cursor: pointer;
       color: white;
 }
-.first-part .games .games-img{
-      
+.games-img img{
+      height: 250px;
+      width: 180px;
 }
 .first-part .games .games-name{
       padding: 10px 0px;
