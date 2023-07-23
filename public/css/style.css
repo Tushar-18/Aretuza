@@ -33,6 +33,52 @@
       margin-left: 100px;
       font-size: 30px;
 }
+
+.first-part{
+      display: flex;
+      /* flex-wrap: wrap; */
+      padding: 50px;
+      width: 100%;
+      background-color: rgb(18, 18, 18);
+}
+.title{
+      color: rgb(255, 255, 255);
+      padding: 10px 0px;
+      background-color: rgb(18, 18, 18);
+      font-size: xx-large;
+}
+.main-title{
+      background-color: rgb(18, 18, 18);
+      padding: 0px 50px;
+}
+.line{
+      background-color: white;
+      margin: 0px 0px;
+      /* width: 190vh; */
+      height: 1px;
+}
+.first-part .games{
+      display: block;
+      padding: 10px;
+      background-color: rgb(30, 30, 30);
+      /* height: 50%; */
+      width: 200px;
+      margin:  0px 20px;
+      cursor: pointer;
+      color: white;
+}
+.first-part .games .games-img{
+      
+}
+.first-part .games .games-name{
+      padding: 10px 0px;
+}
+
+.first-part .games:hover{
+
+      border-radius: 10px;
+      background-color: rgb(42, 42, 42);
+}
 @media (max-width:1000px) {
       .images{
             height: 80vh;
