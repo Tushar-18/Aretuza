@@ -70,7 +70,7 @@
 
       <div class="box-border games">
          <div class="games-img">
-            <img src="images/the_hunter.png" alt="errer">
+            <img src="images/sea-of-thieves.jpg" alt="errer">
          </div>
          <div class="games-name">
             <p class="big">The Hunter</p>
@@ -100,7 +100,7 @@
 
       <div class="box-border games">
          <div class="games-img">
-            <img src="images/eyes.gif" alt="errer">
+            <img src="images/ark2.avif" alt="errer">
          </div>
          <div class="games-name">
             <p class="big">ARK</p>

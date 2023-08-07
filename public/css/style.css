@@ -63,7 +63,6 @@
 .line{
       background-color: white;
       margin: 0px 0px;
-      /* width: 190vh; */
       height: 1px;
 }
 .first-part .games{
@@ -71,7 +70,6 @@
       display: block;
       padding: 10px;
       background-color: rgb(30, 30, 30);
-      /* height: 50%; */
       width: 300px;
       margin:  20px 20px;
       cursor: pointer;
@@ -92,7 +90,6 @@
       transform: skew(30deg);
       transition-duration: 1.5s;
       transform-origin: bottom left;
-      /* background-color: beige; */
 }
 .first-part .games:hover::after{
       height: 100%;
@@ -115,11 +112,6 @@
       padding: 10px 0px;
 }
 
-/* .first-part .games:hover{
-
-      border-radius: 10px;
-      background-color: rgb(42, 42, 42);
-} */
 @media (max-width:1000px) {
       .images{
             height: 80vh;
@@ -179,10 +171,10 @@
       background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: rgba(27, 8, 153, 0.854);
 }
 ::-webkit-scrollbar-track {
-    border-radius: 4px;
+    /* border-radius: 4px; */
     background-color: rgba(255, 255, 255, 0.47);
 }
