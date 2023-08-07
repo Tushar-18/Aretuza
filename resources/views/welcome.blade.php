@@ -24,8 +24,8 @@
     <p class="title">Top Games</p>
       <p class="line"></p>
    </div>
-    <div class="box-border first-part">
-      
+    <div class="box-border first-part w-full">
+      <a href="items">
       <div class="box-border games">
          <div class="games-img">
             <img src="images/Remnant.jpg" alt="errer">
@@ -34,7 +34,7 @@
             <p class="big">Remnant</p>
             <p class="small text-white"> price: ₹400</p>
          </div>
-      </div>
+      </div></a>
 
 
       <div class="box-border games">
@@ -111,6 +111,6 @@
     </div>
     </div>    
  </div>
-    
+
 </body>
 </html>

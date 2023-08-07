@@ -1,0 +1,25 @@
+.fouter{
+      background-color: rgb(18, 18, 18);
+      padding: 40px;
+}
+.first-part{
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+}
+.fouter-logo{
+      cursor: pointer;
+}
+.nav{
+      color: aliceblue;
+      /* background-color: aqua; */
+      justify-content: center;
+      width: 70%;
+      font-size: 20px;
+      cursor: pointer;
+      display: block;
+      padding: 0px 100px;
+}
+.nav ul li{
+      padding: 5px 0px;
+}

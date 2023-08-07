@@ -20,3 +20,5 @@ Route::view('login', 'login');
 Route::view('register', 'register');
 Route::view('navbar', 'navbar');
 Route::view('distribute', 'distribute');
+Route::view('items','items');
+Route::view('Store','store');

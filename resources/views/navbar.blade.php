@@ -18,9 +18,9 @@
                 <div class="logo"><img src="Images/logo.png" alt="error"></div>
                 <nav class="nav">
                     <ul>
-                        <li ><a class="nav-hover" href="">Home</a></li>
-                        <li ><a class="nav-hover" href="">store</a></li>
-                        <li ><a class="nav-hover" href="">Engine</a></li>
+                        <li ><a class="nav-hover" href="welcome">Home</a></li>
+                        <li ><a class="nav-hover" href="store">store</a></li>
+                        <li ><a class="nav-hover" href="Engine">Engine</a></li>
                     </ul>
                 </nav>
                 <div class="profile">
