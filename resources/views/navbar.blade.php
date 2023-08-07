@@ -13,8 +13,8 @@
 </head>
 
     <body>
-        <div class="container">
-            <header class="header active">
+        <div class="container-main">
+            <header class="header">
                 <div class="logo"><img src="Images/logo.png" alt="error"></div>
                 <nav class="nav">
                     <ul>
@@ -28,7 +28,7 @@
                         <img src="Images/default.jpg" alt="error" id="signin">
                         <div class="log"><a href="">Login</a></div>
                     </div>
-                    <label for="signin" style="margin-right: 10px">Name</label>
+                    <label for="signin" style="margin-right: 10px;color:#fff;">Name</label>
                     <div class="menutoggle">
                         <div></div>
                         <div></div>
