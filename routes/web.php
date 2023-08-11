@@ -22,3 +22,5 @@ Route::view('navbar', 'navbar');
 Route::view('distribute', 'distribute');
 Route::view('items','items');
 Route::view('Store','store');
+Route::view('footer','footer');
+Route::view('admin/admin-sidebar','admin/admin-sidebar');
