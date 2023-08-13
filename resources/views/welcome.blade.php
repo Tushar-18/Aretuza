@@ -27,7 +27,7 @@
     <div class="box-border first-part w-full">
       <a href="items">
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/Remnant.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -38,7 +38,7 @@
 
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/god_of_war.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -49,7 +49,7 @@
 
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/red_dead_redemption.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -59,7 +59,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/watch_dogs_2.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -69,7 +69,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/sea-of-thieves.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -79,7 +79,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/valorant.avif" alt="errer">
          </div>
          <div class="games-name">
@@ -89,7 +89,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/Destiny_2.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -99,7 +99,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/ark2.avif" alt="errer">
          </div>
          <div class="games-name">
