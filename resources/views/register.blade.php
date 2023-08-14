@@ -31,6 +31,7 @@
                 <p for="" class="l-login">Sign in with an Aretuza Games account</p><br>
                 <div class="input-box">
                      <select id="country" name="country" class="inputs" class="form-control" >
+                <option value="">Select country</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>

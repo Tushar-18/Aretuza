@@ -15,7 +15,7 @@
     <body>
         <div class="container-main">
             <header class="header">
-                <div class="logo"><img src="Images/logo.png" alt="error"></div>
+                <div class="logo"><img src="Images/aretuza_white.png" alt="error"></div>
                 <nav class="nav">
                     <ul>
                         <li ><a class="nav-hover" href="welcome">Home</a></li>
