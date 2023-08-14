@@ -12,6 +12,7 @@
    @include("navbar")
    <div class="images">
       <div class="box-border bg-gradient-to-r from-black p1">
+         {{-- <img src="Images/spider-man.png" class="w-32 h-40 -mt-9 spider" alt=""> --}}
          <div class="text-large box-border text-white">
             Aretuza
          </div>
@@ -21,7 +22,8 @@
       </div>
     </div>
     <div class="main-title">
-    <p class="title">Top Games</p>
+    <p class="title ">Top Games</p>
+    <img src="Images/zombie.png" class="zombie ml-48 h-24 w-20 -mt-16"  alt="">
       <p class="line"></p>
    </div>
     <div class="box-border first-part w-full">
@@ -69,11 +71,11 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img m-3">
+         <div class="games-img">
             <img src="images/sea-of-thieves.jpg" alt="errer">
          </div>
          <div class="games-name">
-            <p class="big">The Hunter</p>
+            <p class="big">Sea of Thieves</p>
             <p class="small text-white"> price: ₹400</p>
          </div>
       </div>
@@ -99,7 +101,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img m-3">
+         <div class="games-img">
             <img src="images/ark2.avif" alt="errer">
          </div>
          <div class="games-name">
