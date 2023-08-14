@@ -29,7 +29,7 @@
     <div class="box-border first-part w-full">
       <a href="items">
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/Remnant.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -40,7 +40,7 @@
 
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/god_of_war.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -51,7 +51,7 @@
 
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/red_dead_redemption.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -61,7 +61,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/watch_dogs_2.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -71,8 +71,13 @@
       </div>
 
       <div class="box-border games">
+<<<<<<< HEAD
          <div class="games-img">
             <img src="images/pngwing.com.png" alt="errer">
+=======
+         <div class="games-img m-3">
+            <img src="images/sea-of-thieves.jpg" alt="errer">
+>>>>>>> 8b3ecd796e41d2a051692362eea0b139a621a9c5
          </div>
          <div class="games-name">
             <p class="big">Sea of Thieves</p>
@@ -81,7 +86,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/valorant.avif" alt="errer">
          </div>
          <div class="games-name">
@@ -91,7 +96,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/Destiny_2.jpg" alt="errer">
          </div>
          <div class="games-name">
@@ -101,8 +106,13 @@
       </div>
 
       <div class="box-border games">
+<<<<<<< HEAD
          <div class="games-img">
             <img src="images/ark.2.png" alt="errer">
+=======
+         <div class="games-img m-3">
+            <img src="images/ark2.avif" alt="errer">
+>>>>>>> 8b3ecd796e41d2a051692362eea0b139a621a9c5
          </div>
          <div class="games-name">
             <p class="big">ARK</p>
