@@ -71,13 +71,10 @@
       </div>
 
       <div class="box-border games">
-<<<<<<<<< Temporary merge branch 1
-         <div class="games-img m-3">
-            <img src="images/sea-of-thieves.jpg" alt="errer">
-=========
+
          <div class="games-img">
             <img src="images/pngwing.com.png" alt="errer">
->>>>>>>>> Temporary merge branch 2
+
          </div>
          <div class="games-name">
             <p class="big">Sea of Thieves</p>
