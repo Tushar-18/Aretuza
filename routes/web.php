@@ -28,3 +28,4 @@ Route::view('footer','footer');
 Route::view('admin/admin-sidebar','admin/admin-sidebar');
 Route::view('admin/user-list','admin/user-list');
 Route::view('admin/game-list','admin/game-list');
+Route::view('admin/add-games','admin/add-games');
