@@ -42,7 +42,7 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white">
-                        <tr>
+                        <tr class="hover:bg-zinc-50">
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                 <div class="flex items-center">
                                     <div class="h-10 w-10 rounded-full">
