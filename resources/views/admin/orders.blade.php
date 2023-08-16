@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Orders</title>
 </head>
 <body>
      @section('content')
@@ -134,9 +134,9 @@
         Showing
         <span class="font-medium">1</span>
         to
-        <span class="font-medium">200</span>
+        <span class="font-medium">5</span>
         of
-        <span class="font-medium">2000</span>
+        <span class="font-medium">30</span>
         results
     </p>
     </div>

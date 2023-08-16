@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/scroll.css">
     {{-- @vite('resources/css/app.css') --}}
 </head>
 
@@ -22,11 +23,11 @@
                     <input class="inputs" type="password" placeholder="Password" id="myInput"><br>
                 </div>
                 <div class="pwd">
-                    <div class="show"><input type="checkbox" onclick="show()">Show password</div>
+                    <div class="show"><input type="checkbox" onclick="showp()">Show password</div>
                     <a href="">forgot password</a>
                 </div>
                 <input type="submit" value="LOG IN NOW" class="submint-btn"><br>
-                <p style="color: #e6dfdf;"> Don't have an account? <a href="" style="color: #fff;">sign up</a>
+                <p style="color: #e6dfdf;"> Don't have an account? <a href="register" style="color: #fff;">sign up</a>
                 </p><br>
             </div>
         </form>
