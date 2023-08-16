@@ -12,7 +12,7 @@
 
 <body>
     @section('content')
-        <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:m-8 pr-10 lg:px-8 w-full">
+        <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:m-8 pr-10 lg:px-8 w-full ">
             <div
                 class="align-middle rounded-tl-lg rounded-tr-lg inline-block w-full py-4 overflow-x-auto bg-white shadow-lg px-12">
                 <div class="flex justify-between">
@@ -263,9 +263,9 @@
                             Showing
                             <span class="font-medium">1</span>
                             to
-                            <span class="font-medium">200</span>
+                            <span class="font-medium">5</span>
                             of
-                            <span class="font-medium">2000</span>
+                            <span class="font-medium">40</span>
                             results
                         </p>
                     </div>

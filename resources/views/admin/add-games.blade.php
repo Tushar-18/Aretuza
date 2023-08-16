@@ -10,7 +10,7 @@
 </head>
 <body>
     @section('content')
-  <div class="w-full flex flex-col items-center">
+  <div class="w-full flex flex-col items-center overflow-y-auto">
     <div class="mt-8 w-9/12">
       <h4 class="text-gray-600">
         Add Games
@@ -44,20 +44,17 @@
 
               <div>
                 <label class="text-gray-700" for="password">Attributes</label>
-                <input
+                <select
                   v-model="user.password"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
                 >
-              </div>
-
-              <div>
-                <label class="text-gray-700" for="passwordConfirmation">Password Confirmation</label>
-                <input
-                  v-model="user.confirm"
-                  class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="text"
-                >
+              <option>Action</option>
+              <option>Advanture</option>
+              <option>Puzzle</option>
+              <option>Horror</option>
+              <option>Racing</option>
+              </select>
               </div>
             </div>
 <form class="mt-8 space-y-3" action="#" method="POST">

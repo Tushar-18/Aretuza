@@ -1,9 +1,16 @@
-<!-- component -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  @vite('resources/css/app.css')
+  
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+</head>
+<body>
 
-<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
-
-<div class=" flex flex-row bg-gray-100 h-full ">
+<div class=" flex flex-row bg-gray-100 h-screen ">
   <div class="flex flex-col w-60 bg-white rounded-r-3xl overflow-hidden">
     <div class="flex items-center justify-center h-20 shadow-md">
       <h1 class="text-3xl uppercase text-indigo-500 m-5"><img src="../Images/aretuza_black.png" alt="error"></h1>
@@ -62,3 +69,7 @@
   </div>
   @yield('content')
 </div>
+</body>
+</html>
+
+   
