@@ -38,6 +38,7 @@
             </header>
         </div>
         <script src="js/nav.js"></script>
+        @yield('content')
     </body>
 
 </html>

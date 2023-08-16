@@ -1,16 +1,16 @@
-@extends('../admin/admin-sidebar')
+@extends('../layouts/admin-sidebar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>user list</title>
     @vite('resources/css/app.css')
 </head>
 <body>
     @section('content')
-    <div class="-my-2 py-2 overflow-x-auto overflow-hidden sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8 flex flex-col items-center w-full">
+    <div class="-my-2 py-2 overflow-x-auto overflow-hidden sm:-mx-6 sm:px-6 lg:m-8  pr-10 lg:px-8 flex flex-col items-center w-full">
         <div class="align-middle rounded-tl-lg rounded-tr-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
             <div class="flex justify-between">
                 <div class="inline-flex border rounded w-7/12 px-2 lg:px-6 h-12 bg-transparent">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="align-middle overflow-y-auto inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg h-screen">
+        <div class="align-middle overflow-y-auto inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg h-4/5">
             <table class="min-w-full">
                 <thead>
                     <tr>

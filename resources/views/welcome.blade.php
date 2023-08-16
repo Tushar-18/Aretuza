@@ -1,3 +1,4 @@
+@extends('layouts/navbar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +10,12 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   @include("navbar")
+   @section("content")
    <div class="images">
       <div class="box-border bg-gradient-to-r from-black p1">
          {{-- <img src="Images/spider-man.png" class="w-32 h-40 -mt-9 spider" alt=""> --}}
          <div class="text-large box-border text-white">
-            Aretuza
+            <img src="Images/aretuza_white.png" alt="error">
          </div>
          <div class="text-small box-border text-white">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, itaque non modi assumenda in maxime repellendus minima reprehenderit distinctio dolore, dolorum ut adipisci architecto aliquam velit iure quo! Doloribus, doloremque?
@@ -115,6 +116,6 @@
     </div>
     </div>    
  </div>
-
+@endsection
 </body>
 </html>

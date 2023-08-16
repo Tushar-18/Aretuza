@@ -1,19 +1,18 @@
-@extends('../layouts/admin-sidebar')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>add games</title>
+    <title>Edit games</title>
     @vite('resources/css/app.css')
 </head>
 <body>
-    @section('content')
   <div class="w-full flex flex-col items-center">
     <div class="mt-8 w-9/12">
       <h4 class="text-gray-600">
-        Add Games
+        Edit Games
       </h4>
 
       <div class="mt-4">
@@ -104,6 +103,5 @@
       </div>
     </div>
   </div>
-  @endsection
 </body>
 </html>
