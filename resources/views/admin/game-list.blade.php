@@ -54,7 +54,7 @@
                                 Price</th>
                             <th
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
-                                Phone</th>
+                                Description</th>
                             <th
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
                                 Status</th>
@@ -78,10 +78,10 @@
                             </td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                ₹799</td>
+                                <del>₹799</del> ₹449</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                +2348106420637</td>
+                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
@@ -98,7 +98,7 @@
                                 </button>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="admin/edit-game"
+                                <a href="{{URL::to('/')}}/admin/edit-game"
                                     class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
                                     DETAILS </a>
                             </td>
@@ -119,7 +119,7 @@
                                 ₹799</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                +2348106420637</td>
+                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
@@ -136,7 +136,7 @@
                                 </button>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="admin/edit-game"
+                                <a href="{{URL::to('/')}}/admin/edit-game"
                                     class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
                                     DETAILS </a>
                             </td>
@@ -157,7 +157,7 @@
                                 ₹799</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                +2348106420637</td>
+                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
@@ -174,7 +174,7 @@
                                 </button>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="admin/edit-game"
+                                <a href="{{URL::to('/')}}/admin/edit-game"
                                     class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
                                     DETAILS </a>
                             </td>
@@ -195,7 +195,7 @@
                                 ₹799</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                +2348106420637</td>
+                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
@@ -212,7 +212,7 @@
                                 </button>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="admin/edit-game"
+                                <a href="{{URL::to('/')}}/admin/edit-game"
                                     class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
                                     DETAILS </a>
                             </td>
@@ -233,7 +233,7 @@
                                 ₹799</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                +2348106420637</td>
+                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
@@ -250,7 +250,7 @@
                                 </button>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="admin/edit-game"
+                                <a href="{{URL::to('/')}}/admin/edit-game"
                                     class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
                                     DETAILS </a>
                             </td>

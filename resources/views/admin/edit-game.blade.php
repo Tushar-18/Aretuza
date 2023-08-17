@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-  <div class="w-full flex flex-col items-center">
+  <div class="w-full flex flex-col items-center bg-gray-100">
     <div class="mt-8 w-9/12">
       <h4 class="text-gray-600">
         Edit Games
@@ -42,20 +42,34 @@
               </div>
 
               <div>
-                <label class="text-gray-700" for="password">Attributes</label>
-                <input
+                <label class="text-gray-700" for="password">Catagory</label>
+                <select
                   v-model="user.password"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
                 >
+              <option>Action</option>
+              <option>Advanture</option>
+              <option>Puzzle</option>
+              <option>Horror</option>
+              <option>Racing</option>
+              </select>
               </div>
 
               <div>
-                <label class="text-gray-700" for="passwordConfirmation">Password Confirmation</label>
+                <label class="text-gray-700" for="passwordConfirmation">Age requirment</label>
                 <input
                   v-model="user.confirm"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="text"
+                  type="number"
+                >
+              </div>
+              <div>
+                <label class="text-gray-700" for="passwordConfirmation">Give Discount in Percentage </label>
+                <input
+                  v-model="user.confirm"
+                  class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
+                  type="number"
                 >
               </div>
             </div>

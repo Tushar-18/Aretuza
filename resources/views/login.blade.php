@@ -20,7 +20,7 @@
                 <p for="" class="l-login">Sign in with an Aretuza Games account</p><br>
                 <div class="input-box">
                     <input class="inputs" type="email" placeholder="Email"><br>
-                    <input class="inputs" type="password" placeholder="Password" id="myInput"><br>
+                    <input class="inputs" type="password" placeholder="Password" id="pin"><br>
                 </div>
                 <div class="pwd">
                     <div class="show"><input type="checkbox" onclick="showp()">Show password</div>

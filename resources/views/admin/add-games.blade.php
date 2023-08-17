@@ -43,7 +43,7 @@
               </div>
 
               <div>
-                <label class="text-gray-700" for="password">Attributes</label>
+                <label class="text-gray-700" for="password">Catagory</label>
                 <select
                   v-model="user.password"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
@@ -55,6 +55,14 @@
               <option>Horror</option>
               <option>Racing</option>
               </select>
+              </div>
+              <div>
+                <label class="text-gray-700" for="passwordConfirmation">Age requirment</label>
+                <input
+                  v-model="user.confirm"
+                  class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
+                  type="number"
+                >
               </div>
             </div>
 <form class="mt-8 space-y-3" action="#" method="POST">
