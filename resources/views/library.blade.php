@@ -22,7 +22,9 @@
         <div class="games-name">
            <p class="big">Remnant</p>
            <p class="small text-white"> price: ₹400</p>
+           <a href="" class="bg-red-700 items-center my-2 flex w-full h-10 justify-center rounded-lg text-white hover:bg-blue-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Invoice</a>
         </div>
+        
      </div></a>
 
 
@@ -33,6 +35,7 @@
         <div class="games-name">
            <p class="big">Destiny 2</p>
            <p class="small text-white"> price: ₹400</p>
+           <p class="bg-red-700 items-center my-2 flex w-full h-10 justify-center rounded-lg text-white hover:bg-blue-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Invoish</p>
         </div>
     
      </div>

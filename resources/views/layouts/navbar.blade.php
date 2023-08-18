@@ -16,7 +16,7 @@
         <div class="container-main">
             <header class="header">
                 <div class="logo"><img src="Images/aretuza_white.png" alt="error"></div>
-                <nav class="nav">
+                <nav class="nav px-5">
                     <ul>
                         <li ><a class="nav-hover" href="welcome">Home</a></li>
                         <li ><a class="nav-hover" href="store">store</a></li>
@@ -63,32 +63,32 @@
     <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2 w-full">
             <div class="px-5 py-2">
-                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
                     About
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                    Blog
+                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
+                    Home
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
                     Team
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
                     Pricing
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
                     Contact
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
                     Terms
                 </a>
             </div>
