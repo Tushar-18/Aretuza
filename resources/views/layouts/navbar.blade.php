@@ -27,6 +27,7 @@
                     <div class="pro-in">
                         <img src="Images/default.jpg" alt="error" id="signin">
                         <div class="log"><a href="">Login</a></div>
+                        <div class="log mt-6"><a href="">Library</a></div>
                     </div>
                     <label for="signin" style="margin-right: 10px;color:#fff;">Name</label>
                     <div class="menutoggle">

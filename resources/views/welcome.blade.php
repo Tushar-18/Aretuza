@@ -26,6 +26,10 @@
     <p class="title ">Top Games</p>
     <img src="Images/zombie.png" class="zombie ml-48 h-24 w-20 -mt-16"  alt="">
       <p class="line"></p>
+
+      {{-- <div class="pt-20">
+         <p class="p-3 w-20 text-lg text-white bg-none border rounded-full">Library</p>
+      </div> --}}
    </div>
     <div class="box-border first-part w-full">
       <a href="items">
@@ -113,9 +117,7 @@
          </div>
       </div>
     </div>
-    </div>
-    </div>    
- </div>
+
 @endsection
 </body>
 </html>

@@ -209,6 +209,9 @@
             margin-left: 10px;
       }
 }
+.wishlist{
+      /* height: 70vh; */
+}
 ::-webkit-scrollbar{
       width: 10px;
       background-color: transparent;

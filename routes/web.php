@@ -23,6 +23,8 @@ Route::view('distribute', 'distribute');
 Route::view('items','items');
 Route::view('Store','store');
 Route::view('footer','footer');
+Route::view('buy','buy');
+Route::view('Wishlist','wishlist');
 
 // admin
 Route::view('admin/admin-sidebar','admin/admin-sidebar');
