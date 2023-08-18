@@ -39,7 +39,6 @@
     </div>
 </div>
                 <div class="profile">
-
                     <a href="admin/user-list" style="margin-right: 10px;color:#fff;">Admin</a>
                     <div class="pro-in">
                         <img src="Images/default.jpg" alt="error" id="signin">
