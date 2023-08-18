@@ -22,6 +22,7 @@
                         <div class="flex flex-col">
                               <label class="text-5xl">Remnant</label>
                               <label class="pt-5">Price ₹2900</label>
+                              <label class=" text-yellow-600">50% off</label>
                               <label class="pt-5">The world has been thrown into chaos by an ancient evil from another dimension. As one of the last remnants of humanity, you must set out alone or alongside up to two other survivors to face down hordes of deadly enemies to retake what was lost.</label>
                               <label class="text-lg mt-4 ml-4 ">🦖 Great Boss Battles</label>
                               <label class="text-lg m-4">😍 Extremely Fun</label>
