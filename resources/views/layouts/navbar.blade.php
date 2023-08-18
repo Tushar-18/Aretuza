@@ -20,10 +20,11 @@
                     <ul>
                         <li ><a class="nav-hover" href="welcome">Home</a></li>
                         <li ><a class="nav-hover" href="store">store</a></li>
-                        <li ><a class="nav-hover" href="Engine">Engine</a></li>
                     </ul>
                 </nav>
                 <div class="profile">
+                    <a href="library" style="margin-right: 10px;color:#fff;">Library</a>
+                    <a href="admin/user-list" style="margin-right: 10px;color:#fff;">Admin</a>
                     <div class="pro-in">
                         <img src="Images/default.jpg" alt="error" id="signin">
                         <div class="log"><a href="">Login</a></div>

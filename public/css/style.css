@@ -95,7 +95,7 @@
 
 @keyframes z1{
       from{
-            transform: translateY(-400px) translateX(1000px) rotate(7200deg);
+            transform: translateY(-400px) translateX(1000px) rotate(720deg);
             
       }
       to{
