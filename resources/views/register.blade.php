@@ -27,15 +27,41 @@
     {{-- @include("navbar") --}}
     <div class="container-main">
         <form action="" method="post" class="form-box">
+            @csrf
             <div class="logo"><img src="Images/logo.png" alt="error"></div><br>
             <div class="comp"><br>
                 <p for="" class="l-login">Sign in with an Aretuza Games account</p><br>
                 <div class="input-box">
-                    <input class="inputs" type="text" placeholder="Fullname"><br>
-                    <input class="inputs" type="email" placeholder="Email">
-                    <input class="inputs" type="date" placeholder="Date of birth">
-                    <input class="inputs" id="pin" type="password" placeholder="Password"><br>
-                    <input class="inputs" id="cpin" type="password" placeholder="Confirm Password"><br>
+                    <input class="inputs" name="fn" type="text" placeholder="Fullname"><br>
+                     <span style="color:red">
+            @error('fn')
+                {{ $message }}
+            @enderror
+        </span>
+                    <input class="inputs" name="em" type="email" placeholder="Email">
+                     <span style="color:red">
+            @error('em')
+                {{ $message }}
+            @enderror
+        </span>
+                    <input class="inputs" name="age" type="date" placeholder="Date of birth">
+                     <span style="color:red">
+            @error('age')
+                {{ $message }}
+            @enderror
+        </span>
+                    <input class="inputs" name="pwd" id="pin" type="password" placeholder="Password"><br>
+                     <span style="color:red">
+            @error('pwd')
+                {{ $message }}
+            @enderror
+        </span>
+                    <input class="inputs" name="pwd_confirmation" id="cpin" type="password" placeholder="Confirm Password"><br>
+                     <span style="color:red">
+            @error('pwd_confirmation')
+                {{ $message }}
+            @enderror
+        </span>
                 </div>
                 <div class="pwd">
                     <div class="show"><input type="checkbox" onclick="show()" > Show password</div>

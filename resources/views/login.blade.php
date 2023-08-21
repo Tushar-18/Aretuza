@@ -14,13 +14,24 @@
 <body>
     {{-- @include("navbar") --}}
     <div class="container-main">
-        <form action="" method="post" class="form-box">
+        <form action="login_action" method="post" class="form-box">
+            @csrf
             <div class="logo"><img src="Images/logo.png" alt="error"></div><br>
             <div class="comp"><br>
                 <p for="" class="l-login">Sign in with an Aretuza Games account</p><br>
                 <div class="input-box">
-                    <input class="inputs" type="email" placeholder="Email"><br>
-                    <input class="inputs" type="password" placeholder="Password" id="pin"><br>
+                    <input class="inputs" name="em" type="email" placeholder="Email"><br>
+                    <span style="color:red">
+            @error('em')
+                {{ $message }}
+            @enderror
+        </span>
+                    <input class="inputs" name="pwd" type="password" placeholder="Password" id="pin"><br>
+                    <span style="color:red">
+            @error('pwd')
+                {{ $message }}
+            @enderror
+        </span>
                 </div>
                 <div class="pwd">
                     <div class="show"><input type="checkbox" onclick="showp()">Show password</div>
