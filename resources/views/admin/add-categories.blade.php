@@ -25,19 +25,23 @@
           <form method="post" action="{{URL::to('/')}}/admin/add-games_a">
             @csrf
             <div class="gap-6 mt-4 sm:grid-cols-2">
-              <div>
-                <label class="text-gray-700" for="username">Category Name</label>
+              <div class="flex justify-between items-center">
+                <div class="w-full">
+                    <label class="text-gray-700" for="username">Category Name</label>
                 <input
                   v-model="user.username"
-                  class="w-2/4 mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
+                  class="w-2/4 mt-2 pl-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
                   name="fn"
                 >
+                </div>
                 <span style="color:red">
             @error('fn')
                 {{ $message }}
             @enderror
         </span>
+        <a href="{{URL::to('/')}}/admin/edit-user"
+                              class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">Add</a>
               </div>
             </div>
        
@@ -46,11 +50,11 @@
         </div>
       </div>
 
-      <div class="p-6  bg-white rounded-md shadow-md ">
-                <ul>
+      <div class="p-6 mt-10 bg-white rounded-md shadow-md ">
+                <ul >
                     <li>Action</li>
                     <li>Horror</li>
-                    <li></li>
+                    <li>Puzzle</li>
                 </ul>
              </div>
     </div>
