@@ -1,4 +1,3 @@
-@@ -0,0 +1,47 @@
 @extends('layouts/navbar')
 <!DOCTYPE html>
 <html lang="en">
