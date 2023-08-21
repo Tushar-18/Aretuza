@@ -42,8 +42,8 @@
                     <a href="admin/user-list" style="margin-right: 10px;color:#fff;">Admin</a>
                     <div class="pro-in">
                         <img src="Images/default.jpg" alt="error" id="signin">
-                        <div class="log"><a href="">Login</a></div>
-                        <div class="log mt-6"><a href="">Library</a></div>
+                        <div class="log"><a href="login">Login</a></div>
+                        <div class="log mt-6"><a href="library">Library</a></div>
                     </div>
                     <label for="signin" style="margin-right: 10px;color:#fff;">Name</label>
                     <div class="menutoggle">
@@ -73,12 +73,12 @@
             </div>
             <div class="px-5 py-2">
                 <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
-                    Team
+                    Library
                 </a>
             </div>
             <div class="px-5 py-2">
                 <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
-                    Pricing
+                    store
                 </a>
             </div>
             <div class="px-5 py-2">

@@ -77,7 +77,7 @@
 
       <div class="box-border games">
 
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/sea-of-thieves.jpg" alt="errer">
 
          </div>
