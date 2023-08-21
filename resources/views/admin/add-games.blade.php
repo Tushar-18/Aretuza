@@ -69,6 +69,11 @@
               <option>Horror</option>
               <option>Racing</option>
               </select>
+              <span style="color:red">
+                @error('')
+                    {{ $message }}
+                @enderror
+            </span>
               </div>
               <div>
                 <label class="text-gray-700" for="passwordConfirmation">Age requirment</label>

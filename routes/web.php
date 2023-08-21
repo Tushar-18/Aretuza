@@ -31,6 +31,7 @@ Route::view('Wishlist','wishlist');
 Route::view('store','store');
 Route::view('library','library');
 Route::view('aboutus','aboutus');
+Route::view('edit_profile','edit_profile');
 
 // admin
 Route::view('admin/admin-sidebar','admin/admin-sidebar');

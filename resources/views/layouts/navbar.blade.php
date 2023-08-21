@@ -35,13 +35,13 @@
         class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
         type="text"
         id="search"
-        placeholder="Search something.." /> 
+        placeholder="Search something.."/> 
     </div>
 </div>
                 <div class="profile">
                     <a href="admin/user-list" style="margin-right: 10px;color:#fff;">Admin</a>
                     <div class="pro-in">
-                        <img src="Images/default.jpg" alt="error" id="signin">
+                        <a href="edit_profile"><img src="Images/profile.png" alt="error" id="signin"></a>
                         <div class="log"><a href="login">Login</a></div>
                         <div class="log mt-6"><a href="library">Library</a></div>
                     </div>
