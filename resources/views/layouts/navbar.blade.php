@@ -15,7 +15,7 @@
     <body>
         <div class="container-main">
             <header class="header">
-                <div class="logo w-40"><img src="Images/white-logo.png" alt="error"></div>
+                <div class="logo w-40"><a href="/"><img src="Images/white-logo.png" alt="error"></a></div>
                 <nav class="nav px-5">
                     <ul>
                         <li ><a class="nav-hover" href="welcome">Home</a></li>
