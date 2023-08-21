@@ -14,8 +14,7 @@
 <body>
     {{-- @include("navbar") --}}
     <div class="container-main">
-        <form action="login_action" method="post" class="form-box">
-            @csrf
+        <form action="" method="post" class="form-box">
             <div class="logo"><img src="Images/logo.png" alt="error"></div><br>
             <div class="comp"><br>
                 <p for="" class="l-login">Sign in with an Aretuza Games account</p><br>
