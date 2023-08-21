@@ -38,7 +38,7 @@
                     <a href="">forgot password</a>
                 </div>
                 <input type="submit" value="LOG IN NOW" class="submint-btn"><br>
-                <p style="color: #e6dfdf;"> Don't have an account? <a href="register" style="color: #fff;">sign up</a>
+                <p style="color: #e6dfdf;"> Don't have an account? <a href="register" style="color: red;">sign up</a>
                 </p><br>
             </div>
         </form>

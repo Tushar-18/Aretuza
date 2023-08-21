@@ -26,7 +26,7 @@ class validate extends Controller
             'pic' => 'required|max:30000|mimes:jpg,png,gif,bmp'
 
         ], [
-            'fn.required' => 'Full name cannot be empty',
+            'fn.required' => 'Fill plz',
             'fn.min' => 'Full name must contain minimum 3 characters',
             'fn.max' => 'Full name must contain maximum of 30 characters',
             'em.required' => 'Email address canniot be empty',
@@ -34,8 +34,8 @@ class validate extends Controller
             'pwd.required' => 'Password field cannot be empty',
             'pwd.regex' => 'Password must contain one small letter one capital letter, one number and one special symbol',
             'pwd.confirmed' => 'Password and Confirm Password must match',
-            'pwd_confirmation.required' => 'Confirm Password must not be empty',
-            'age.required' => 'Please enter your age'
+            'pwd_confirmation.required' => 'plz enter password',
+            'age.required' => 'age is requried'
         ]);
        return view('login');
     }

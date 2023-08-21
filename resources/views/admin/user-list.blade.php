@@ -27,7 +27,10 @@
                         <input type="text" class="flex-shrink flex-grow flex-auto leading-normal tracking-wide w-px border border-none border-l-0 rounded rounded-l-none px-3 relative focus:outline-none text-xxs lg:text-xs  text-gray-500 font-thin" placeholder="Search">
                     </div>
                 </div>
+                <a href="{{URL::to('/')}}/admin/add-user"
+                                    class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD USER</a>
             </div>
+            
         </div>
         <div class="align-middle overflow-y-auto inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg h-4/5">
             <table class="min-w-full">
