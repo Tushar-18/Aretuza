@@ -18,7 +18,7 @@
             <img src="Images/white-logo.png" alt="error">
          </div>
          <div class="text-small box-border text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, itaque non modi assumenda in maxime repellendus minima reprehenderit distinctio dolore, dolorum ut adipisci architecto aliquam velit iure quo! Doloribus, doloremque?
+            Your Ultimate Horizon Adventure awaits! Explore the vibrant open world landscapes of Mexico with limitless, fun driving action in the world's greatest cars.
        </div>
       </div>
     </div>
@@ -108,7 +108,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/ark2.avif" alt="errer">
          </div>
          <div class="games-name">

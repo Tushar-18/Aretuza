@@ -1,3 +1,4 @@
+@extends('layouts/navbar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +9,10 @@
      <script src="https://cdn.tailwindcss.com"></script>
      @vite('resources/css/app.css')
 </head>
-<body class="bg-zinc-800">
-     
+<body>
+     @section("content")
+<div class="bg-zinc-900 p-4">
+     <div class="p-10 bg-zinc-800">
 <form>
      <div class="w-3/5 align-middle bg-zinc-700 rounded p-5 m-28 ml-72">
           <div class="flex w-auto p-12 bg-center">
@@ -33,5 +36,8 @@
      <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-52 hover:shadow-md hover:shadow-zinc-600 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 btn-hover">BUY NOW</button>
    </form>
 </div>
+</div>
+</div>
+@endsection
 </body>
 </html>
