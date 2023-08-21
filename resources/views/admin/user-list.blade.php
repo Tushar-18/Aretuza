@@ -72,6 +72,17 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 12</td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 17</td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/delete-user"
+                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE</a>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/edit-user"
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETAILS</a>
+                            </td>
+                            
+                            
+                            
                   </tr>
                        <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
@@ -96,6 +107,17 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 12</td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 17</td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/delete-user"
+                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE</a>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/edit-user"
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETAILS</a>
+                            </td>
+                            
+                            
+                            
                   </tr>
                   <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
@@ -120,6 +142,17 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 12</td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 17</td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/delete-user"
+                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE</a>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/edit-user"
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETAILS</a>
+                            </td>
+                            
+                            
+                            
                   </tr>
                   <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
@@ -144,6 +177,17 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 12</td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 17</td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/delete-user"
+                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE</a>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/edit-user"
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETAILS</a>
+                            </td>
+                            
+                            
+                            
                   </tr>
                   <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
@@ -168,6 +212,17 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 12</td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 17</td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/delete-user"
+                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE</a>
+                            </td>
+                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                                <a href="{{URL::to('/')}}/admin/edit-user"
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETAILS</a>
+                            </td>
+                            
+                            
+                            
                   </tr>
                 </tbody>
             </table>

@@ -1,108 +1,108 @@
-
+@extends('../layouts/admin-sidebar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit games</title>
+    <title>add games</title>
     <script src="https://cdn.tailwindcss.com"></script>
     @vite('resources/css/app.css')
 </head>
 <body>
-  <div class="w-full flex flex-col items-center bg-gray-100">
+    @section('content')
+  <div class="w-full flex flex-col items-center overflow-y-auto">
     <div class="mt-8 w-9/12">
       <h4 class="text-gray-600">
-        Edit Games
+       Edit User Data
       </h4>
 
       <div class="mt-4">
         <div class="p-6 bg-white rounded-md shadow-md ">
           <h2 class="text-lg font-semibold text-gray-700 capitalize">
-           Edit Game
+           Edit User Data
           </h2>
 
-          <form action="{{URL::to('/')}}/admin/edit-game_a" method="post">
+          <form method="post" action="{{URL::to('/')}}/admin/add-games_a">
+            @csrf
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               <div>
-                <label class="text-gray-700" for="username">Game Name</label>
+                <label class="text-gray-700" for="username">User Name</label>
                 <input
                   v-model="user.username"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
+                  name="fn"
                 >
                 <span style="color:red">
-            @error('game')
+            @error('fn')
                 {{ $message }}
             @enderror
         </span>
               </div>
 
               <div>
-                <label class="text-gray-700" for="emailAddress">Price</label>
+                <label class="text-gray-700" for="emailAddress">Email</label>
                 <input
                   v-model="user.email"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="number"
+                  type="email"
+                  name="em"
                 >
                 <span style="color:red">
-            @error('price')
+            @error('em')
                 {{ $message }}
             @enderror
         </span>
               </div>
 
               <div>
-                <label class="text-gray-700" for="password">Catagory</label>
-                <select
-                  v-model="user.password"
+                <label class="text-gray-700" for="emailAddress">Date of Birth</label>
+                <input
+                  v-model="user.email"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="text"
+                  type="date"
+                  name="dob"
                 >
-              <option>Action</option>
-              <option>Advanture</option>
-              <option>Puzzle</option>
-              <option>Horror</option>
-              <option>Racing</option>
-              </select>
+                <span style="color:red">
+            @error('dob')
+                {{ $message }}
+            @enderror
+        </span>
               </div>
 
+              
               <div>
-                <label class="text-gray-700" for="passwordConfirmation">Age requirment</label>
+                <label class="text-gray-700" for="passwordConfirmation">Password</label>
                 <input
                   v-model="user.confirm"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="number"
+                  type="password"
+                  name="pwd"
                 >
                 <span style="color:red">
-            @error('age')
+            @error('pwd')
                 {{ $message }}
             @enderror
         </span>
               </div>
               <div>
-                <label class="text-gray-700" for="passwordConfirmation">Give Discount in Percentage </label>
+                <label class="text-gray-700" for="passwordConfirmation">Confirm Password</label>
                 <input
                   v-model="user.confirm"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="number"
+                  type="password"
+                  name="password_confirmation"
                 >
                 <span style="color:red">
-            @error('req')
+            @error('password_confirmation')
                 {{ $message }}
             @enderror
         </span>
               </div>
             </div>
-                    <div class="grid grid-cols-1 space-y-2">
-                        <label class="text-sm font-bold text-gray-500 tracking-wide">Description</label>
-                            <textarea class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="Descrption"></textarea>
-                            <span style="color:red">
-            @error('dec')
-                {{ $message }}
-            @enderror
-        </span>
-                    </div>
+
+                    
                     <div class="grid grid-cols-1 space-y-2">
                                     <label class="text-sm font-bold text-gray-500 tracking-wide">Attach Document</label>
                         <div class="flex items-center justify-center w-full">
@@ -131,14 +131,15 @@
                     <div>
                         <button type="submit" class="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide
                                     font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
-                       Edit
+                        Add User
                     </button>
                     </div>
-           
+            
           </form>
         </div>
       </div>
     </div>
   </div>
+  @endsection
 </body>
 </html>

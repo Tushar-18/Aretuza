@@ -20,7 +20,7 @@
       <div class="mt-4">
         <div class="p-6 bg-white rounded-md shadow-md ">
           <h2 class="text-lg font-semibold text-gray-700 capitalize">
-            Account settings
+            Add User
           </h2>
 
           <form method="post" action="{{URL::to('/')}}/admin/add-games_a">
@@ -32,68 +32,77 @@
                   v-model="user.username"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
-                  name="game"
+                  name="fn"
                 >
                 <span style="color:red">
-            @error('game')
+            @error('fn')
                 {{ $message }}
             @enderror
         </span>
               </div>
 
               <div>
-                <label class="text-gray-700" for="emailAddress">Price</label>
+                <label class="text-gray-700" for="emailAddress">Email</label>
                 <input
                   v-model="user.email"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="number"
-                  name="price"
+                  type="email"
+                  name="em"
                 >
                 <span style="color:red">
-            @error('price')
+            @error('em')
                 {{ $message }}
             @enderror
         </span>
               </div>
 
               <div>
-                <label class="text-gray-700" for="password">Catagory</label>
-                <select
-                  v-model="user.password"
+                <label class="text-gray-700" for="emailAddress">Date of Birth</label>
+                <input
+                  v-model="user.email"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="text"
+                  type="date"
+                  name="dob"
                 >
-              <option>Action</option>
-              <option>Advanture</option>
-              <option>Puzzle</option>
-              <option>Horror</option>
-              <option>Racing</option>
-              </select>
+                <span style="color:red">
+            @error('dob')
+                {{ $message }}
+            @enderror
+        </span>
               </div>
+
+              
               <div>
-                <label class="text-gray-700" for="passwordConfirmation">Age requirment</label>
+                <label class="text-gray-700" for="passwordConfirmation">Password</label>
                 <input
                   v-model="user.confirm"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                  type="number"
+                  type="password"
+                  name="pwd"
                 >
                 <span style="color:red">
-            @error('age')
+            @error('pwd')
+                {{ $message }}
+            @enderror
+        </span>
+              </div>
+              <div>
+                <label class="text-gray-700" for="passwordConfirmation">Confirm Password</label>
+                <input
+                  v-model="user.confirm"
+                  class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
+                  type="password"
+                  name="password_confirmation"
+                >
+                <span style="color:red">
+            @error('password_confirmation')
                 {{ $message }}
             @enderror
         </span>
               </div>
             </div>
 
-                    <div class="grid grid-cols-1 space-y-2">
-                        <label class="text-sm font-bold text-gray-500 tracking-wide">Description</label>
-                            <textarea class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="Descrption"></textarea>
-                    </div>
-                    <span style="color:red">
-            @error('dec')
-                {{ $message }}
-            @enderror
-        </span>
+                    
                     <div class="grid grid-cols-1 space-y-2">
                                     <label class="text-sm font-bold text-gray-500 tracking-wide">Attach Document</label>
                         <div class="flex items-center justify-center w-full">
