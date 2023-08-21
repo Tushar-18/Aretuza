@@ -93,17 +93,11 @@
                     <div>
                         <button type="submit" class="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide
                                     font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
-                        Upload
+                        Add
                     </button>
                     </div>
         </form>
-            <div class="flex justify-end mt-4">
-              <button
-                class="px-4 py-2 text-gray-200 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-              >
-                Save
-              </button>
-            </div>
+            
           </form>
         </div>
       </div>

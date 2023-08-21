@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div
-                class="align-middle overflow-y-auto inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg h-4/5">
+                class="align-middle overflow-auto  inline-block min-w-full shadow bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg h-4/5">
                 <table class="min-w-full">
                     <thead>
                         <tr>
@@ -97,11 +97,11 @@
                                     class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
                                 </button>
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+                            <td class="px-6 py-4 whitespace-no-wrap text-right  border-b border-gray-500 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
-                                    DETAILS </a>
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETELS</a>
                             </td>
+                            
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
@@ -137,9 +137,9 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
-                                    DETAILS </a>
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETELS</a>
                             </td>
+                           
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
@@ -175,9 +175,9 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
-                                    DETAILS </a>
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETELS</a>
                             </td>
+                            
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
@@ -213,9 +213,9 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
-                                    DETAILS </a>
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETELS</a>
                             </td>
+                                                        
                         </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
@@ -251,9 +251,9 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT
-                                    DETAILS </a>
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT_DETELS</a>
                             </td>
+                            
                         </tr>
                     </tbody>
                 </table>
