@@ -80,8 +80,8 @@
 
       <div class="box-border games">
 
-         <div class="games-img">
-            <img src="images/pngwing.com.png" alt="errer">
+         <div class="games-img m-3">
+            <img src="images/sea-of-thieves.jpg" alt="errer">
 
          </div>
          <div class="games-name">
@@ -111,7 +111,7 @@
       </div>
 
       <div class="box-border games">
-         <div class="games-img">
+         <div class="games-img m-3">
             <img src="images/ark2.avif" alt="errer">
          </div>
          <div class="games-name">

@@ -21,7 +21,7 @@
             Account settings
           </h2>
 
-          <form @submit.prevent="register">
+          <form action="{{URL::to('/')}}/admin/edit-game_a" method="post">
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               <div>
                 <label class="text-gray-700" for="username">Game Name</label>
@@ -30,6 +30,11 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
                 >
+                <span style="color:red">
+            @error('game')
+                {{ $message }}
+            @enderror
+        </span>
               </div>
 
               <div>
@@ -39,6 +44,11 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="number"
                 >
+                <span style="color:red">
+            @error('price')
+                {{ $message }}
+            @enderror
+        </span>
               </div>
 
               <div>
@@ -63,6 +73,11 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="number"
                 >
+                <span style="color:red">
+            @error('age')
+                {{ $message }}
+            @enderror
+        </span>
               </div>
               <div>
                 <label class="text-gray-700" for="passwordConfirmation">Give Discount in Percentage </label>
@@ -71,12 +86,21 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="number"
                 >
+                <span style="color:red">
+            @error('req')
+                {{ $message }}
+            @enderror
+        </span>
               </div>
             </div>
-<form class="mt-8 space-y-3" action="#" method="POST">
                     <div class="grid grid-cols-1 space-y-2">
                         <label class="text-sm font-bold text-gray-500 tracking-wide">Description</label>
                             <textarea class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="Descrption"></textarea>
+                            <span style="color:red">
+            @error('dec')
+                {{ $message }}
+            @enderror
+        </span>
                     </div>
                     <div class="grid grid-cols-1 space-y-2">
                                     <label class="text-sm font-bold text-gray-500 tracking-wide">Attach Document</label>
@@ -92,6 +116,11 @@
                                     <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a file</a> from your computer</p>
                                 </div>
                                 <input type="file" class="hidden">
+                                <span style="color:red">
+            @error('pic')
+                {{ $message }}
+            @enderror
+        </span>
                             </label>
                         </div>
                     </div>
@@ -104,7 +133,6 @@
                        Edit
                     </button>
                     </div>
-        </form>
            
           </form>
         </div>

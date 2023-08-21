@@ -63,8 +63,6 @@
         <nav class="flex flex-wrap justify-center -mx-5 -my-2 w-full">
             <div class="px-5 py-2">
                 <a href="aboutus" class="text-base leading-6 text-gray-500 hover:text-gray-600">
-                    About
-                </a>
             </div>
             <div class="px-5 py-2">
                 <a href="#" class="text-base leading-6 text-gray-500 hover:text-gray-600">
