@@ -15,7 +15,7 @@
     {{-- @include("navbar") --}}
     <div class="container-main">
         <form action="" method="post" class="form-box">
-            <div class="logo"><img src="Images/logo.png" alt="error"></div><br>
+            <div class="logo"><img src="Images/white-logo.png" alt="error"></div><br>
             <div class="comp"><br>
                 <p for="" class="l-login">Sign in with an Aretuza Games account</p><br>
                 <div class="input-box">
