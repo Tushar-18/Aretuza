@@ -14,10 +14,11 @@
 <body>
     {{-- @include("navbar") --}}
     <div class="container-main">
-        <form action="" method="post" class="form-box">
-            <div class="logo"><img src="Images/logo.png" alt="error"></div><br>
+        <form action="login_action" method="post" class="form-box">
+            @csrf
+            <div class="logo"><img src="Images/white-logo.png" alt="error"></div><br>
             <div class="comp"><br>
-                <p for="" class="l-login">Sign in with an Aretuza Games account</p><br>
+                <p for="" class="l-login">Sign in with an SPIRIT Games account</p><br>
                 <div class="input-box">
                     <input class="inputs" name="em" type="email" placeholder="Email"><br>
                     <span style="color:red">
