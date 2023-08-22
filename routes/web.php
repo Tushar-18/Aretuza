@@ -46,3 +46,4 @@ Route::view('admin/rating','admin/rating');
 Route::view('admin/add-user','admin/add-user');
 Route::view('admin/edit-user','admin/edit-user');
 Route::view('admin/add-categories','admin/add-categories');
+Route::view('admin/admin-orders','admin/admin-orders');

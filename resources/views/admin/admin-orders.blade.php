@@ -1,4 +1,4 @@
-@extends('layouts/navbar')
+@extends("../layouts/admin-sidebar")
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +13,13 @@
      <div class="w-full flex flex-col items-center overflow-y-auto">
           <div class="mt-8 w-9/12">
             <h4 class="text-gray-600">
-              Add Games
+              Add Orders
             </h4>
       
             <div class="mt-4">
               <div class="p-6 bg-white rounded-md shadow-md ">
                 <h2 class="text-lg font-semibold text-gray-700 capitalize">
-                 Add Games
+                 Add Orders
                 </h2>
       
                 <form method="post" action="{{URL::to('/')}}/admin/add-games_a">
@@ -54,26 +54,6 @@
                   @enderror
               </span>
                     </div>
-      
-                    {{-- <div>
-                      <label class="text-gray-700" for="password">Catagory</label>
-                      <select
-                        v-model="user.password"
-                        class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                        type="text"
-                      >
-                    <option>Action</option>
-                    <option>Advanture</option>
-                    <option>Puzzle</option>
-                    <option>Horror</option>
-                    <option>Racing</option>
-                    </select>
-                    <span style="color:red">
-                      @error('')
-                          {{ $message }}
-                      @enderror
-                  </span>
-                    </div> --}}
                     <div>
                       <label class="text-gray-700" for="passwordConfirmation">Email</label>
                       <input
@@ -101,7 +81,7 @@
                           <div class="grid grid-cols-1 space-y-2">
                                           <label class="text-sm font-bold text-gray-500 tracking-wide">Game Name</label>
                                         <div class="flex align-middle justify-center">
-                                             <img src="images/valorant.png" alt="" class="items-center h-96">
+                                             <img src="../images/valorant.png" alt="" class="items-center h-96">
                                         </div>
                           </div>
                           <div>
@@ -110,7 +90,6 @@
                               Add
                           </button>
                           </div>
-                  
                 </form>
               </div>
             </div>
