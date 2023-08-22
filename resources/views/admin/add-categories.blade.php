@@ -40,7 +40,7 @@
                 {{ $message }}
             @enderror
         </span>
-        <a href="{{URL::to('/')}}/admin/edit-user"
+        <a href="{{URL::to('/')}}/admin/add-categories"
                               class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">Add</a>
               </div>
             </div>
