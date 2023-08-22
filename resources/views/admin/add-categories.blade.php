@@ -22,7 +22,7 @@
             Add Categories
           </h2>
 
-          <form method="post" action="{{URL::to('/')}}/admin/add-games_a">
+          <form method="post" action="{{URL::to('/')}}/admin/allocate">
             @csrf
             <div class="gap-6 mt-4 sm:grid-cols-2">
               <div class="flex justify-between items-center">
@@ -39,9 +39,9 @@
             @error('fn')
                 {{ $message }}
             @enderror
-        </span>
-        <a href="{{URL::to('/')}}/admin/add-categories"
-                              class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">Add</a>
+        </span> 
+        <input href="{{URL::to('/')}}/admin/add-categories" type="submit"
+                              class="px-5 py-2 text-center border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none" value="Add">
               </div>
             </div>
        

@@ -17,7 +17,7 @@
      <div class="w-3/5 align-middle bg-zinc-700 rounded p-5 m-28 ml-72">
           <div class="flex w-auto p-12 bg-center">
                <div class="align-middle justify-center flex">
-                    <img src="images/default.jpg" class="h-52 w-96 ml-48 rounded-full hover:shadow-xl hover:shadow-zinc-600  ">
+                    <img src="images/profile.png" class="h-52 w-52 ml-48 rounded-full hover:shadow-xl hover:shadow-zinc-600  ">
                </div>
           </div>
      <div class="relative z-0 mb-6 group">

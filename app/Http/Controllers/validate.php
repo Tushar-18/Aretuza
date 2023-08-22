@@ -23,10 +23,11 @@ class validate extends Controller
             'pwd' => 'required',
              'pwd_confirmation' => 'required',
             'age' => 'required',
+            'discount' => 'required',
             'pic' => 'required|max:30000|mimes:jpg,png,gif,bmp'
 
         ], [
-            'fn.required' => 'Fill plz',
+            'fn.required' => ' Name is required',
             'fn.min' => 'Full name must contain minimum 3 characters',
             'fn.max' => 'Full name must contain maximum of 30 characters',
             'em.required' => 'Email address canniot be empty',
@@ -35,7 +36,8 @@ class validate extends Controller
             'pwd.regex' => 'Password must contain one small letter one capital letter, one number and one special symbol',
             'pwd.confirmed' => 'Password and Confirm Password must match',
             'pwd_confirmation.required' => 'plz enter password',
-            'age.required' => 'age is requried'
+            'age.required' => 'age is requried',
+            'discount.required' => 'discount is requried'
         ]);
        return view('login');
     }
