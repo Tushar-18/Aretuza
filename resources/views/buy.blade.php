@@ -10,112 +10,33 @@
 </head>
 <body>
      @section("content")
-     <div class="w-full flex flex-col items-center overflow-y-auto">
-          <div class="mt-8 w-9/12">
-            <h4 class="text-gray-600">
-              Add Games
-            </h4>
-      
-            <div class="mt-4">
-              <div class="p-6 bg-white rounded-md shadow-md ">
-                <h2 class="text-lg font-semibold text-gray-700 capitalize">
-                 Add Games
-                </h2>
-      
-                <form method="post" action="{{URL::to('/')}}/admin/add-games_a">
-                  @csrf
-                  <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
-                    <div>
-                      <label class="text-gray-700" for="username">Game Name</label>
-                      <input
-                        v-model="user.username"
-                        class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                        type="text"
-                        name="game"
-                      >
-                      <span style="color:red">
-                  @error('game')
-                      {{ $message }}
-                  @enderror
-              </span>
-                    </div>
-      
-                    <div>
-                      <label class="text-gray-700" for="emailAddress">Price</label>
-                      <input
-                        v-model="user.email"
-                        class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                        type="number"
-                        name="price"
-                      >
-                      <span style="color:red">
-                  @error('price')
-                      {{ $message }}
-                  @enderror
-              </span>
-                    </div>
-      
-                    {{-- <div>
-                      <label class="text-gray-700" for="password">Catagory</label>
-                      <select
-                        v-model="user.password"
-                        class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                        type="text"
-                      >
-                    <option>Action</option>
-                    <option>Advanture</option>
-                    <option>Puzzle</option>
-                    <option>Horror</option>
-                    <option>Racing</option>
-                    </select>
-                    <span style="color:red">
-                      @error('')
-                          {{ $message }}
-                      @enderror
-                  </span>
-                    </div> --}}
-                    <div>
-                      <label class="text-gray-700" for="passwordConfirmation">Email</label>
-                      <input
-                        v-model="user.confirm"
-                        class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                        type="email"
-                      >
-                      <span style="color:red">
-                  @error('age')
-                      {{ $message }}
-                  @enderror
-              </span>
-                    </div>
-                  </div>
-      
-                          <div class="grid grid-cols-1 space-y-2">
-                              <label class="text-sm font-bold text-gray-500 tracking-wide">Description</label>
-                                  <textarea class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="Descrption"></textarea>
-                          </div>
-                          <span style="color:red">
-                  @error('dec')
-                      {{ $message }}
-                  @enderror
-              </span>
-                          <div class="grid grid-cols-1 space-y-2">
-                                          <label class="text-sm font-bold text-gray-500 tracking-wide">Game Name</label>
-                                        <div class="flex align-middle justify-center">
-                                             <img src="images/valorant.png" alt="" class="items-center h-96">
-                                        </div>
-                          </div>
-                          <div>
-                              <button type="submit" class="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide
-                                          font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
-                              Add
-                          </button>
-                          </div>
-                  
-                </form>
-              </div>
-            </div>
+<div class="bg-zinc-900 p-4">
+     <div class="p-10 bg-zinc-800">
+<form>
+     <div class="w-3/5 align-middle bg-zinc-700 rounded p-5 m-28 ml-72">
+          <div class="flex w-auto p-12 bg-center">
+               <div class="align-middle justify-center flex">
+                    <img src="images/default.jpg" class="h-52 w-96 ml-48 rounded-full hover:shadow-xl hover:shadow-zinc-600  ">
+               </div>
           </div>
-        </div>
+     <div class="relative z-0 mb-6 group">
+         <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-200 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-red-700 peer" placeholder=" " required />
+         <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name on Card</label>
+     </div>
+     <div class="relative z-0 w-full mb-6 group">
+         <input type="text" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-200 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer" placeholder=" " required />
+         <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Card Number</label>
+     </div>
+     <div class="relative z-0 w-full mb-6 group">
+         <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-200 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+         <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
+     </div>
+
+     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-52 hover:shadow-md hover:shadow-zinc-600 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 btn-hover">BUY NOW</button>
+   </form>
+</div>
+</div>
+</div>
 @endsection
 </body>
 </html>

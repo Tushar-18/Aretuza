@@ -23,6 +23,7 @@
           </h2>
 
           <form action="{{URL::to('/')}}/admin/edit-game_a" method="post">
+            @csrf
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               <div>
                 <label class="text-gray-700" for="username">Game Name</label>
@@ -86,9 +87,10 @@
                   v-model="user.confirm"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="number"
+                  name="discount"
                 >
                 <span style="color:red">
-            @error('req')
+            @error('discount')
                 {{ $message }}
             @enderror
         </span>

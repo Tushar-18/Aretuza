@@ -81,9 +81,9 @@
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">4.3</textarea></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
+                            </td>
                             
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <button
@@ -109,9 +109,9 @@
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
+                            </td>
                             
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <button
@@ -137,9 +137,9 @@
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
+                            </td>
                            
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <button
@@ -165,9 +165,9 @@
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
+                            </td>
                             
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <button
@@ -193,9 +193,9 @@
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
+                            </td>
                             
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <button

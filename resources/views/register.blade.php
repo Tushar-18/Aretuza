@@ -26,7 +26,7 @@
 <body>
     {{-- @include("navbar") --}}
     <div class="container-main">
-        <form action="" method="post" class="form-box">
+        <form action="register" method="post" class="form-box">
             @csrf
             <div class="logo"><img src="Images/logo.png" alt="error"></div><br>
             <div class="comp"><br>

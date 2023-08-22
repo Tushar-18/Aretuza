@@ -23,7 +23,7 @@
             Add User
           </h2>
 
-          <form method="post" action="{{URL::to('/')}}/admin/add-games_a">
+          <form method="post" action="{{URL::to('/')}}/register">
             @csrf
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               <div>
@@ -92,10 +92,10 @@
                   v-model="user.confirm"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="password"
-                  name="password_confirmation"
+                  name="pwd_confirmation"
                 >
                 <span style="color:red">
-            @error('password_confirmation')
+            @error('pwd_confirmation')
                 {{ $message }}
             @enderror
         </span>
