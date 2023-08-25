@@ -50,7 +50,7 @@ class validate extends Controller
             'dec' => 'required|max:20',
             
             'pic' => 'required|max:30000|mimes:jpg,png,gif,bmp'
-
+    
         ]);
        return view('admin/game-list');
     }
@@ -63,9 +63,18 @@ class validate extends Controller
             'dec' => 'required|max:20',
             
             'pic' => 'required|max:30000|mimes:jpg,png,gif,bmp'
-
+    
         ]);
        return view('admin/game-list');
+}
+    public function add_cat(Request $req)
+    {
+        $req->validate([
+            'cat' => 'required|min:3',
+
+        ], [
+            'cat.required' => ' Catagory is required',
+        ]);
+        return view('admin/add-categories');
     }
-       
 }
