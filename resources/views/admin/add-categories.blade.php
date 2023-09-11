@@ -22,7 +22,7 @@
             Add Categories
           </h2>
 
-          <form method="post" action="{{URL::to('/')}}/admin/allocate">
+          <form method="post" action="{{URL::to('/')}}/admin/add-categories_a">
             @csrf
             <div class="gap-6 mt-4 sm:grid-cols-2">
               <div class="flex justify-between items-center">
@@ -32,17 +32,17 @@
                   v-model="user.username"
                   class="w-2/4 mt-2 pl-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
-                  name="fn"
+                  name="cat"
                 >
                 </div>
-                <span style="color:red">
-            @error('fn')
-                {{ $message }}
-            @enderror
-        </span> 
-        <input href="{{URL::to('/')}}/admin/add-categories" type="submit"
-                              class="px-5 py-2 text-center border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none" value="Add">
+                <input href="{{URL::to('/')}}/admin/add-categories" type="submit"
+                class="px-5 py-2 text-center border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none" value="Add">
               </div>
+              <span style="color:red">
+          @error('cat')
+              {{ $message }}
+          @enderror
+      </span> 
             </div>
        
              
