@@ -32,6 +32,9 @@ Route::view('store','store');
 Route::view('library','library');
 Route::view('aboutus','aboutus');
 Route::view('edit_profile','edit_profile');
+Route::post('edit-profile',[validate::class,'edit_profile']);
+Route::view('change_password','change_pwd');
+Route::post('change_password',[validate::class,'edit_profile']);
 
 // admin
 Route::view('admin/admin-sidebar','admin/admin-sidebar');
