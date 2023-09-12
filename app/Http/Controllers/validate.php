@@ -96,8 +96,10 @@ class validate extends Controller
         return view('edit_profile');
     }
        
-};
-     function add_cat(Request $req){
+
+
+    public function add_cat(Request $req)
+    {
         $req->validate([
             'cat' => 'required|min:3',
 
@@ -106,3 +108,5 @@ class validate extends Controller
         ]);
         return view('admin/add-categories');
     }
+
+}

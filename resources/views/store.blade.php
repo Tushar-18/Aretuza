@@ -81,7 +81,7 @@
       <div class="box-border games">
 
          <div class="games-img m-3">
-            <img src="images/sea-of-thieves.jpg" alt="errer">
+            <img src="images/sea.png" alt="errer">
 
          </div>
          <div class="games-name">
@@ -92,7 +92,7 @@
 
       <div class="box-border games">
          <div class="games-img m-3">
-            <img src="images/valorant.avif" alt="errer">
+            <img src="images/valorant1.avif" alt="errer">
          </div>
          <div class="games-name">
             <p class="big">Valorant</p>

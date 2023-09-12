@@ -42,7 +42,7 @@
 		<div class="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
 			<div class="flex flex-col w-full lg:w-1/3 p-8">
 				<p class="ml-6 text-yellow-600 text-lg mb-2 uppercase tracking-loose">REVIEW</p>
-                        <img src="images/default.jpg" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
+                        <img src="images/profile.png" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
 				<p class="text-3xl md:text-5xl my-1 leading-relaxed text-yellow-600 md:leading-snug">Leave us a feedback!</p>
 				<p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
 					Please provide your valuable feedback and something something ...
