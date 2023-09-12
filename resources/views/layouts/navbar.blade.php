@@ -41,15 +41,16 @@
                 <div class="profile">
                     <a href="admin/user-list" style="margin-right: 10px;color:#fff;">Admin</a>
                     <div class="pro-in">
-                        <a href="edit_profile"><img src="Images/profile.png" alt="error" id="signin"></a>
-                        <div class="log"><a href="login">Login</a></div>
-                        <div class="log mt-6"><a href="library">Library</a></div>
+                        <img src="Images/profile.png" alt="error" id="signin">
+                        <div class="log mt-6"><a href="login">Login</a></div>
+                        <div class="log mt-12"><a href="library" class="mt-6">Library</a></div>
+                        <div class="log" style="margin-top: 4.5rem"><a href="edit_profile" class="mt-6">Profile</a></div>
+                        <div class="log mt-30"><a href="change_password" class="mt-6">Change Password</a></div>
+                        
                     </div>
                     <label for="signin" style="margin-right: 10px;color:#fff;">Name</label>
                     <div class="menutoggle">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        
                     </div>
                 </div>
             </header>

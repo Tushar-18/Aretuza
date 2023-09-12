@@ -12,7 +12,7 @@
 </head>
 <body>
      @section("content")
-     <p class="text-7xl pl-20 text-white bg-zinc-900 pt-7">Profile</p>
+     <p class="text-7xl pl-20 text-white bg-zinc-900 pt-7">Change Password</p>
      <div class="bg-zinc-900 h-full px-96 py-40 w-full">
       
           <div class="bg-zinc-800 h-full w-full rounded-3xl">
@@ -22,12 +22,14 @@
                <div class="p-10 flex align-middle justify-center  ">
                     <form action="edit-profile" method="POST" class="w-full">
                       @csrf
-                         <div class="md:flex md:items-center mb-6">
+                         
+                         
+                        <div class="md:flex md:items-center mb-6">
                            
                            <div class="w-full">
-                             <input class="bg-zinc-700 focus:bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-zinc-500" id="inline-full-name" type="text" name="name" placeholder="Name">
+                             <input class="bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-zinc-200 leading-tight focus:outline-none focus:bg-zinc-600 focus:border-zinc-500" id="inline-full-name" type="password" name="old_pwd" placeholder="old Password">
                              <span style="color:red">
-                              @error('name')
+                              @error('old_pwd')
                                   {{ $message }}
                               @enderror
                           </span>
@@ -36,29 +38,14 @@
                          <div class="md:flex md:items-center mb-6">
                            
                            <div class="w-full">
-                             <input class="bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-zinc-200 leading-tight focus:outline-none focus:bg-zinc-600 focus:border-zinc-500" id="inline-password" type="date" name="dob" placeholder="DOB">
+                             <input class="bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-zinc-200 leading-tight focus:outline-none focus:bg-zinc-600 focus:border-zinc-500" id="inline-full-name" type="password" name="new_pwd" placeholder="New Password">
                              <span style="color:red">
-                              @error('dob')
+                              @error('new_pwd')
                                   {{ $message }}
                               @enderror
                           </span>
                            </div>
-                         </div>  
-                         <div class="md:flex md:items-center mb-6">
-                           
-                              <div class="w-full">
-                                <input class="bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-zinc-400 leading-tight focus:outline-none focus:bg-zinc-600 focus:border-zinc-500 " id="inline-password" name="profile" type="file">
-                                
-                              {{-- <input class="block w-full text-sm h-11 px-4y text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-black dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file"> --}}
-
-                                <span style="color:red">
-                                  @error('profile')
-                                      {{ $message }}
-                                  @enderror
-                              </span>
-                              </div>
-                            </div>
-                       
+                         </div>
                          <button class="shadow bg-blue-600 w-full btn-hover hover:bg-blue-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
                               Update
                          </button>
