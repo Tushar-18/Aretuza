@@ -44,6 +44,7 @@ Route::get('account_activation/{email}', [memberscontroller::class, 'account_act
 // admin
 Route::view('admin/admin-sidebar','admin/admin-sidebar');
 Route::view('admin/user-list','admin/user-list');
+Route::get('admin/user-list',[memberscontroller::class,'fatch_data']);
 Route::view('admin/game-list','admin/game-list');
 Route::view('admin/add-games','admin/add-games');
 Route::post('admin/add-games_a',[validate::class,'add_games']);

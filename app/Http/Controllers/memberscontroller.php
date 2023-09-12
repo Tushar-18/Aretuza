@@ -73,14 +73,12 @@ class memberscontroller extends Controller
         }
     
     }
-<<<<<<< Updated upstream
+
     public function fatch_data(){
         $data = Member::select()->get();
-        return view('/',compact('data'));
+        return view('admin/user-list',compact('data'));
     }
-    public function Edit_user(){
-        
-=======
+   
     public function account_activation($email)
     {
         $result = member::whereEmail($email)->first();
@@ -100,6 +98,6 @@ class memberscontroller extends Controller
             }
             return redirect('login');
         }
->>>>>>> Stashed changes
+
     }
 }
