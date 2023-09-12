@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\validate;
 use App\Http\Controllers\memberscontroller;
+use App\Models\Member;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Http\Controllers\memberscontroller;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = Member::select()->get();
+    return view('welcome')->with(compact('data'));
 });
 Route::view('welcome','welcome');
 Route::view('login', 'login');

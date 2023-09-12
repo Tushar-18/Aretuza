@@ -41,14 +41,14 @@
                 <div class="profile">
                     <a href="admin/user-list" style="margin-right: 10px;color:#fff;">Admin</a>
                     <div class="pro-in">
-                        <img src="Images/profile.png" alt="error" id="signin">
+                        <img src="Images/{{session('pic')}}" alt="error" id="signin">
                         <div class="log mt-6"><a href="login">Login</a></div>
                         <div class="log mt-12"><a href="library" class="mt-6">Library</a></div>
                         <div class="log" style="margin-top: 4.5rem"><a href="edit_profile" class="mt-6">Profile</a></div>
                         <div class="log mt-30"><a href="change_password" class="mt-6">Change Password</a></div>
                         
                     </div>
-                    <label for="signin" style="margin-right: 10px;color:#fff;">Name</label>
+                    <label for="signin" style="margin-right: 10px;color:#fff;">{{session('name')}}</label>
                     <div class="menutoggle">
                         
                     </div>

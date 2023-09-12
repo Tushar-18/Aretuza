@@ -73,4 +73,11 @@ class memberscontroller extends Controller
         }
     
     }
+    public function fatch_data(){
+        $data = Member::select()->get();
+        return view('/',compact('data'));
+    }
+    public function Edit_user(){
+        
+    }
 }
