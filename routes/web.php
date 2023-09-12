@@ -39,6 +39,7 @@ Route::view('edit_profile','edit_profile');
 Route::post('edit-profile',[validate::class,'edit_profile']);
 Route::view('change_password','change_pwd');
 Route::post('change_password',[validate::class,'edit_profile']);
+Route::get('account_activation/{email}', [memberscontroller::class, 'account_activation']);
 
 // admin
 Route::view('admin/admin-sidebar','admin/admin-sidebar');

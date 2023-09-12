@@ -45,10 +45,10 @@ class memberscontroller extends Controller
             session()->flash('succ', 'Data saved successfully');
             $email = $req->em;
             $fn = $req->fn;
-            $data = ['email' => $email, 'fn' => $fn];
+            $data = ['em' => $email, 'fn' => $fn];
             Mail::send('register_template', ["data1" => $data], function ($message) use ($data) {
 
-                $message->to($data['email'], $data['fn']);
+                $message->to($data['em'], $data['fn']);
                 $message->from("travaliya519@rku.ac.in", "Tushar");
             });
         } else {
@@ -73,11 +73,33 @@ class memberscontroller extends Controller
         }
     
     }
+<<<<<<< Updated upstream
     public function fatch_data(){
         $data = Member::select()->get();
         return view('/',compact('data'));
     }
     public function Edit_user(){
         
+=======
+    public function account_activation($email)
+    {
+        $result = member::whereEmail($email)->first();
+        if (empty($result)) {
+            session()->flash('error', 'Your account is not registered. kindly register here.');
+            return redirect('register');
+        } else {
+            if ($result->status == 'Active') {
+                session()->flash('success', 'Your account is already activated kindly login');
+            } else {
+                $update = member::where('email', $email)->update(array('status' => 'Active'));
+                if ($update) {
+                    session()->flash('success', 'Your account is activated successfully. kindly login');
+                } else {
+                    session()->flash('error', 'Account activation failed please try after sometime.');
+                }
+            }
+            return redirect('login');
+        }
+>>>>>>> Stashed changes
     }
 }
