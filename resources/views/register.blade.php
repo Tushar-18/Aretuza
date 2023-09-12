@@ -8,25 +8,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/scroll.css">
-    {{-- @vite('resources/css/app.css') --}}
-    <style>
-        #country{
-            background:transparent;
-        }
-        #country > *{
-            background: rgba(0, 0, 0, 0.922);
-            background: blur(4px);
-        }
-        #country > *::selection{
-            background-color: rgb(0, 255, 136);
-        }
-    </style>
+   
 </head>
 
 <body>
     {{-- @include("navbar") --}}
     <div class="container-main">
-        <form action="register" method="post" class="form-box">
+        <form action="register-action" method="post" class="form-box" enctype="multipart/form-data">
             @csrf
             <div class="logo"><img src="Images/logo.png" alt="error"></div><br>
             <div class="comp"><br>

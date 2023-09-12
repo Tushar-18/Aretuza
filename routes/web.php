@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\validate;
+use App\Http\Controllers\memberscontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +20,9 @@ Route::get('/', function () {
 });
 Route::view('welcome','welcome');
 Route::view('login', 'login');
-Route::post('login_action', [validate::class,'login']);
+Route::post('login_action', [memberscontroller::class,'login']);
 Route::view('register', 'register');
-Route::post('register', [validate::class,'register']);
+Route::post('register-action', [memberscontroller::class,'user_reg']);
 Route::view('navbar', 'navbar');
 Route::view('distribute', 'distribute');
 Route::view('items','items');
