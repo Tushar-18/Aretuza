@@ -9,6 +9,7 @@
     {{-- <script src="https://cdn.tailwindcss.com"></script>  --}}
     @vite('resources/css/app.css')
 </head>
+
 <body>
     @section('content')
     <div class="-my-2 py-2 overflow-x-auto overflow-hidden sm:-mx-6 sm:px-6 lg:m-8  pr-10 lg:px-8 flex flex-col items-center w-full">
