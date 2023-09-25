@@ -68,20 +68,20 @@
                             
                             
                             <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{$d['birth_date']}}</td>
-                            @if ($d['status'])
+                            @if ($d['status'] == "Active")
                                 
                             
                             <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                 <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                <span class="relative text-xs">{{$d['status']}}</span>
+                                <a href="/user_status/{{$d['email']}}" class="relative text-xs">{{$d['status']}}</a>
                             </span>
                             </td>
                             @else
                             <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                 <span aria-hidden class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                <span class="relative text-xs">not active</span>
+                                <a href="/user_status/{{$d['email']}}" class="relative text-xs">Inactive</a>
                             </span>
                             </td>
                             @endif

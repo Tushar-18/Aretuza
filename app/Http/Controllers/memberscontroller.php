@@ -63,13 +63,22 @@ class memberscontroller extends Controller
         $result = Member::where('email', $req->em)->where('password', $req->pwd)->first();
         if ($result == null) {
             return "invalid username and password";
-        } else {
+        } else if($result['role'] == "user" && $result['status'] == "Active"){
             $req->session()->put('email', $result['email']);
             $req->session()->put('pwd', $result['password']);
             $req->session()->put('name', $result['fullname']);
             $req->session()->put('pic', $result['pic']);
 
             return redirect('/');
+        }else if($result['role'] == "admin" && $result['status'] == "Active"){
+            $req->session()->put('email', $result['email']);
+            $req->session()->put('pwd', $result['password']);
+            $req->session()->put('name', $result['fullname']);
+            $req->session()->put('pic', $result['pic']);
+            return redirect('admin/user-list');
+        }
+        else{
+            return "Inactive Account";
         }
     
     }
@@ -99,5 +108,26 @@ class memberscontroller extends Controller
             return redirect('login');
         }
 
+    }
+    public function status_users($id)
+    {
+        $data = Member::where('email', $id)->first();
+        if ($data['status'] == "Active") {
+            DB::table('members')
+            ->where('email', $id)
+                ->update(['status' => 'Inactive']);
+            return redirect('admin/user-list');
+        } else {
+            DB::table('members')
+            ->where('email', $id)
+                ->update(['status' => 'Active']);
+            return redirect('admin/user-list');
+        }
+    }
+    public function user_delete($id){
+        DB::table('members')
+            ->where('email', $id)
+            ->update(['status' => 'Inactive']);
+        return redirect('admin/user-list');
     }
 }
