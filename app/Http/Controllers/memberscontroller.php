@@ -125,9 +125,17 @@ class memberscontroller extends Controller
         }
     }
     public function user_delete($id){
-        DB::table('members')
+        $data = Member::where('email', $id)->first();
+        if ($data['status'] == "Active") {
+            DB::table('members')
             ->where('email', $id)
-            ->update(['status' => 'Inactive']);
-        return redirect('admin/user-list');
+            ->update(['status' => 'Deleted']);
+            return redirect('admin/user-list');
+        } else {
+            DB::table('members')
+            ->where('email', $id)
+            ->update(['status' => 'Deleted']);
+            return redirect('admin/user-list');
+        }
     }
 }
