@@ -77,22 +77,29 @@
                                 <a href="/user_status/{{$d['email']}}" class="relative text-xs">{{$d['status']}}</a>
                             </span>
                             </td>
+                            @elseif (($d['status'] == "Inactive"))
+                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                <span class="relative inline-block px-3 py-1 font-semibold text-yellow-900 leading-tight">
+                                <span aria-hidden class="absolute inset-0 bg-yellow-200 opacity-50 rounded-full"></span>
+                                <a href="/user_status/{{$d['email']}}" class="relative text-xs">Inactive</a>
+                            </span>
+                            </td>
                             @else
                             <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                 <span aria-hidden class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                <a href="/user_status/{{$d['email']}}" class="relative text-xs">Inactive</a>
+                                <a href="/user_status/{{$d['email']}}" class="relative text-xs">Deleted</a>
                             </span>
                             </td>
                             @endif
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">{{$d['role']}}</td>
                             {{-- <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">August 17</td> --}}
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/delete-user"
+                                <a href="{{URL::to('/')}}/delete-user/{{$d['email']}}"
                                     class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE</a>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/edit-user"
+                                <a href="{{URL::to('/')}}/admin/edit-user/{{$d['id']}}"
                                     class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT</a>
                             </td>
                       @endforeach      

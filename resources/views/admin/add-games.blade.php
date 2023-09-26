@@ -23,7 +23,7 @@
            Add Games
           </h2>
 
-          <form method="post" action="{{URL::to('/')}}/admin/add-games_a">
+          <form method="post" action="{{URL::to('/')}}/admin/add-games_a" enctype="multipart/form-data">
             @csrf
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
               <div>
@@ -33,6 +33,7 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
                   name="game"
+                  value="{{ old('game') }}"
                 >
                 <span style="color:red">
             @error('game')
@@ -48,6 +49,8 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="number"
                   name="price"
+                  value="{{ old('price') }}"
+
                 >
                 <span style="color:red">
             @error('price')
@@ -62,15 +65,16 @@
                   v-model="user.password"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
+                  name="cat"
+                  value="{{ old('cat') }}"
+
                 >
-              <option>Action</option>
-              <option>Advanture</option>
-              <option>Puzzle</option>
-              <option>Horror</option>
-              <option>Racing</option>
+              @foreach ($data as $d)
+                <option>{{$d['catagories']}}</option>
+              @endforeach
               </select>
               <span style="color:red">
-                @error('')
+                @error('cat')
                     {{ $message }}
                 @enderror
             </span>
@@ -81,6 +85,9 @@
                   v-model="user.confirm"
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="number"
+                  name="age"
+                  value="{{ old('age') }}"
+
                 >
                 <span style="color:red">
             @error('age')
@@ -92,7 +99,7 @@
 
                     <div class="grid grid-cols-1 space-y-2">
                         <label class="text-sm font-bold text-gray-500 tracking-wide">Description</label>
-                            <textarea class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="Descrption"></textarea>
+                            <textarea class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" type="" placeholder="Descrption" name="dec" value="{{ old('dec') }}"></textarea>
                     </div>
                     <span style="color:red">
             @error('dec')
@@ -112,7 +119,7 @@
                                     </div>
                                     <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a file</a> from your computer</p>
                                 </div>
-                                <input type="file" class="hidden">
+                                <input type="file" class="hidden" name="pic">
                                 <span style="color:red">
             @error('pic')
                 {{ $message }}

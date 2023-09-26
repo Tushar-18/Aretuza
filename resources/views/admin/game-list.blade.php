@@ -59,128 +59,56 @@
                             <th
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
                                 Status</th>
-                            <th
-                                class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
-                                Created At</th>
+                            
+                            <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+                            <th class="px-6 py-3 border-b-2 border-gray-300"></th>
                             <th class="px-6 py-3 border-b-2 border-gray-300"></th>
                         </tr>
                     </thead>
                     <tbody class="bg-white">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <del>₹799</del> ₹449</td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                    <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                    <span class="relative text-xs">active</span>
-                                </span>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                September 12</td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
-                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT</a>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/allocate-category"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD_CATEGORY</a>
-                            </td>
+                        @foreach ($data as $d)
                             
-                        </tr>
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                 <div class="flex items-center">
                                     <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
+                                        <img src="{{URL::to('/')}}/../Images/game_pic/{{$d["game_pic"]}}" alt="error">
                                     </div>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
+                                <div class="text-sm leading-5 text-blue-900">{{$d["game_name"]}}</div>
                             </td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                ₹799</td>
+                                ₹{{$d["game_price"]}}</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
+                                <textarea name="" id="" cols="20" rows="1">{{$d["description"]}}</textarea></td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                @if ($d['status'] == "Active")
+                                    <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                     <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                    <span class="relative text-xs">active</span>
+                                    <a href="{{URL::to('/')}}/game-status/{{$d['game_id']}}" class="relative text-xs">{{$d["status"]}}</a>
                                 </span>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                September 12</td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
-                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT</a>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/allocate-category"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD_CATEGORY</a>
-                            </td>
-                           
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                ₹799</td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                @elseif ($d['status'] == "Inactive")
+                                <span class="relative inline-block px-3 py-1 font-semibold text-yellow-900 leading-tight">
+                                    <span aria-hidden class="absolute inset-0 bg-yellow-200 opacity-50 rounded-full"></span>
+                                    <a href="{{URL::to('/')}}/game-status/{{$d['game_id']}}" class="relative text-xs">{{$d["status"]}}</a>
+                                </span>
+                                @else
                                 <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                     <span aria-hidden class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                    <span class="relative text-xs">not active</span>
+                                    <a href="{{URL::to('/')}}/game-status/{{$d['game_id']}}" class="relative text-xs">{{$d["status"]}}</a>
                                 </span>
+                                @endif
                             </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                September 12</td>
+                        
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
+                                <a href="{{URL::to('/')}}/delete-game/{{$d['game_id']}}"
                                     class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
+                                </a>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/edit-game"
@@ -192,90 +120,9 @@
                             </td>
                             
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                ₹799</td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                    <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                    <span class="relative text-xs">active</span>
-                                </span>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                September 12</td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
-                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT</a>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/allocate-category"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD_CATEGORY</a>
-                            </td>
-                                                        
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                ₹799</td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                    <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                    <span class="relative text-xs">active</span>
-                                </span>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                September 12</td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
-                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/edit-game"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT</a>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/allocate-category"
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD_CATEGORY</a>
-                            </td>
-                            
-                        </tr>
+                        @endforeach
+                        
+                        
                     </tbody>
                 </table>
                 <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">

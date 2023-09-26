@@ -33,6 +33,7 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
                   name="fn"
+                  value="{{$data['fullname']}}"
                 >
                 <span style="color:red">
             @error('fn')
@@ -48,6 +49,7 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="email"
                   name="em"
+                  value="{{$data['email']}}"
                 >
                 <span style="color:red">
             @error('em')
@@ -63,6 +65,7 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="date"
                   name="dob"
+                  value="{{$data['birth_date']}}"
                 >
                 <span style="color:red">
             @error('dob')
@@ -79,6 +82,7 @@
                   class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="password"
                   name="pwd"
+                  value="{{$data['password']}}"
                 >
                 <span style="color:red">
             @error('pwd')

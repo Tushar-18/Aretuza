@@ -32,7 +32,7 @@
                   v-model="user.username"
                   class="w-2/4 mt-2 pl-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
                   type="text"
-                  name="cat"
+                  name="description"
                 >
                 </div>
                 <input href="{{URL::to('/')}}/admin/add-categories" type="submit"
@@ -52,9 +52,9 @@
 
       <div class="p-6 mt-10 bg-white rounded-md shadow-md ">
                 <ul >
-                    <li>Action</li>
-                    <li>Horror</li>
-                    <li>Puzzle</li>
+                   @foreach ($data as $d)
+                     <li>{{$d['catagories']}}</li>
+                   @endforeach
                 </ul>
              </div>
     </div>

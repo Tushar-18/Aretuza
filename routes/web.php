@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\gamecontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\validate;
 use App\Http\Controllers\memberscontroller;
@@ -46,17 +47,21 @@ Route::view('admin/admin-sidebar','admin/admin-sidebar');
 Route::view('admin/user-list','admin/user-list');
 Route::get('admin/user-list',[memberscontroller::class,'fatch_data']);
 Route::get('/user_status/{id}',[memberscontroller::class, 'status_users']);
-Route::view('admin/game-list','admin/game-list');
-Route::view('admin/add-games','admin/add-games');
-Route::post('admin/add-games_a',[validate::class,'add_games']);
+Route::get('/delete-user/{id}',[memberscontroller::class, 'user_delete']);
+Route::get('admin/game-list',[gamecontroller::class,'fetch_games']);
+Route::get('game-status/{id}',[gamecontroller::class,'status_games']);
+Route::get('delete-game/{id}',[gamecontroller::class,'delete_game']);
+Route::get('admin/add-games', [gamecontroller::class, 'feth_cat_game']);
+Route::post('admin/add-games_a',[gamecontroller::class,'add_games']);
 Route::view('admin/orders','admin/orders');
 Route::view('admin/edit-game','admin/edit-game');
 Route::post('admin/edit-game_a',[validate::class,'edit_games']);
 Route::view('admin/rating','admin/rating');
 Route::view('admin/add-user','admin/add-user');
-Route::view('admin/edit-user','admin/edit-user');
-Route::view('admin/add-categories','admin/add-categories');
-Route::post('admin/add-categories_a', [validate::class, 'add_cat']);
+// Route::view('admin/edit-user','admin/edit-user');
+Route::get('admin/edit-user/{id}', [memberscontroller::class, 'edit_users']);
+Route::get('admin/add-categories', [gamecontroller::class, 'feth_cat']);
+Route::post('admin/add-categories_a', [gamecontroller::class, 'add_catagories']);
 
 Route::view('admin/admin-orders','admin/admin-orders');
 
