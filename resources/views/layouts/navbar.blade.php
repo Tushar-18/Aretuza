@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/css/nav.css">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
     <body>
         <div class="container-main">
             <header class="header">
-                <div class="logo w-40"><a href="/"><img src="Images/white-logo.png" alt="error"></a></div>
+                <div class="logo w-40"><a href="/"><img src="{{URL::to('/')}}/Images/white-logo.png" alt="error"></a></div>
                 <nav class="nav px-5">
                     <ul>
                         <li ><a class="nav-hover" href="welcome">Home</a></li>
@@ -41,7 +41,7 @@
                 <div class="profile">
                      @if(session()->has('email'))
                     <div class="pro-in">
-                        <img src="Images/{{session('pic')}}" alt="error" id="signin">
+                        <img src="{{URL::to('/')}}/Images/{{session('pic')}}"   id="signin">
                         <div class="log mt-6"><a href="login">Login</a></div>
                         <div class="log mt-12"><a href="library" class="mt-6">Library</a></div>
                         <div class="log " style="margin-top: 4.5rem"><a href="edit_profile" class="mt-6">Profile</a></div>

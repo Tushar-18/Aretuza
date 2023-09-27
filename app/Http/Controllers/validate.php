@@ -49,7 +49,7 @@ class validate extends Controller
             'game' => 'required|min:3|max:20',
             'price' => 'required',
             'age' => 'required',
-            'dec' => 'required|max:20',
+            'dec' => 'required',
             
             'pic' => 'required|max:30000|mimes:jpg,png,gif,bmp'
     
@@ -62,7 +62,7 @@ class validate extends Controller
             'game' => 'required|min:3|max:20',
             'price' => 'required',
             'age' => 'required',
-            'dec' => 'required|max:20',
+            'dec' => 'required',
             
             'pic' => 'required|max:30000|mimes:jpg,png,gif,bmp'
     
@@ -76,7 +76,7 @@ class validate extends Controller
             'dob' => 'required',
             'old_pwd' => 'required|min:4|max:10|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
             'new_pwd' => 'required|min:4|max:10|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
-            'profile' => 'required|max:30000|mimes:jpg,png,gif,bmp'
+            'profile' => 'required|max:300000'
         ],[
             'name.required' => 'Name is required',
             'name.min' => 'Full name must contain minimum 3 characters',

@@ -28,98 +28,23 @@
     <p class="title ">Top Games</p>
     <img src="Images/zombie.png" class="zombie ml-48 h-24 w-20 -mt-16"  alt="">
       <p class="line"></p>
-
-      {{-- <div class="pt-20">
-         <p class="p-3 w-20 text-lg text-white bg-none border rounded-full">Library</p>
-      </div> --}}
    </div>
     <div class="box-border first-part w-full">
-      <a href="items">
-      <div class="box-border games">
-         <div class="games-img m-3">
-            <img src="images/Remnant.jpg" alt="errer">
-         </div>
-         <div class="games-name">
-            <p class="big">Remnant</p>
-            <p class="small text-white"> price: ₹400</p>
-         </div>
-      </div></a>
-
-
-      <div class="box-border games">
-         <div class="games-img m-3">
-            <img src="images/god_of_war.jpg" alt="errer">
-         </div>
-         <div class="games-name">
-            <p class="big">God Of War</p>
-            <p class="small text-white"> price: ₹400</p>
-         </div>
-      </div>
-
-
-      <div class="box-border games">
-         <div class="games-img m-3">
-            <img src="images/red_dead_redemption.jpg" alt="errer">
-         </div>
-         <div class="games-name">
-            <p class="big">Red Dead Redemption</p>
-            <p class="small text-white"> price: ₹400</p>
-         </div>
-      </div>
-
-      <div class="box-border games">
-         <div class="games-img m-3">
-            <img src="images/watch_dogs_2.jpg" alt="errer">
-         </div>
-         <div class="games-name">
-            <p class="big">Watch Dogs 2</p>
-            <p class="small text-white"> price: <del style="margin-right: 10px">₹3599</del>₹524.85</p>
-         </div>
-      </div>
-
-      <div class="box-border games">
-
-         <div class="games-img m-3">
-            <img src="images/sea.png" alt="errer">
-
-         </div>
-         <div class="games-name">
-            <p class="big">Sea of Thieves</p>
-            <p class="small text-white"> price: ₹400</p>
-         </div>
-      </div>
-
-      <div class="box-border games">
-         <div class="games-img m-3">
-            <img src="images/valorant1.avif" alt="errer">
-         </div>
-         <div class="games-name">
-            <p class="big">Valorant</p>
-            <p class="small text-white"> price: free</p>
-         </div>
-      </div>
-
-      <div class="box-border games">
-         <div class="games-img m-3">
-            <img src="images/Destiny_2.jpg" alt="errer">
-         </div>
-         <div class="games-name">
-            <p class="big">Destiny 2</p>
-            <p class="small text-white"> price: free</p>
-         </div>
-      </div>
-
-      <div class="box-border games">
-         <div class="games-img m-3">
-            <img src="images/ark2.avif" alt="errer">
-         </div>
-         <div class="games-name">
-            <p class="big">ARK</p>
-            <p class="small text-white"> price: free</p>
-         </div>
-      </div>
+      @foreach ($game as $d)
+         
+         <a href="{{URL::to('/')}}/items_a/{{$d['game_id']}}">
+         <div class="box-border games">
+            <div class="games-img m-3">
+               <img src="{{URL::to("/")}}/images/game_pic/{{$d['game_pic']}}" alt="errer">
+            </div>
+            <div class="games-name">
+               <p class="big">{{$d['game_name']}}</p>
+               {{-- <p class="small text-white">{{$d['description']}}</p> --}}
+               <p class="text-sm  text-white"> price: ₹{{$d['game_price']}}</p>
+            </div>
+         </div></a>
+      @endforeach
     </div>
-
 @endsection
 </body>
 </html>

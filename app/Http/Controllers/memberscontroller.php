@@ -138,8 +138,11 @@ class memberscontroller extends Controller
             return redirect('admin/user-list');
         }
     }
-    public function edit_users($id){
+    public function edit_users(Request $req,$id){
         $data = Member::where('id', $id)->first();
-        return view('admin/edit-user',compact('data'));
-    }
+        DB::table('members')
+            ->where('email', $id)
+            ->update(['fullname','birth_date','pic' => $req->name, $req->dob, $req->profile]);
+            return redirect('/',compact('data'));
+    }   
 }

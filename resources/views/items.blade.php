@@ -6,7 +6,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>Document</title>
-            <link rel="stylesheet" href="css/items.css">
+            <link rel="stylesheet" href="{{URL::to('/')}}/css/items.css">
             <script src="https://cdn.tailwindcss.com"></script>
             @vite('resources/css/app.css')
 
@@ -16,16 +16,24 @@
             <div class="bg-zinc-900 p-20">
             <div class="bg-zinc-800 w-auto h-auto p-20 flex rounded-lg">
                   <div class="first-part">
-                        <img src="images/Remnant.jpg" class=" w-96 h-96 " alt="errer">
+                        <img src="{{URL::to('/')}}/images/game_pic/{{$data['game_pic']}}" class=" w-96 h-96 " alt="errer">
                   </div>
                   <div class="second-part pl-14  w-96 text-white">
                         <div class="flex flex-col">
-                              <label class="text-5xl">Remnant</label>
-                              <label class="pt-5">Price ₹2900</label>
+                              <label class="text-5xl">{{$data->game_name}}</label>
+                              @if ($data['game_price']== '0.00')
+                                <label class="pt-5 text-lg">Price <label class=" text-green-500">Free</label></label>
+                              @else
+                                <label class="pt-5">Price ₹{{$data['game_price']}}</label>
+                              @endif
+                              @if ($data['offers'] != '0.00')    
                               <label class=" text-yellow-600">50% off</label>
-                              <label class="pt-5">The world has been thrown into chaos by an ancient evil from another dimension. As one of the last remnants of humanity, you must set out alone or alongside up to two other survivors to face down hordes of deadly enemies to retake what was lost.</label>
-                              <label class="text-lg mt-4 ml-4 ">🦖 Great Boss Battles</label>
-                              <label class="text-lg m-4">😍 Extremely Fun</label>
+                              @endif
+                              <label class="pt-5">{{$data['description']}}</label><br>
+                              <li class="text-2xl">
+                                Catagories
+                              </li>
+                              <label class="text-lg mt-4 ml-9 ">{{$data['catagories']}}</label>
                         </div>
                   </div>
                   <div class="w-96 bg-zinc-700 ml-16 h-auto p-6">
@@ -42,7 +50,7 @@
 		<div class="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
 			<div class="flex flex-col w-full lg:w-1/3 p-8">
 				<p class="ml-6 text-yellow-600 text-lg mb-2 uppercase tracking-loose">REVIEW</p>
-                        <img src="images/profile.png" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
+                        <img src="{{URL::to('/')}}/images/profile.png" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
 				<p class="text-3xl md:text-5xl my-1 leading-relaxed text-yellow-600 md:leading-snug">Leave us a feedback!</p>
 				<p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
 					Please provide your valuable feedback and something something ...

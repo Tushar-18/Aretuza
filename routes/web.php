@@ -4,6 +4,7 @@ use App\Http\Controllers\gamecontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\validate;
 use App\Http\Controllers\memberscontroller;
+use App\Models\Game;
 use App\Models\Member;
 
 /*
@@ -19,7 +20,8 @@ use App\Models\Member;
 
 Route::get('/', function () {
     $data = Member::select()->get();
-    return view('welcome')->with(compact('data'));
+    $game = Game::select()->get();
+    return view('welcome')->with(compact('data','game'));
 });
 Route::view('welcome','welcome');
 Route::view('login', 'login');
@@ -29,6 +31,8 @@ Route::post('register-action', [memberscontroller::class,'user_reg']);
 Route::view('navbar', 'navbar');
 Route::view('distribute', 'distribute');
 Route::view('items','items');
+Route::get('items_a/{id}',[gamecontroller::class,'game_pro']);
+Route::get('items',[gamecontroller::class,'chack_user']);
 Route::view('Store','store');
 Route::view('footer','footer');
 Route::view('buy','buy');
@@ -38,6 +42,7 @@ Route::view('library','library');
 Route::view('aboutus','aboutus');
 Route::view('edit_profile','edit_profile');
 Route::post('edit-profile',[validate::class,'edit_profile']);
+Route::view('edit_profile/{id}',[memberscontroller::class,'edit_users']);
 Route::view('change_password','change_pwd');
 Route::post('change_password',[validate::class,'edit_profile']);
 Route::get('account_activation/{email}', [memberscontroller::class, 'account_activation']);

@@ -13,11 +13,11 @@ class gamecontroller extends Controller
     {
 
         $req->validate([
-            'game' => 'required|min:3|max:20',
+            'game' => 'required|min:3',
             'price' => 'required',
             'age' => 'required',
             'cat' => 'required',
-            'dec' => 'required|min:5|max:20',
+            'dec' => 'required|min:5',
             'pic' => 'required|max:300000'
 
         ]);
@@ -38,7 +38,7 @@ class gamecontroller extends Controller
             session()->flash('err', 'error in saving data');
         }
 
-        return view('admin/game-list');
+        return $this->fetch_games();
     }
     public function feth_cat(){
         $data = Catagories::select()->get();
@@ -64,8 +64,8 @@ class gamecontroller extends Controller
         } else {
             session()->flash('err', 'error in saving data');
         }
-      
-        return view('admin/add-categories');
+        $data = Catagories::select()->get();
+        return view('admin/add-categories',compact('data'));
     }
     public function fetch_games()
     {
@@ -94,5 +94,17 @@ class gamecontroller extends Controller
             ->where('game_id', $id)
                 ->update(['status' => 'Deleted']);
             return redirect('admin/game-list');
+    }
+    public function chack_user(){
+        if(session()->has('email')){
+            return view("items");
+        }
+        else{
+            return view("login");
+        }
+    }
+    public function game_pro($id){
+        $data=Game::where('game_id',$id)->first();
+        return view('items',compact('data'));
     }
 }
