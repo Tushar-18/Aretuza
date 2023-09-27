@@ -47,7 +47,7 @@
                         <div class="log mt-6"><a href="logout_action">Logut</a></div>
 
                         <div class="log mt-12"><a href="library" class="mt-6">Library</a></div>
-                        <div class="log " style="margin-top: 4.5rem"><a href="edit_profile" class="mt-6">Profile</a>
+                        <div class="log " style="margin-top: 4.5rem"><a href="{{URL::to('/')}}/edit_profile/{{session('id')}}" class="mt-6">Profile</a>
                         </div>
                         <div class="log mt-30"><a href="change_password" class="mt-6">Change Password</a></div>
 

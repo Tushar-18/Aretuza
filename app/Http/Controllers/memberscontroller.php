@@ -69,6 +69,7 @@ class memberscontroller extends Controller
             $req->session()->put('pwd', $result['password']);
             $req->session()->put('name', $result['fullname']);
             $req->session()->put('pic', $result['pic']);
+            $req->session()->put('id',$result['id']);
 
             return redirect('/');
         }else if($result['role'] == "admin" && $result['status'] == "Active"){
@@ -76,6 +77,7 @@ class memberscontroller extends Controller
             $req->session()->put('pwd', $result['password']);
             $req->session()->put('name', $result['fullname']);
             $req->session()->put('pic', $result['pic']);
+            $req->session()->put('id',$result['id']);
             return redirect('admin/user-list');
         }
         else{
@@ -211,6 +213,55 @@ public function admin_add_user_reg(Request $req){
         }
 
         return view('login');
+    }
+    
+    public function edit_users($id){
+        $data = Member::where('id', $id)->first();
+        return view('edit_profile',compact('data'));
+    }
+    public function edit_profile(Request $req){
+        $req->validate([
+            'name' => 'required|max:20|min:2',
+            'dob' => 'required',
+            'old_pwd' => 'required|min:4|max:10|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
+            'new_pwd' => 'required|min:4|max:10|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
+            'profile' => 'required|max:300000'
+        ],[
+            'name.required' => 'Name is required',
+            'name.min' => 'Full name must contain minimum 3 characters',
+            'name.max' => 'Full name must contain maximum of 30 characters',
+            'dob.required' => 'Date of Birth is required',
+            'old_pwd.required' => 'Old Password field cannot be empty',
+            'old_pwd.regex' => 'Password must contain one small letter one capital letter, one number and one special symbol',
+            'old_pwd.min' => 'Old Password must contain minimum 3 characters',
+            'old_pwd.max' => 'Old Password must contain maximum 20 characters',
+            'new_pwd.required' => 'New Password field cannot be empty',
+            'new_pwd.regex' => 'Password must contain one small letter one capital letter, one number and one special symbol',
+            'new_pwd.min' => 'New Password must contain minimum 3 characters',
+            'new_pwd.max' => 'New Password must contain maximum 20 characters',
+            'profile.required' => 'Profile pohto not selected',
+            'profile.max' => 'file size is lessthan 30MB'
+        ]);
+
+        $result = Member::where('email', $req->em)->first();
+        if ($req->hasFile('pic')) {
+
+            $file_name = "Images/profile_pictures/" . $result['profile'];
+            if (File::exists($file_name)) {
+                File::delete($file_name);
+            }
+
+            $pic_name = uniqid() . $req->file('profile')->getClientOriginalName();
+            $req->pic->move('images/profile_pictures/', $pic_name);
+            $result->where('email', $req->em)->update(array('fullname' => $req->name,  'birth_date' => $req->dob, 'profile' => $pic_name));
+            session()->flash('succ', 'Data Updated successfully');
+        } else {
+            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'birth_date' => $req->dob));
+            session()->flash('succ', 'Data Updated successfully');
+        }
+        return redirect()->back();
+
+        return view('edit_profile');
     }
 }
 
