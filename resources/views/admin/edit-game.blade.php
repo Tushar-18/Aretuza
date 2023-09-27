@@ -1,3 +1,4 @@
+@extends('../layouts/admin-sidebar')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +11,8 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+    @section('content')
+
   <div class="w-full flex flex-col items-center bg-gray-100">
     <div class="mt-8 w-9/12">
       <h4 class="text-gray-600">
@@ -142,5 +145,6 @@
       </div>
     </div>
   </div>
+  @endsection
 </body>
 </html>

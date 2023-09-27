@@ -6,6 +6,7 @@ use App\Models\Catagories;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\file;
 
 class gamecontroller extends Controller
 {
@@ -105,5 +106,25 @@ class gamecontroller extends Controller
     public function game_pro($id){
         $data=Game::where('game_id',$id)->first();
         return view('items',compact('data'));
+    }
+    public function update_users(Request $req)
+    {
+        $result = game::where('email', $req->em)->first();
+        if ($req->hasFile('pic')) {
+
+            $file_name = "Images/profile_pictures/" . $result['pic'];
+            if (File::exists($file_name)) {
+                File::delete($file_name);
+            }
+
+            $pic_name = uniqid() . $req->file('pic')->getClientOriginalName();
+            $req->pic->move('images/profile_pictures/', $pic_name);
+            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'password' => $req->pwd,  'birth_date' => $req->dob, 'pic' => $pic_name));
+            session()->flash('succ', 'Data Updated successfully');
+        } else {
+            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'password' => $req->pwd, 'birth_date' => $req->dob));
+            session()->flash('succ', 'Data Updated successfully');
+        }
+        return redirect()->back();
     }
 }
