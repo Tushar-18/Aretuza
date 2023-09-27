@@ -213,4 +213,4 @@ public function admin_add_user_reg(Request $req){
         return view('login');
     }
 }
->>>>>>> a5b68f64a7708d01812c3e7a7d1d3db98192fdce
+
