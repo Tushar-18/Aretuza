@@ -26,6 +26,7 @@ Route::get('/', function () {
 Route::view('welcome','welcome');
 Route::view('login', 'login');
 Route::post('login_action', [memberscontroller::class,'login']);
+Route::get('logout_action', [memberscontroller::class,'logout']);
 Route::view('register', 'register');
 Route::post('register-action', [memberscontroller::class,'user_reg']);
 Route::view('navbar', 'navbar');
@@ -62,9 +63,10 @@ Route::view('admin/orders','admin/orders');
 Route::view('admin/edit-game','admin/edit-game');
 Route::post('admin/edit-game_a',[validate::class,'edit_games']);
 Route::view('admin/rating','admin/rating');
-Route::view('admin/add-user','admin/add-user');
+Route::post('admin/add-user',[memberscontroller::class, 'admin_add_user_reg']);
 // Route::view('admin/edit-user','admin/edit-user');
 Route::get('admin/edit-user/{id}', [memberscontroller::class, 'edit_users']);
+Route::post('admin/update-user', [memberscontroller::class, 'update_users']);
 Route::get('admin/add-categories', [gamecontroller::class, 'feth_cat']);
 Route::post('admin/add-categories_a', [gamecontroller::class, 'add_catagories']);
 

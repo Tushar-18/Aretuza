@@ -58,7 +58,6 @@ class gamecontroller extends Controller
         ]);
         $reg = new Catagories();
         $reg->catagories = $req->description;
-        $reg->save();
         if ($reg->save()) {
             session()->flash('succ', 'Data saved successfully');
         } else {
