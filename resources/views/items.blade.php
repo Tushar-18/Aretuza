@@ -30,10 +30,17 @@
                               <label class=" text-yellow-600">50% off</label>
                               @endif
                               <label class="pt-5">{{$data['description']}}</label><br>
+                              @php
+$cat = json_decode($data['catagories']);
+@endphp
                               <li class="text-2xl">
                                 Catagories
                               </li>
-                              <label class="text-lg mt-4 ml-9 ">{{$data['catagories']}}</label>
+                              @foreach ($cat as $c)
+                              <label class="text-lg mt-2 ml-9 ">
+                                {{$c}}
+                              </label>
+                              @endforeach
                         </div>
                   </div>
                   <div class="w-96 bg-zinc-700 ml-16 h-auto p-6">

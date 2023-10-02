@@ -58,8 +58,8 @@
             @enderror
         </span>
               </div>
-
-              <div>
+              <input type="checkbox" name="cat[]" value="">
+              {{-- <div>
                 <label class="text-gray-700" for="password">Catagory</label>
                 <select
                   v-model="user.password"
@@ -78,7 +78,7 @@
                     {{ $message }}
                 @enderror
             </span>
-              </div>
+              </div> --}}
               <div>
                 <label class="text-gray-700" for="passwordConfirmation">Age requirment</label>
                 <input

@@ -111,11 +111,11 @@
                                 </a>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/edit-game"
+                                <a href="{{URL::to('/')}}/admin/edit-game/{{$d['game_id']}}"
                                     class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">EDIT</a>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/allocate-category"
+                                <a href="{{URL::to('/')}}/admin/allocate-category/{{$d['game_id']}}"
                                     class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD_CATEGORY</a>
                             </td>
                             

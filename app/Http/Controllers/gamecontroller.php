@@ -17,7 +17,7 @@ class gamecontroller extends Controller
             'game' => 'required|min:3',
             'price' => 'required',
             'age' => 'required',
-            'cat' => 'required',
+            // 'cat' => 'required',
             'dec' => 'required|min:5',
             'pic' => 'required|max:300000'
 
@@ -29,7 +29,7 @@ class gamecontroller extends Controller
         $reg->game_name = $req->game;
         $reg->game_price = $req->price;
         $reg->description = $req->dec;
-        $reg->catagories = $req->cat;
+        $reg->catagories = json_encode( $req->cat);
         $reg->age_req = $req->age;
         $reg->game_pic = $pic_name;
         $reg->save();
@@ -44,11 +44,6 @@ class gamecontroller extends Controller
     public function feth_cat(){
         $data = Catagories::select()->get();
         return view('admin/add-categories', compact('data'));
-    }
-    public function feth_cat_game()
-    {
-        $data = Catagories::select()->get();
-        return view('admin/add-games', compact('data'));
     }
     public function add_catagories(Request $req)
     {
@@ -107,24 +102,61 @@ class gamecontroller extends Controller
         $data=Game::where('game_id',$id)->first();
         return view('items',compact('data'));
     }
-    public function update_users(Request $req)
+    public function edit_game($id)
     {
-        $result = game::where('email', $req->em)->first();
+        $data = game::where('game_id', $id)->first();
+        return view('admin/edit-game', compact('data'));
+    }
+    public function update_games(Request $req)
+    {
+        $req->validate([
+            'game' => 'required|min:3|max:20',
+            'price' => 'required',
+            'age_req' => 'required',
+            'dec' => 'required',
+            'offers' => 'required',
+            
+            'age_req' => 'required'
+            
+
+        ]);
+        $result = game::where('game_id', $req->id)->first();
+        // return $result;
         if ($req->hasFile('pic')) {
 
-            $file_name = "Images/profile_pictures/" . $result['pic'];
+            $file_name = "Images/game_pic/" . $result['pic'];
             if (File::exists($file_name)) {
                 File::delete($file_name);
             }
 
             $pic_name = uniqid() . $req->file('pic')->getClientOriginalName();
-            $req->pic->move('images/profile_pictures/', $pic_name);
-            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'password' => $req->pwd,  'birth_date' => $req->dob, 'pic' => $pic_name));
+            $req->pic->move('images/game_pic/', $pic_name);
+            $off =  $req->offers;
+            $total= $req->price;
+            $offer = ($off/$total)*100;
+            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price,'description' => $req->dec,'offers' => $offer,  'age_req' => $req->age_req, 'game_pic' => $pic_name));
             session()->flash('succ', 'Data Updated successfully');
         } else {
-            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'password' => $req->pwd, 'birth_date' => $req->dob));
+            $off =  $req->offers;
+            $total = $req->price;
+            $offer = $total-(($off / 100) * $total);
+            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price,'description' => $req->dec,'offers' => $offer, 'age_req' => $req->age_req));
             session()->flash('succ', 'Data Updated successfully');
         }
+        return $this->edit_game($req->id);
+    }
+    public function feth_allocate_cat($id)
+    {
+        $data = Catagories::select()->get();
+        $data1 = game::where('game_id', $id)->first();
+        return view('admin/allocate_category', compact('data','data1'));
+    }
+    public function allocate_catagories(Request $req){
+        $result = game::where('game_id', $req->id)->first();
+        // return $result;
+        // $result->catagories = json_encode($req->cat);
+        // $result->save();
+        $result->where('game_id', $req->id)->update(array('catagories' => json_encode($req->cat)));
         return redirect()->back();
     }
 }

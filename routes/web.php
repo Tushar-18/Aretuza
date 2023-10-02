@@ -56,11 +56,11 @@ Route::get('/delete-user/{id}',[memberscontroller::class, 'user_delete']);
 Route::get('admin/game-list',[gamecontroller::class,'fetch_games']);
 Route::get('game-status/{id}',[gamecontroller::class,'status_games']);
 Route::get('delete-game/{id}',[gamecontroller::class,'delete_game']);
-Route::get('admin/add-games', [gamecontroller::class, 'feth_cat_game']);
+Route::view('admin/add-games', 'admin/add-games');
 Route::post('admin/add-games_a',[gamecontroller::class,'add_games']);
 Route::view('admin/orders','admin/orders');
-Route::view('admin/edit-game','admin/edit-game');
-Route::post('admin/edit-game_a',[validate::class,'edit_games']);
+Route::get('admin/edit-game/{id}',[gamecontroller::class,'edit_game']);
+Route::post('admin/edit-game_a',[gamecontroller::class, 'update_games']);
 Route::view('admin/rating','admin/rating');
 Route::post('admin/add-user',[memberscontroller::class, 'admin_add_user_reg']);
 // Route::view('admin/edit-user','admin/edit-user');
@@ -71,5 +71,6 @@ Route::post('admin/add-categories_a', [gamecontroller::class, 'add_catagories'])
 
 Route::view('admin/admin-orders','admin/admin-orders');
 
-Route::view('admin/allocate-category','admin/allocate-category');
+Route::get('admin/allocate-category/{id}',[gamecontroller::class, 'feth_allocate_cat']);
+Route::post('admin/allocate-catagorie_a',[gamecontroller::class, 'allocate_catagories']);
 

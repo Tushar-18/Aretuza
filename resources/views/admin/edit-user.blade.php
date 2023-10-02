@@ -71,7 +71,7 @@
                                     <label class="text-gray-700" for="emailAddress">Email</label>
                                     <input v-model="user.email"
                                         class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                                        type="email" name="em" value="{{ $data['email'] }}">
+                                        type="email" name="em" value="{{ $data['email'] }}" readonly>
                                     <span style="color:red">
                                         @error('em')
                                             {{ $message }}
@@ -92,17 +92,17 @@
                                 </div>
 
 
-                                <div>
+                                {{-- <div>
                                     <label class="text-gray-700" for="passwordConfirmation">Password</label>
                                     <input v-model="user.confirm"
                                         class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                                        type="password" name="pwd" value="{{ $data['password'] }}">
+                                        type="password" name="pwd" value="{{ $data['password'] }}" readonly>
                                     <span style="color:red">
                                         @error('pwd')
                                             {{ $message }}
                                         @enderror
                                     </span>
-                                </div>
+                                </div> --}}
 
                             </div>
 
