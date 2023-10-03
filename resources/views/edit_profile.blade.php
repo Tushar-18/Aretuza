@@ -17,10 +17,10 @@
       
           <div class="bg-zinc-800 h-full w-full rounded-3xl">
                <div class="flex items-center justify-center">
-                    <img src="{{URL::to('/')}}/images/profile.png" alt="network not comeing" class="rounded-full hover:shadow-xl hover:shadow-zinc-700 bg-zinc-600 -mt-20 h-52 w-52">
+                    <img src="{{URL::to('/')}}/images/profile_pictures/{{$data['pic']}}" alt="network not comeing" class="rounded-full hover:shadow-xl hover:shadow-zinc-700 bg-zinc-600 -mt-20 h-52 w-52">
                </div>
                <div class="p-10 flex align-middle justify-center  ">
-                    <form action="edit-profile" method="POST" class="w-full">
+                    <form action="{{URL::to('/')}}/edit-profile" enctype="multipart/form-data" method="POST" class="w-full">
                       @csrf
                          <div class="md:flex md:items-center mb-6">
                            
@@ -33,6 +33,14 @@
                           </span>
                            </div>
                          </div>
+                         <div class="w-full">
+                              <input class="bg-zinc-700 focus:bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:border-zinc-500" id="inline-full-name" type="email" name="email" placeholder="Email" value="{{$data['email']}}" readonly>
+                              <span style="color:red">
+                               @error('name')
+                                   {{ $message }}
+                               @enderror
+                           </span>
+                            </div><br>
                          <div class="md:flex md:items-center mb-6">
                            
                            <div class="w-full">

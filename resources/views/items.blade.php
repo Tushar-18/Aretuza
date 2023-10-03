@@ -40,7 +40,7 @@
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
     color: #deb217;  
-}
+}   
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
@@ -84,10 +84,10 @@ $cat = json_decode($data['catagories']);
                         </div>
                   </div>
                   <div class="w-96 bg-zinc-700 ml-16 h-auto p-6">
-                        <a href="buy">
+                    <a href="{{URL::to('/')}}/buy">
                               <div class="bg-blue-700 items-center flex w-80 h-10 mt-20 mb-20  justify-center rounded-lg text-white hover:bg-blue-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">BUY NOW</div></a>
                               
-                        <a href="Wishlist"><div class="bg-none border items-center flex w-80 h-10 mt-20 mb-20 justify-center rounded-lg text-white hover:bg-zinc-200/10 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Add to Wish List</div></a> 
+                              <a href="{{URL::to('/')}}/Wishlist"><div class="bg-none border items-center flex w-80 h-10 mt-20 mb-20 justify-center rounded-lg text-white hover:bg-zinc-200/10 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Add to Wish List</div></a> 
             </div>
             
       </div>

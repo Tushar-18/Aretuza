@@ -42,7 +42,7 @@ Route::view('Wishlist','wishlist');
 Route::view('store','store');
 Route::view('library','library');
 Route::view('aboutus','aboutus');
-Route::post('edit-profile',[memberscontroller::class,'edit_profile']);
+Route::get('edit_profile/{id}',[memberscontroller::class,'edit_user']);
 Route::get('edit_profile/{id}',[memberscontroller::class,'edit_users']);
 Route::view('change_password','change_pwd');
 Route::post('change_password',[validate::class,'edit_profile']);

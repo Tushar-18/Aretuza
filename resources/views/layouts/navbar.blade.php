@@ -19,8 +19,8 @@
                         alt="error"></a></div>
             <nav class="nav px-5">
                 <ul>
-                    <li><a class="nav-hover" href="welcome">Home</a></li>
-                    <li><a class="nav-hover" href="store">store</a></li>
+                    <li><a class="nav-hover" href="{{URL::to('/')}}/welcome">Home</a></li>
+                    <li><a class="nav-hover" href="{{URL::to('/')}}/store">store</a></li>
                 </ul>
             </nav>
             <!-- component -->
@@ -43,13 +43,13 @@
                 @if (session()->has('email'))
                     <div class="pro-in">
 
-                        <img src="{{ URL::to('/') }}/Images/{{ session('pic') }}" id="signin">
-                        <div class="log mt-6"><a href="logout_action">Logut</a></div>
+                        <img src="{{ URL::to('/') }}/Images/profile_pictures/{{ session('pic') }}" id="signin">
+                        <div class="log mt-6"><a href="{{URL::to('/')}}/logout_action">Logut</a></div>
 
-                        <div class="log mt-12"><a href="library" class="mt-6">Library</a></div>
+                        <div class="log mt-12"><a href="{{URL::to('/')}}/library" class="mt-6">Library</a></div>
                         <div class="log " style="margin-top: 4.5rem"><a href="{{URL::to('/')}}/edit_profile/{{session('id')}}" class="mt-6">Profile</a>
                         </div>
-                        <div class="log mt-30"><a href="change_password" class="mt-6">Change Password</a></div>
+                        <div class="log mt-30"><a href="{{URL::to('/')}}/change_password" class="mt-6">Change Password</a></div>
 
                     </div>
                     <label for="signin" style="margin-right: 10px;color:#fff;">{{ session('name') }}</label>
