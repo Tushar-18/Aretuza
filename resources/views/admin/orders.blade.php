@@ -26,8 +26,8 @@
                         <input type="text" class="flex-shrink flex-grow flex-auto leading-normal tracking-wide w-px border border-none border-l-0 rounded rounded-l-none px-3 relative focus:outline-none text-xxs lg:text-xs  text-gray-500 font-thin" placeholder="Search">
                     </div>
                 </div>
-                <a href="{{URL::to('/')}}/admin/admin-orders"
-                class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a>
+                {{-- <a href="{{URL::to('/')}}/admin/admin-orders"
+                class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a> --}}
             </div>
         </div>
         <div class="align-middle overflow-y-auto inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg h-4/5">
@@ -61,10 +61,10 @@
                             <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{$d['game_price']}}</td>
                             
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">{{$d['email']}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                            {{-- <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/admin-orders"
                 class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a>
-                            </td>
+                            </td> --}}
                             
                   </tr> 
                     @endforeach
