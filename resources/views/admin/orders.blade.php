@@ -39,11 +39,13 @@
                         <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">User name</th>
                         <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Price</th>
                         
-                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Purchase Date</th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Email</th>
                         <th class="px-6 py-3 border-b-2 border-gray-300"></th>
                     </tr>
                 </thead>
                 <tbody class="bg-white">
+                    @foreach ($data as $d)
+                        
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                 <div class="flex items-center">
@@ -53,102 +55,20 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
+                                <div class="text-sm leading-5 text-blue-900">{{$d['game_name']}}</div>
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">Tushar</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">₹499</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{$d['fullname']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{$d['game_price']}}</td>
                             
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">September 12</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">{{$d['email']}}</td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/admin-orders"
                 class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a>
                             </td>
                             
-                  </tr>
-                       <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">Tushar</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">₹499</td>
-                            
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">September 12</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/admin-orders"
-                class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a>
-                            </td>
-                            
-                  </tr>
-                  <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">Tushar</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">₹499</td>
-                            
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">September 12</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/admin-orders"
-                class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a>
-                            </td>
-                            
-                  </tr>
-                  <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">Tushar</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">₹499</td>
-                            
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">September 12</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/admin-orders"
-                class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a>
-                            </td>
-                            
-                  </tr>
-                  <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">Tushar</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">₹499</td>
-                            
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">September 12</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                <a href="{{URL::to('/')}}/admin/admin-orders"
-                class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a>
-                            </td>
-                            
-                  </tr>
+                  </tr> 
+                    @endforeach
+
                 </tbody>
             </table>
           <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">

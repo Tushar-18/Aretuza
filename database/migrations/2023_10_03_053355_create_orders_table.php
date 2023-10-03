@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('game_id');
             $table->string('game_pic');
             $table->string('game_name');
             $table->string('email');
-            $table->string('pic');
             $table->string('fullname');
-            $table->string('review');
-            $table->float('rating');
+            $table->double('game_price');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ratings');
+        Schema::dropIfExists('orders');
     }
 };

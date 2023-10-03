@@ -157,10 +157,10 @@ class memberscontroller extends Controller
 
             $pic_name = uniqid() . $req->file('pic')->getClientOriginalName();
             $req->pic->move('images/profile_pictures/', $pic_name);
-            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'password' => $req->pwd,  'birth_date' => $req->dob, 'pic' => $pic_name));
+            $result->where('email', $req->em)->update(array('fullname' => $req->fn,  'birth_date' => $req->dob, 'pic' => $pic_name));
             session()->flash('succ', 'Data Updated successfully');
         } else {
-            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'password' => $req->pwd, 'birth_date' => $req->dob));
+            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'birth_date' => $req->dob));
             session()->flash('succ', 'Data Updated successfully');
         }
         return redirect()->back();

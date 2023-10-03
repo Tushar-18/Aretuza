@@ -84,7 +84,7 @@ $cat = json_decode($data['catagories']);
                         </div>
                   </div>
                   <div class="w-96 bg-zinc-700 ml-16 h-auto p-6">
-                        <a href="buy">
+                        <a href="{{URL::to('/')}}/order/{{$data['game_id']}}">
                               <div class="bg-blue-700 items-center flex w-80 h-10 mt-20 mb-20  justify-center rounded-lg text-white hover:bg-blue-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">BUY NOW</div></a>
                               
                         <a href="Wishlist"><div class="bg-none border items-center flex w-80 h-10 mt-20 mb-20 justify-center rounded-lg text-white hover:bg-zinc-200/10 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Add to Wish List</div></a> 
@@ -115,6 +115,7 @@ $cat = json_decode($data['catagories']);
                                         @csrf
                                         <input type="hidden" value="{{$data['game_id']}}" name="id">
                                         <input type="hidden" value="{{$data['game_pic']}}" name="pic">
+                                        <input type="hidden" value="{{$data['game_name']}}" name="game_name">
 										<div class="relative w-full mb-3">
                                             <div class="relative w-full mb-3">
                                               
@@ -130,18 +131,27 @@ $cat = json_decode($data['catagories']);
                                 <input type="radio" id="star1" name="rating" value="1" />
                                 <label for="star1" title="text">1 star</label>
                               </div>
-											<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                        for="email">Email</label><input type="email" name="email" id="email" class="border-0 px-3 py-3 rounded text-sm shadow w-full
+										<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                        for="email">Email</label> <br><span style="color:red">
+            @error('rating')
+                {{ $message }}
+            @enderror
+        </span>	<input type="email" name="email" id="email" class="border-0 px-3 py-3 rounded text-sm shadow w-full
                     bg-gray-300 placeholder-black text-gray-800 outline-none focus:bg-gray-400" placeholder="Email"
-                        style="transition: all 0.15s ease 0s;" value="{{session('email')}}" required />
+                        style="transition: all 0.15s ease 0s;" value="{{session('email')}}" />
                         
                     </div>
 			{{-- <label class="block uppercase text-xs font-bold mb-10" for="message">4.5</label> --}}
                         <textarea maxlength="300" name="review" id="feedback" rows="4"
                         cols="80"
                         class="border-0 px-3 py-3 bg-gray-300 placeholder-black text-gray-800 rounded text-sm shadow focus:outline-none w-full"
-                        placeholder="Comment.." required></textarea>
+                        placeholder="Comment.."></textarea>
 											</div>
+                                             <span style="color:red">
+            @error('review')
+                {{ $message }}
+            @enderror
+        </span>
 											<div class="text-center mt-6">
 												<button id="feedbackBtn"
                         class="bg-none btn-hover text-white text-center border hover:bg-zinc-200/10 mx-auto active:bg-blue-800 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"

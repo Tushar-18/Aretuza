@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\validate;
 use App\Http\Controllers\memberscontroller;
 use App\Http\Controllers\ratingcontroller;
+use App\Http\Controllers\ordercontroller;
 use App\Models\Game;
 use App\Models\Member;
 
@@ -64,7 +65,7 @@ Route::post('admin/add-games_a',[gamecontroller::class,'add_games']);
 Route::view('admin/orders','admin/orders');
 Route::get('admin/edit-game/{id}',[gamecontroller::class,'edit_game']);
 Route::post('admin/edit-game_a',[gamecontroller::class, 'update_games']);
-// Route::view('admin/rating','admin/rating');
+Route::view('admin/add-user-reg', 'admin/add-user');
 Route::post('admin/add-user',[memberscontroller::class, 'admin_add_user_reg']);
 // Route::view('admin/edit-user','admin/edit-user');
 Route::get('admin/edit-user/{id}', [memberscontroller::class, 'edit_users']);
@@ -72,9 +73,13 @@ Route::post('admin/update-user', [memberscontroller::class, 'update_users']);
 Route::get('admin/add-categories', [gamecontroller::class, 'feth_cat']);
 Route::post('admin/add-categories_a', [gamecontroller::class, 'add_catagories']);
 
-Route::view('admin/admin-orders','admin/admin-orders');
+Route::get('admin/orders',[ordercontroller::class, 'fetch_orders']);
 
 Route::get('admin/allocate-category/{id}',[gamecontroller::class, 'feth_allocate_cat']);
 Route::post('admin/allocate-catagorie_a',[gamecontroller::class, 'allocate_catagories']);
+
 Route::get('admin/rating',[ratingcontroller::class, 'fetch_review']);
+Route::get('delete-review/{id}', [ratingcontroller::class, 'delete_review']);
+
+Route::get('order/{id}', [ordercontroller::class, 'order']);
 
