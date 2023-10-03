@@ -15,7 +15,7 @@ class gamecontroller extends Controller
     {
 
         $req->validate([
-            'rating' => 'required',
+            'game' => 'required',
             'price' => 'required',
             'age' => 'required',
             // 'cat' => 'required',
@@ -29,7 +29,7 @@ class gamecontroller extends Controller
         $reg = new Game();
         $reg->game_name = $req->game;
         $reg->game_price = $req->price;
-        $reg->new_price = $req->price;
+        // $reg->new_price = $req->price;
         $reg->description = $req->dec;
         $reg->catagories = json_encode($req->cat);
         $reg->age_req = $req->age;
