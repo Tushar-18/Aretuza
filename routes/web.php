@@ -84,3 +84,16 @@ Route::get('delete-review/{id}', [ratingcontroller::class, 'delete_review']);
 
 Route::get('order/{id}', [ordercontroller::class, 'order']);
 
+
+
+
+
+
+
+Route::view('forget_password_form','forget_password');
+
+Route::post('forget_password_form_submit', [memberscontroller::class, 'forget_password_form_submit']);
+Route::get('verify_forget_pwd_otp/{email}/{token}', [memberscontroller::class, 'verify_forget_pwd_otp']);
+Route::post('verify_otp_forget_password_action', [memberscontroller::class, 'verify_otp_forget_password_action']);
+Route::post('reset_pwd_action', [memberscontroller::class, 'reset_pwd_action']);
+
