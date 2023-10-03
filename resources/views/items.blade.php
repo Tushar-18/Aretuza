@@ -9,6 +9,46 @@
             <link rel="stylesheet" href="{{URL::to('/')}}/css/items.css">
             <script src="https://cdn.tailwindcss.com"></script>
             @vite('resources/css/app.css')
+                        <style>*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+</style>
 
       </head>
       <body >
@@ -58,9 +98,9 @@ $cat = json_decode($data['catagories']);
 			<div class="flex flex-col w-full lg:w-1/3 p-8">
 				<p class="ml-6 text-yellow-600 text-lg mb-2 uppercase tracking-loose">REVIEW</p>
                         <img src="{{URL::to('/')}}/images/profile.png" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
-				<p class="text-3xl md:text-5xl my-1 leading-relaxed text-yellow-600 md:leading-snug">Leave us a feedback!</p>
+				<p class="text-3xl md:text-5xl my-1 leading-relaxed text-yellow-600 md:leading-snug">Leave us a Review!</p>
 				<p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-					Please provide your valuable feedback and something something ...
+					Please provide your valuable Review and something something ...
 				</p>
 			</div>
 			<div class="flex flex-col w-full lg:w-2/3 justify-center">
@@ -71,16 +111,33 @@ $cat = json_decode($data['catagories']);
 								class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-zinc-700">
 								<div class="flex-auto p-5 lg:p-10">
 									<h4 class="text-2xl mb-4 text-white font-semibold">Have a suggestion?</h4>
-									<form id="feedbackForm" action="" method="">
+									<form action="{{URL::to('/')}}/add-review" method="post">
+                                        @csrf
+                                        <input type="hidden" value="{{$data['game_id']}}" name="id">
+                                        <input type="hidden" value="{{$data['game_pic']}}" name="pic">
 										<div class="relative w-full mb-3">
+                                            <div class="relative w-full mb-3">
+                                              
+                                                <div class="rate">
+                                <input type="radio" id="star5" name="rating" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rating" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rating" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rating" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rating" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                              </div>
 											<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
                         for="email">Email</label><input type="email" name="email" id="email" class="border-0 px-3 py-3 rounded text-sm shadow w-full
                     bg-gray-300 placeholder-black text-gray-800 outline-none focus:bg-gray-400" placeholder="Email"
-                        style="transition: all 0.15s ease 0s;" required />
+                        style="transition: all 0.15s ease 0s;" value="{{session('email')}}" required />
+                        
                     </div>
-											<div class="relative w-full mb-3">
-												<label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                        for="message">Message</label><textarea maxlength="300" name="feedback" id="feedback" rows="4"
+			{{-- <label class="block uppercase text-xs font-bold mb-10" for="message">4.5</label> --}}
+                        <textarea maxlength="300" name="review" id="feedback" rows="4"
                         cols="80"
                         class="border-0 px-3 py-3 bg-gray-300 placeholder-black text-gray-800 rounded text-sm shadow focus:outline-none w-full"
                         placeholder="Comment.." required></textarea>
@@ -101,13 +158,15 @@ $cat = json_decode($data['catagories']);
 		</div>
 	</div><br>
 </section>
+@foreach ($rat as $r)
+    
 <article class="p-6 mb-7 text-base rounded-lg dark:bg-zinc-800 hover:border-b-2 hover:border-t-2 hover:bg-">
         <footer class="flex justify-between items-center mb-2">
             <div class="flex items-center">
                 <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
                         class="mr-2 w-6 h-6 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                        alt="Michael Gough">Michael Gough</p>
+                        src="{{ URL::to('/') }}/Images/{{ session('pic') }}"
+                        alt="Michael Gough">{{$r['fullname']}}</p>
                 <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                         title="February 8th, 2022">Feb. 8, 2022</time></p>
             </div>
@@ -125,10 +184,9 @@ $cat = json_decode($data['catagories']);
             <!-- Dropdown menu -->
             
         </footer>
-        <p class="text-gray-500 dark:text-gray-400">Very straight-to-point article. Really worth time reading. Thank you! But tools are just the
-            instruments for the UX designers. The knowledge of the design tools are as important as the
-            creation of the design strategy.</p>
-        <div class="flex items-center mt-4 space-x-4">
+        <p class="text-gray-500 dark:text-gray-400">Rating : {{$r['rating']}}</p>
+        <p class="text-gray-500 dark:text-gray-400">{{$r['review']}}</p>
+        {{-- <div class="flex items-center mt-4 space-x-4">
             <button type="button"
                 class="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400">
                 <svg class="mr-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -138,8 +196,10 @@ $cat = json_decode($data['catagories']);
                 Like
             </button>
             
-        </div>
+        </div> --}}
     </article>
+@endforeach
+
 </div>
         @endsection
 </body>

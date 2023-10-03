@@ -58,7 +58,7 @@
             @enderror
         </span>
               </div>
-              <input type="checkbox" name="cat[]" value="">
+              <input type="checkbox" name="cat[]" value="" style="display: none;" checked>
               {{-- <div>
                 <label class="text-gray-700" for="password">Catagory</label>
                 <select

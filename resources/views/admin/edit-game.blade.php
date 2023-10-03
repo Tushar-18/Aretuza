@@ -67,13 +67,13 @@
                                         @enderror
                                     </span>
                                 </div>
-                                <div>
-                                    <label class="text-gray-700" for="passwordConfirmation">Give Discount in Percentage
+                                <div> 
+                                    <label class="text-gray-700" for="passwordConfirmation">Give Discount in Percentage %
                                     </label>
                                     <input 
                                         class="w-full mt-2 border h-8 border-gray-400 outline-none rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"
-                                        type="text" name="offers" value="20">
-                                        <span class="text-xs text-green-700">*with discount {{ $data['offers'] }}</span>
+                                        type="text" name="offers" value="{{$data['offers']}}">
+                                        <span class="text-xs text-green-700">*with discount {{ $data['new_price'] }}</span>
                                     <span style="color:red">
                                         @error('offers')
                                             {{ $message }}
@@ -83,9 +83,7 @@
                             </div>
                             <div class="grid grid-cols-1 space-y-2">
                                 <label class="text-sm font-bold text-gray-500 tracking-wide">Description</label>
-                                <textarea class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" name="dec"
-                                    type="" placeholder="Descrption">
-                {{ $data['description'] }}
+                                <textarea class="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500" name="dec" placeholder="Descrption">{{ $data['description'] }}
                             </textarea>
                                 <span style="color:red">
                                     @error('dec')

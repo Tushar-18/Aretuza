@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('description');
             $table->integer('age_req');
             $table->string('status')->default("Inactive");
+            $table->float('new_price')->default(0);
             $table->float('offers')->default(0);
             $table->string('catagories');
             $table->string('game_pic');

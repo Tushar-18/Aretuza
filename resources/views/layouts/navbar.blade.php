@@ -54,7 +54,7 @@
                     </div>
                     <label for="signin" style="margin-right: 10px;color:#fff;">{{ session('name') }}</label>
                 @else
-                    <div class="log"><a href="login" class="mt-6 text-white">Login</a></div>
+                    <div class="log"><a href="{{URL::to('/')}}/login" class="mt-6 text-white">Login</a></div>
                 @endif
                 <div class="menutoggle">
                     <span></span>

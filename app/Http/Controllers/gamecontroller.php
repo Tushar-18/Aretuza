@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Game;
 use App\Models\Catagories;
+use App\Models\Rating;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -29,9 +30,10 @@ class gamecontroller extends Controller
         $reg->game_name = $req->game;
         $reg->game_price = $req->price;
         $reg->description = $req->dec;
-        $reg->catagories = json_encode( $req->cat);
+        $reg->catagories = json_encode($req->cat);
         $reg->age_req = $req->age;
         $reg->game_pic = $pic_name;
+        // return $req->cat;
         $reg->save();
         if ($reg->save()) {
             session()->flash('succ', 'Data saved successfully');
@@ -100,7 +102,8 @@ class gamecontroller extends Controller
     }
     public function game_pro($id){
         $data=Game::where('game_id',$id)->first();
-        return view('items',compact('data'));
+        $rat = Rating::where('game_id', $id)->get();
+        return view('items',compact('data','rat'));
     }
     public function edit_game($id)
     {
@@ -134,13 +137,13 @@ class gamecontroller extends Controller
             $off =  $req->offers;
             $total= $req->price;
             $offer = ($off/$total)*100;
-            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price,'description' => $req->dec,'offers' => $offer,  'age_req' => $req->age_req, 'game_pic' => $pic_name));
+            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price,'description' => $req->dec,'offers' => $req->offers,'new_price' => $offer,  'age_req' => $req->age_req, 'game_pic' => $pic_name));
             session()->flash('succ', 'Data Updated successfully');
         } else {
             $off =  $req->offers;
             $total = $req->price;
             $offer = $total-(($off / 100) * $total);
-            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price,'description' => $req->dec,'offers' => $offer, 'age_req' => $req->age_req));
+            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price,'description' => $req->dec,'offers' => $req->offers, 'new_price' => $offer, 'age_req' => $req->age_req));
             session()->flash('succ', 'Data Updated successfully');
         }
         return $this->edit_game($req->id);

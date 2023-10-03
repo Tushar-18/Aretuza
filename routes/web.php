@@ -4,6 +4,7 @@ use App\Http\Controllers\gamecontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\validate;
 use App\Http\Controllers\memberscontroller;
+use App\Http\Controllers\ratingcontroller;
 use App\Models\Game;
 use App\Models\Member;
 
@@ -47,6 +48,8 @@ Route::view('change_password','change_pwd');
 Route::post('change_password',[validate::class,'edit_profile']);
 Route::get('account_activation/{email}', [memberscontroller::class, 'account_activation']);
 
+Route::post('add-review',[ratingcontroller::class, 'add_review']);
+
 // admin
 Route::view('admin/admin-sidebar','admin/admin-sidebar');
 Route::view('admin/user-list','admin/user-list');
@@ -61,7 +64,7 @@ Route::post('admin/add-games_a',[gamecontroller::class,'add_games']);
 Route::view('admin/orders','admin/orders');
 Route::get('admin/edit-game/{id}',[gamecontroller::class,'edit_game']);
 Route::post('admin/edit-game_a',[gamecontroller::class, 'update_games']);
-Route::view('admin/rating','admin/rating');
+// Route::view('admin/rating','admin/rating');
 Route::post('admin/add-user',[memberscontroller::class, 'admin_add_user_reg']);
 // Route::view('admin/edit-user','admin/edit-user');
 Route::get('admin/edit-user/{id}', [memberscontroller::class, 'edit_users']);
@@ -73,4 +76,5 @@ Route::view('admin/admin-orders','admin/admin-orders');
 
 Route::get('admin/allocate-category/{id}',[gamecontroller::class, 'feth_allocate_cat']);
 Route::post('admin/allocate-catagorie_a',[gamecontroller::class, 'allocate_catagories']);
+Route::get('admin/rating',[ratingcontroller::class, 'fetch_review']);
 

@@ -52,6 +52,9 @@
                                 Game Name</th>
                             <th
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                Name</th>
+                            <th
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
                                 user email</th>
                             <th
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
@@ -64,6 +67,10 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white">
+                        
+                        @foreach ($data as $d)
+                            
+                        @endforeach
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                 <div class="flex items-center">
@@ -73,72 +80,19 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
+                                <div class="text-sm leading-5 text-blue-900">{{$d['game_id']}}</div>
                             </td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                tushar.ravaliya18@gmail.com</td>
+                                {{$d['fullname']}}</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
-                            </td>
-                            
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
-                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
+                                {{$d['email']}}</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                tushar.ravaliya18@gmail.com</td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
+                                <textarea name="" id="" cols="20" rows="1">{{$d['review']}}</textarea></td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
-                            </td>
-                            
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
-                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                tushar.ravaliya18@gmail.com</td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
+                                <div class="text-sm leading-5 text-blue-900"> {{$d['rating']}}</div>
                             </td>
                            
                             <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
@@ -148,62 +102,8 @@
                             </td>
                             
                         </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                tushar.ravaliya18@gmail.com</td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
-                            </td>
-                            
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
-                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">Destiny 2</div>
-                            </td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                tushar.ravaliya18@gmail.com</td>
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                                <textarea name="" id="" cols="20" rows="1">hfdufh</textarea></td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900"> 4.9</div>
-                            </td>
-                            
-                            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                <button
-                                    class="px-5 py-2 border-red-500 border text-red-500 rounded transition duration-300 hover:bg-red-700 hover:text-white focus:outline-none">DELETE
-                                </button>
-                            </td>
-                            
-                        </tr>
+                        
+                        
                     </tbody>
                 </table>
                 <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
