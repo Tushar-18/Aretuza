@@ -226,7 +226,7 @@ public function admin_add_user_reg(Request $req){
         return view('edit_profile',compact('data'));
     }
     public function edit_profile(Request $req){
-        return 'hello'; 
+        // return 'hello'; 
         $req->validate([
             'name' => 'required|max:20|min:2',
             'dob' => 'required',
@@ -252,10 +252,10 @@ public function admin_add_user_reg(Request $req){
 
             $pic_name = uniqid() . $req->file('profile')->getClientOriginalName();
             $req->pic->move('images/profile_pictures/', $pic_name);
-            $result->where('email', $req->em)->update(array('fullname' => $req->name,  'birth_date' => $req->dob, 'profile' => $pic_name));
+            $result->where('email', $req->em)->update(array('fullname' => $req->name,  'birth_date' => $req->dob, 'pic' => $pic_name));
             session()->flash('succ', 'Data Updated successfully');
         } else {
-            $result->where('email', $req->em)->update(array('fullname' => $req->fn, 'birth_date' => $req->dob));
+            $result->where('email', $req->em)->update(array('fullname' => $req->name, 'birth_date' => $req->dob));
             session()->flash('succ', 'Data Updated successfully');
         }
         return redirect()->back();
