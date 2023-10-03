@@ -226,7 +226,6 @@ public function admin_add_user_reg(Request $req){
         return view('edit_profile',compact('data'));
     }
     public function edit_profile(Request $req){
-        return 'hello';
         $req->validate([
             'name' => 'required|max:20|min:2',
             'dob' => 'required',
