@@ -228,10 +228,10 @@ public function admin_add_user_reg(Request $req){
     public function edit_profile(Request $req){
         $req->validate([
             'name' => 'required|max:20|min:2',
-            'dob' => 'required',
+            'dob' => 'required',    
             // 'old_pwd' => 'required|min:4|max:10|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
             // 'new_pwd' => 'required|min:4|max:10|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
-            'profile' => 'required|max:300000'
+            // 'profile' => 'required|max:300000'
         ],[
             'name.required' => 'Name is required',
             'name.min' => 'Full name must contain minimum 3 characters',
@@ -241,9 +241,8 @@ public function admin_add_user_reg(Request $req){
             'profile.max' => 'file size is lessthan 30MB'
         ]);
 
-        $result = Member::where('email', $req->em)->first();
+        $result = Member::where('email', $req->email)->first();
         if ($req->hasFile('pic')) {
-
             $file_name = "Images/profile_pictures/" . $result['profile'];
             if (File::exists($file_name)) {
                 File::delete($file_name);
@@ -251,10 +250,11 @@ public function admin_add_user_reg(Request $req){
 
             $pic_name = uniqid() . $req->file('profile')->getClientOriginalName();
             $req->pic->move('images/profile_pictures/', $pic_name);
-            $result->where('email', $req->em)->update(array('fullname' => $req->name,  'birth_date' => $req->dob, 'pic' => $pic_name));
+            $result->where('email', $req->email)->update(array('fullname' => $req->name,  'birth_date' => $req->dob, 'pic' => $pic_name));
             session()->flash('succ', 'Data Updated successfully');
         } else {
-            $result->where('email', $req->em)->update(array('fullname' => $req->name, 'birth_date' => $req->dob));
+            
+            $result->where('email', $req->email)->update(array('fullname' => $req->name, 'birth_date' => $req->dob));
             session()->flash('succ', 'Data Updated successfully');
         }
         return redirect()->back();
