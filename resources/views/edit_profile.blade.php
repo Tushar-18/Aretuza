@@ -36,7 +36,7 @@
                          <div class="w-full">
                               <input class="bg-zinc-700 focus:bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-gray-200 leading-tight focus:outline-none focus:border-zinc-500" id="inline-full-name" type="email" name="email" placeholder="Email" value="{{$data['email']}}" readonly>
                               <span style="color:red">
-                               @error('name')
+                               @error('email')
                                    {{ $message }}
                                @enderror
                            </span>
