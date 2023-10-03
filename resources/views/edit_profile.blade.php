@@ -44,7 +44,7 @@
                          <div class="md:flex md:items-center mb-6">
                            
                            <div class="w-full">
-                             <input class="bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-zinc-200 leading-tight focus:outline-none focus:bg-zinc-600 focus:border-zinc-500" id="inline-password" type="date" name="dob" placeholder="DOB">
+                             <input class="bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-zinc-200 leading-tight focus:outline-none focus:bg-zinc-600 focus:border-zinc-500" id="inline-password" type="date" name="dob" placeholder="DOB" value="{{$data['birth_date']}}">
                              <span style="color:red">
                               @error('dob')
                                   {{ $message }}
