@@ -214,10 +214,14 @@ public function admin_add_user_reg(Request $req){
 
         return view('login');
     }
-    
-    public function edit_users($id){
+    public function edit_users($id)
+    {
         $data = Member::where('id', $id)->first();
-        return view('admin/edit-user',compact('data'));
+        return view('admin/edit-user', compact('data'));
+    }
+    public function fetch_users($id){
+        $data = Member::where('id', $id)->first();
+        return view('edit_profile',compact('data'));
     }
     public function edit_profile(Request $req){
         $req->validate([
