@@ -101,7 +101,7 @@ $cat = json_decode($data['catagories']);
 		<div class="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
 			<div class="flex flex-col w-full lg:w-1/3 p-8">
 				<p class="ml-6 text-yellow-600 text-lg mb-2 uppercase tracking-loose">REVIEW</p>
-                        <img src="{{URL::to('/')}}/images/profile.png" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
+                        <img src="{{URL::to('/')}}/images/profile_pictures/profile.png" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
 				<p class="text-3xl md:text-5xl my-1 leading-relaxed text-yellow-600 md:leading-snug">Leave us a Review!</p>
 				<p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
 					Please provide your valuable Review and something something ...
@@ -179,7 +179,7 @@ $cat = json_decode($data['catagories']);
             <div class="flex items-center">
                 <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
                         class="mr-2 w-6 h-6 rounded-full"
-                        src="{{ URL::to('/') }}/Images/{{ session('pic') }}"
+                        src="{{URL::to('/')}}/images/profile_pictures/{{ session('pic') }}"
                         alt="Michael Gough">{{$r['fullname']}}</p>
                 <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                         title="February 8th, 2022">Feb. 8, 2022</time></p>
