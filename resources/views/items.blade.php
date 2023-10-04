@@ -60,14 +60,18 @@
                   </div>
                   <div class="second-part pl-14  w-96 text-white">
                         <div class="flex flex-col">
-                              <label class="text-5xl">{{$data->game_name}}</label>
+                              <label class="text-5xl">{{$data->game_name}}</label><br>
                               @if ($data['game_price']== '0.00')
-                                <label class="pt-5 text-lg">Price <label class=" text-green-500">Free</label></label>
+                                <label class="pt-5 text-lg">Price <label class=" text-green-500"> Free</label></label>
                               @else
-                                <label class="pt-5">Price ₹{{$data['game_price']}}</label>
+                              {{-- <label class=" text-green-400">{{$data['offers']}}% off</label> --}}
+                                <label >Price ₹<del>{{$data['game_price']}}</del></label>
+                                {{-- <label >Price ₹{{$data['new_price']}}</label> --}}
                               @endif
-                              @if ($data['offers'] != '0.00')    
-                              <label class=" text-yellow-600">50% off</label>
+                              @if ($data['offers'] == '0.00')
+                              @else
+                              <label class=" text-green-400">{{$data['offers']}}% off</label>  
+                              <label >Price ₹{{$data['new_price']}}</label>
                               @endif
                               <label class="pt-5">{{$data['description']}}</label><br>
                               @php
@@ -84,12 +88,19 @@ $cat = json_decode($data['catagories']);
                         </div>
                   </div>
                   <div class="w-96 bg-zinc-700 ml-16 h-auto p-6">
-
+                    @if (isset($orders['game_id']))
+                        @if ($orders['email'] == session('email'))
+                        <a href="{{URL::to('/')}}/library">
+                            <div class="bg-blue-700 items-center flex w-80 h-10 mt-20 mb-20  justify-center rounded-lg text-white hover:bg-blue-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">In Library</div></a>
+                        @else
                         <a href="{{URL::to('/')}}/order/{{$data['game_id']}}">
-
-  
-
-                              <div class="bg-blue-700 items-center flex w-80 h-10 mt-20 mb-20  justify-center rounded-lg text-white hover:bg-blue-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">BUY NOW</div></a>
+                            <div class="bg-blue-700 items-center flex w-80 h-10 mt-20   mb-20  justify-center rounded-lg text-white hover:bg-blue-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">BUY NOW</div></a>
+                        @endif
+                    @else
+                    <a href="{{URL::to('/')}}/order/{{$data['game_id']}}">
+                        <div class="bg-blue-700 items-center flex w-80 h-10 mt-20 mb-20  justify-center rounded-lg text-white hover:bg-blue-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">BUY NOW</div></a>
+                    @endif
+                        
                               
                               <a href="{{URL::to('/')}}/Wishlist"><div class="bg-none border items-center flex w-80 h-10 mt-20 mb-20 justify-center rounded-lg text-white hover:bg-zinc-200/10 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Add to Wish List</div></a> 
             </div>
@@ -101,7 +112,7 @@ $cat = json_decode($data['catagories']);
 		<div class="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
 			<div class="flex flex-col w-full lg:w-1/3 p-8">
 				<p class="ml-6 text-yellow-600 text-lg mb-2 uppercase tracking-loose">REVIEW</p>
-                        <img src="{{URL::to('/')}}/images/profile_pictures/profile.png" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
+                        <img src="{{URL::to('/')}}/images/profile_pictures/{{session('pic')}}" class="rounded-full w-40 h-40 hover:shadow-lg hover:shadow-zinc-600" alt="erorr">
 				<p class="text-3xl md:text-5xl my-1 leading-relaxed text-yellow-600 md:leading-snug">Leave us a Review!</p>
 				<p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
 					Please provide your valuable Review and something something ...
@@ -179,7 +190,7 @@ $cat = json_decode($data['catagories']);
             <div class="flex items-center">
                 <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
                         class="mr-2 w-6 h-6 rounded-full"
-                        src="{{URL::to('/')}}/images/profile_pictures/{{ session('pic') }}"
+                        src="{{URL::to('/')}}/images/profile_pictures/{{$r['pic']}}"
                         alt="Michael Gough">{{$r['fullname']}}</p>
                 <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                         title="February 8th, 2022">Feb. 8, 2022</time></p>

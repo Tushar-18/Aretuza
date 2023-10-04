@@ -18,9 +18,9 @@ class memberscontroller extends Controller
         $req->validate([
             'fn' => 'required|min:3|max:20',
             'em' => 'required|email',
-            'pwd' => 'required|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
-            'pwd' => 'required',
-            'pwd_confirmation' => 'required',
+            'new_pwd' => 'required|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
+            'new_pwd' => 'required',
+            'new_pwd_confirmation' => 'required',
             'age' => 'required',
 
         ], [
@@ -29,11 +29,11 @@ class memberscontroller extends Controller
             'fn.max' => 'Full name must contain maximum of 30 characters',
             'em.required' => 'Email address canniot be empty',
             'em.email' => 'invalid email address',
-            'pwd.required' => 'Password field cannot be empty',
-            'pwd.regex' => 'Password must contain one small letter one capital letter, one number and one special symbol',
-            'pwd.confirmed' => 'Password and Confirm Password must match',
-            'pwd_confirmation.required' => 'please enter password',
-            'age.required' => 'age is requried',
+            'new_pwd.required' => 'Password field cannot be empty',
+            'new_pwd.regex' => 'Password must contain one small letter one capital letter, one number and one special symbol',
+            'new_pwd.confirmed' => 'Password and Confirm Password must match',
+            'new_pwd_confirmation.required' => 'please enter password',
+            'age.required' => 'age is requried'
 
         ]);
       
@@ -242,14 +242,14 @@ public function admin_add_user_reg(Request $req){
         ]);
 
         $result = Member::where('email', $req->email)->first();
-        if ($req->hasFile('pic')) {
+        if ($req->hasFile('profile')) {
             $file_name = "Images/profile_pictures/" . $result['profile'];
             if (File::exists($file_name)) {
                 File::delete($file_name);
             }
 
             $pic_name = uniqid() . $req->file('profile')->getClientOriginalName();
-            $req->pic->move('images/profile_pictures/', $pic_name);
+            $req->profile->move('images/profile_pictures/', $pic_name);
             $result->where('email', $req->email)->update(array('fullname' => $req->name,  'birth_date' => $req->dob, 'pic' => $pic_name));
             session()->flash('succ', 'Data Updated successfully');
         } else {
@@ -257,6 +257,13 @@ public function admin_add_user_reg(Request $req){
             $result->where('email', $req->email)->update(array('fullname' => $req->name, 'birth_date' => $req->dob));
             session()->flash('succ', 'Data Updated successfully');
         }
+        $result = Member::where('email', $req->email)->first();
+        $req->session()->put('email', $result['email']);
+        $req->session()->put('pwd', $result['password']);
+        $req->session()->put('name', $result['fullname']);
+        $req->session()->put('pic', $result['pic']);
+        $req->session()->put('id',$result['id']);
+        
         return redirect()->back();
 
         return view('edit_profile');
@@ -381,6 +388,33 @@ public function admin_add_user_reg(Request $req){
         } else {
             session()->flash('error', 'Password reset token expired. Please Generate the link again by submitting the form');
             return redirect('forget_password_form');
+        }
+    }
+    public function change_pwd(Request $req){
+        $req->validate([   
+            'old_pwd' => 'required|min:4|max:20|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
+            'pwd' => 'required|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/',
+            'pwd_confirmation' => 'required'
+        ],[
+            'old_pwd.required' => 'old password required',
+            'pwd.required' => 'New password required',
+            'old_pwd.min' => 'old password must have 4 character',
+            'pwd.min' => 'new password must have 4 character',
+            'old_pwd.max' => 'old password must have 20 charcter',
+            'pwd.max' => 'new password must have 20 charcter',
+            'pwd.confirmed' => 'Password and Confirm Password must match',
+            'pwd_confirmation.required' => 'please enter password',
+             'old_pwd.regex' => 'use !,#,$,%,^,&,*,-,?',
+             'pwd.regex' => 'use !,#,$,%,^,&,*,-,?'
+
+        ]);
+        $data = Member::where('email', session()->get('email'))->first();
+        if($data['password'] == $req->old_pwd){
+            $data = Member::where('email', session('email'))->update(array('password'=> $req->pwd));
+            return view('login');
+        }
+        else{
+            echo 'password not match';
         }
     }
 }

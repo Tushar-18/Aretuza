@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Game;
 use App\Models\Catagories;
+use App\Models\Member;
+use App\Models\Orders;
 use App\Models\Rating;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -104,7 +106,10 @@ class gamecontroller extends Controller
     public function game_pro($id){
         $data=Game::where('game_id',$id)->first();
         $rat = Rating::where('game_id', $id)->get();
-        return view('items',compact('data','rat'));
+        $orders=Orders::where('user_id',session()->get('id'))->where('game_id', $id)->first();
+        // $member=Member::where('email',session()->get('email'))->first();
+     
+        return view('items',compact('data','rat','orders'));
     }
     public function edit_game($id)
     {
@@ -162,5 +167,16 @@ class gamecontroller extends Controller
         // $result->save();
         $result->where('game_id', $req->id)->update(array('catagories' => json_encode($req->cat)));
         return redirect()->back();
+    }
+    public function store(){
+        $id = Game::select()->latest()->get();
+        $popular = Orders::select( DB::raw('COUNT(game_id) as count'))
+->groupBy('game_id')
+->orderBy('count', 'desc')
+// ->take(10)
+->get();
+$pop = Game::select('game_id',DB::raw('COUNT(game_id) as count'))->groupBy('game_id')->orderBy('count','desc')->get();
+// return dd($pop);
+        return view('store',compact('id','popular','pop'));
     }
 }
