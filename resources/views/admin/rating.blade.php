@@ -106,7 +106,7 @@
                         
                     </tbody>
                 </table>
-                <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
+                {{-- <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
                     <div>
                         <p class="text-sm leading-5 text-blue-700">
                             Showing
@@ -117,8 +117,8 @@
                             <span class="font-medium">40</span>
                             results
                         </p>
-                    </div>
-                    <div>
+                    </div> --}}
+                    {{-- <div>
                         <nav class="relative z-0 inline-flex shadow-sm">
                             <div>
                                 <a href="#"
@@ -157,7 +157,7 @@
                                 </a>
                             </div>
                         </nav>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

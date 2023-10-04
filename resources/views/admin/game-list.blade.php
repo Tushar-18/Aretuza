@@ -125,7 +125,7 @@
                         
                     </tbody>
                 </table>
-                <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
+                {{-- <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
                     <div>
                         <p class="text-sm leading-5 text-blue-700">
                             Showing
@@ -177,7 +177,7 @@
                             </div>
                         </nav>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         </div>

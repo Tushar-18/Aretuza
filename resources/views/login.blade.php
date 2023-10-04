@@ -63,7 +63,7 @@
                 </div>
                 <div class="pwd">
                     <div class="show"><input type="checkbox" onclick="showp()">Show password</div>
-                    <a href="{{URL::to('/')}}/forget_password">forgot password</a>
+                    <a href="{{URL::to('/')}}/forget_password_form">forgot password</a>
                 </div>
                 <input type="submit" value="LOG IN NOW" class="submint-btn"><br>
                 <p style="color: #e6dfdf;"> Don't have an account? <a href="register" style="color: rgb(136, 176, 255);">sign up</a>

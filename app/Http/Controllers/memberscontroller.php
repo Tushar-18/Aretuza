@@ -346,7 +346,7 @@ public function admin_add_user_reg(Request $req){
         $data = DeleteToken::where('email', $email)->where('token', $token)->first();
         if ($data) {
             if ($data->otp == $otp) {
-                return view('reset_pwd');
+                return redirect('reset_pwd');
             } else {
                 session()->flash('error', 'Incorrect OTP');
                 return view('verify_otp_forget_pwd');

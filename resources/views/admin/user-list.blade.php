@@ -57,7 +57,7 @@
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                 <div class="flex items-center">
                                     <div class="h-10 w-10 rounded-full">
-                                        <img src="../Images/default.jpg" alt="error" class="h-10 w-10 rounded-full">
+                                        <img src="{{URL::to('/')}}/Images/profile_pictures/{{$d['pic']}}" alt="error" class="h-10 w-10 rounded-full">
                                     </div>
                                 </div>
                             </td>
@@ -88,7 +88,8 @@
                             <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                 <span aria-hidden class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                <a href="/user_status/{{$d['email']}}" class="relative text-xs">Deleted</a>
+                                {{-- <a href="/user_status/{{$d['email']}}" class="relative text-xs">Deleted</a> --}}
+                                <a class="relative text-xs">Deleted</a>
                             </span>
                             </td>
                             @endif
@@ -110,7 +111,7 @@
             </table>
           <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
     <div>
-    <p class="text-sm leading-5 text-blue-700">
+    {{-- <p class="text-sm leading-5 text-blue-700">
         Showing
         <span class="font-medium">1</span>
         to
@@ -118,10 +119,10 @@
         of
         <span class="font-medium">30</span>
         results
-    </p>
+    </p> --}}
     </div>
     <div>
-    <nav class="relative z-0 inline-flex shadow-sm">
+    {{-- <nav class="relative z-0 inline-flex shadow-sm">
         <div	>
             <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150" aria-label="Previous" v-on:click.prevent="changePage(pagination.current_page - 1)">
                 <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -147,7 +148,7 @@
                 </svg>
             </a>
         </div>
-    </nav>
+    </nav> --}}
     </div>
     </div>
         </div>
