@@ -73,7 +73,7 @@
             </table>
           <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
     <div>
-    <p class="text-sm leading-5 text-blue-700">
+    {{-- <p class="text-sm leading-5 text-blue-700">
         Showing
         <span class="font-medium">1</span>
         to
@@ -111,7 +111,7 @@
             </a>
         </div>
     </nav>
-    </div>
+    </div> --}}
     </div>
         </div>
     </div>

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/css/login.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/css/scroll.css">
     {{-- @vite('resources/css/app.css') --}}
 </head>
 
@@ -43,12 +43,12 @@
                             </div>
                         @endif
         <form action="{{URL::to('/')}}/verify_otp_forget_password_action" method="post" class="form-box">
-            @csrf
-            <div class="logo"><img src="Images/white-logo.png" alt="error"></div><br>
+            @csrf   
+            <div class="logo"><img src="{{URL::to('/')}}/Images/white-logo.png" alt="error"></div><br>
             <div class="comp"><br>
                 {{-- <p for="" class="l-login">Sign in with an SPIRIT Games account</p><br> --}}
                 <div class="input-box">
-                    <input class="inputs" name="otp" type="email" placeholder="Enter OTP"><br>
+                    <input class="inputs" name="otp" type="text" placeholder="Enter OTP"><br>
                     <span style="color:red">
             @error('otp')
                 {{ $message }}

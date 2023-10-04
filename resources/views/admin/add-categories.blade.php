@@ -35,11 +35,11 @@
                   name="description"
                 >
                 </div>
-                <input href="{{URL::to('/')}}/admin/add-categories" type="submit"
+                <input type="submit"
                 class="px-5 py-2 text-center border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none" value="Add">
               </div>
               <span style="color:red">
-          @error('cat')
+          @error('description')
               {{ $message }}
           @enderror
       </span> 

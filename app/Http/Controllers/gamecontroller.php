@@ -41,7 +41,6 @@ class gamecontroller extends Controller
         } else {
             session()->flash('err', 'error in saving data');
         }
-
         return $this->fetch_games();
     }
     public function feth_cat(){
@@ -52,7 +51,7 @@ class gamecontroller extends Controller
     {
 
         $req->validate([
-            'description' => 'required|min:3|max:20',
+            'description' => 'required',
 
         ]);
         $reg = new Catagories();
