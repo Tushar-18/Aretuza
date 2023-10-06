@@ -11,21 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('delete_token', function (Blueprint $table) {
+        Schema::create('contactus', function (Blueprint $table) {
             $table->id();
             $table->string('email');
-            $table->longText('token');
-            $table->integer('otp');
-            $table->dateTime('expiry_time');
-            $table->foreign('email')->references('email')
-                ->on('registration')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');;
+            $table->string('subject');
+            $table->string('message');
             $table->timestamps();
         });
-    
-
     }
 
     /**
@@ -33,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('contactus');
     }
 };

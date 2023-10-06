@@ -6,6 +6,8 @@ use App\Http\Controllers\validate;
 use App\Http\Controllers\memberscontroller;
 use App\Http\Controllers\ratingcontroller;
 use App\Http\Controllers\ordercontroller;
+use App\Http\Controllers\aboutuscontroller;
+use App\Http\Controllers\contactuscontroller;
 use App\Models\Game;
 use App\Models\Member;
 
@@ -42,7 +44,9 @@ Route::view('buy','buy');
 Route::view('Wishlist','wishlist');
 Route::view('store','store');
 Route::view('library','library');
-Route::view('aboutus','aboutus');
+Route::get('aboutus',[aboutuscontroller::class,'fetch_about']);
+Route::view('contactus','contactus');
+Route::post('contactus_a',[contactuscontroller::class, 'contactus']);
 
 Route::post('edit-profile',[memberscontroller::class,'edit_profile']);
 Route::get('edit_profile/{id}',[memberscontroller::class,'fetch_users']);
@@ -83,6 +87,8 @@ Route::get('admin/rating',[ratingcontroller::class, 'fetch_review']);
 Route::get('delete-review/{id}', [ratingcontroller::class, 'delete_review']);
 
 Route::get('order/{id}', [ordercontroller::class, 'order']);
+Route::view('admin/aboutus', 'admin/aboutus');
+Route::post('admin/aboutus', [aboutuscontroller::class, 'about_us']);
 
 
 
