@@ -22,6 +22,8 @@
       </div> --}}
    </div>
     <div class="box-border first-part w-full">
+      @foreach ($popular as $p)
+         
       <a href="items">
       <div class="box-border games">
          <div class="games-img m-3">
@@ -32,9 +34,10 @@
             <p class="small text-white"> price: ₹400</p>
          </div>
       </div></a>
+      @endforeach
 
 
-      <div class="box-border games">
+      {{-- <div class="box-border games">
          <div class="games-img m-3">
             <img src="images/god_of_war.jpg" alt="errer">
          </div>
@@ -42,7 +45,7 @@
             <p class="big">God Of War</p>
             <p class="small text-white"> price: ₹400</p>
          </div>
-      </div>
+      </div> --}}
 
 
       <div class="box-border games">
@@ -58,10 +61,10 @@
           <div class="games-img m-3">
               <img src="images/watch_dogs_2.jpg" alt="errer">
           </div>
-          <div class="games-name">
+          {{-- <div class="games-name">
               <p class="big">Watch Dogs 2</p>
               <p class="small text-white"> price: <del style="margin-right: 10px">₹3599</del>₹524.85</p>
-          </div>
+          </div> --}}
       </div>
 
     </div>
@@ -77,20 +80,34 @@
           </div> --}}
        </div>
     <div class="box-border first-part w-full">
+      @foreach ($id as $i)
+         
+      @if ($i['status'] == 'Active')
+      <a href="{{ URL::to('/') }}/items_a/{{ $i['game_id'] }}">
+          <div class="box-border games">
+              <div class="games-img m-3">
+                  <img src="{{ URL::to('/') }}/images/game_pic/{{ $i['game_pic'] }}" alt="errer">
+              </div>
+              <div class="games-name">
+                  <p class="big">{{ $i['game_name'] }}</p>
+                  {{-- <p class="small text-white">{{$d['description']}}</p> --}}
+                  @if ($i['game_price'] == '0.00')
+                      <label class="pt-5 text-lg">Price <label class=" text-green-500">Free</label></label>
+                  @else
+                      {{-- <p class="text-sm  text-green-400"> offers {{ $d['offers']}}%</p> --}}
+                      {{-- <p class="text-sm  text-white"> price: ₹{{ $d['game_price'] }}</p> --}}
+                  @endif
+                  @if ($i['offers'] == '0.00')
+                  @else
+                  <p class="text-sm  text-green-400"> offers {{ $i['offers']}}%</p>
+                  @endif
+              </div>
+          </div>
+      </a>
+      @endif
+      @endforeach
 
-      <div class="box-border games">
-
-         <div class="games-img m-3">
-            <img src="images/sea.png" alt="errer">
-
-         </div>
-         <div class="games-name">
-            <p class="big">Sea of Thieves</p>
-            <p class="small text-white"> price: ₹400</p>
-         </div>
-      </div>
-
-      <div class="box-border games">
+      {{-- <div class="box-border games">
          <div class="games-img m-3">
             <img src="images/valorant1.avif" alt="errer">
          </div>
@@ -118,7 +135,7 @@
             <p class="big">ARK</p>
             <p class="small text-white"> price: free</p>
          </div>
-      </div>
+      </div> --}}
     </div>
 
 @endsection

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('game_pic');
             $table->string('game_name');
             $table->string('email');
+            $table->string('user_id');
             $table->string('fullname');
             $table->double('game_price');
             $table->timestamps();

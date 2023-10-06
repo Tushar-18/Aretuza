@@ -20,7 +20,7 @@
      
      <div class="box-border games">
         <div class="games-img m-3">
-           <img src="images/Remnant.jpg" alt="errer">
+           <img src="{{URL::to('/')}}/images/Remnant.jpg" alt="errer">
         </div>
         <div class="games-name">
            <p class="big">Remnant</p>
@@ -33,7 +33,7 @@
 
      <div class="box-border games">
         <div class="games-img m-3">
-          <img src="images/Destiny_2.jpg" alt="errer">
+          <img src="{{URL::to('/')}}/images/Destiny_2.jpg" alt="errer">
         </div>
         <div class="games-name">
            <p class="big">Destiny 2</p>

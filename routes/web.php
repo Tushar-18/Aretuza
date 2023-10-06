@@ -38,20 +38,26 @@ Route::view('distribute', 'distribute');
 Route::view('items','items');
 Route::get('items_a/{id}',[gamecontroller::class,'game_pro']);
 Route::get('items',[gamecontroller::class,'chack_user']);
-Route::view('Store','store');
+// Route::view('Store','store');
+Route::get('store',[gamecontroller::class,'store']);
 Route::view('footer','footer');
 Route::view('buy','buy');
 Route::view('Wishlist','wishlist');
-Route::view('store','store');
+// Route::view('store','store');
 Route::view('library','library');
+
 Route::get('aboutus',[aboutuscontroller::class,'fetch_about']);
 Route::view('contactus','contactus');
 Route::post('contactus_a',[contactuscontroller::class, 'contactus']);
 
+Route::view('library/{id}','library');
+Route::view('aboutus','aboutus');
+Route::get('order/{id}', [ordercontroller::class, 'order']);
+
 Route::post('edit-profile',[memberscontroller::class,'edit_profile']);
 Route::get('edit_profile/{id}',[memberscontroller::class,'fetch_users']);
 Route::view('change_password','change_pwd');
-Route::post('change_password',[validate::class,'edit_profile']);
+Route::post('change_password',[memberscontroller::class,'change_pwd']);
 Route::get('account_activation/{email}', [memberscontroller::class, 'account_activation']);
 
 Route::post('add-review',[ratingcontroller::class, 'add_review']);
@@ -86,9 +92,11 @@ Route::post('admin/allocate-catagorie_a',[gamecontroller::class, 'allocate_catag
 Route::get('admin/rating',[ratingcontroller::class, 'fetch_review']);
 Route::get('delete-review/{id}', [ratingcontroller::class, 'delete_review']);
 
+
 Route::get('order/{id}', [ordercontroller::class, 'order']);
 Route::view('admin/aboutus', 'admin/aboutus');
 Route::post('admin/aboutus', [aboutuscontroller::class, 'about_us']);
+
 
 
 

@@ -55,7 +55,7 @@
                          <div class="md:flex md:items-center mb-6">
                            
                               <div class="w-full">
-                                <input class="bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-zinc-400 leading-tight focus:outline-none focus:bg-zinc-600 focus:border-zinc-500 " id="inline-password" name="profile" type="file">
+                                <input class="bg-zinc-700 appearance-none border-2 border-zinc-600 rounded w-full py-2 px-4 text-zinc-400 leading-tight focus:outline-none focus:bg-zinc-600 focus:border-zinc-500 " id="inline-password" name="profile" type="file" value="{{$data['pic']}}">
 
                                 <span style="color:red">
                                   @error('profile')

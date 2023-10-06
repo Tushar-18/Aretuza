@@ -19,7 +19,7 @@
                         alt="error"></a></div>
             <nav class="nav px-5">
                 <ul>
-                    <li><a class="nav-hover" href="{{URL::to('/')}}/welcome">Home</a></li>
+                    <li><a class="nav-hover" href="{{URL::to('/')}}">Home</a></li>
                     <li><a class="nav-hover" href="{{URL::to('/')}}/store">store</a></li>
                 </ul>
             </nav>

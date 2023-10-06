@@ -55,7 +55,7 @@
                     <div class="show"><input type="checkbox" onclick="show()" > Show password</div>
                 </div>
                 <input type="submit" value="Create" class="submint-btn"><br>
-                <p style="color: #e6dfdf;"> Don't have an account? <a href="login" style="color: #fff;">sign up</a>
+                <p style="color: #e6dfdf;"> Don't have an account? <a href="login" style="color: #fff;">sign in</a>
                 </p><br>
             </div>
         </form>

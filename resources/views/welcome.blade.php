@@ -34,22 +34,30 @@
         </div>
         <div class="box-border first-part w-full">
             @foreach ($game as $d)
-                <a href="{{ URL::to('/') }}/items_a/{{ $d['game_id'] }}">
-                    <div class="box-border games">
-                        <div class="games-img m-3">
-                            <img src="{{ URL::to('/') }}/images/game_pic/{{ $d['game_pic'] }}" alt="errer">
-                        </div>
-                        <div class="games-name">
-                            <p class="big">{{ $d['game_name'] }}</p>
-                            {{-- <p class="small text-white">{{$d['description']}}</p> --}}
-                            @if ($d['game_price'] == '0.00')
-                                <label class="pt-5 text-lg">Price <label class=" text-green-500">Free</label></label>
-                            @else
-                                <p class="text-sm  text-white"> price: ₹{{ $d['game_price'] }}</p>
-                            @endif
-                        </div>
+            @if ($d['status'] == 'Active')
+            <a href="{{ URL::to('/') }}/items_a/{{ $d['game_id'] }}">
+                <div class="box-border games">
+                    <div class="games-img m-3">
+                        <img src="{{ URL::to('/') }}/images/game_pic/{{ $d['game_pic'] }}" alt="errer">
                     </div>
-                </a>
+                    <div class="games-name">
+                        <p class="big">{{ $d['game_name'] }}</p>
+                        {{-- <p class="small text-white">{{$d['description']}}</p> --}}
+                        @if ($d['game_price'] == '0.00')
+                            <label class="pt-5 text-lg">Price <label class=" text-green-500">Free</label></label>
+                        @else
+                            {{-- <p class="text-sm  text-green-400"> offers {{ $d['offers']}}%</p> --}}
+                            {{-- <p class="text-sm  text-white"> price: ₹{{ $d['game_price'] }}</p> --}}
+                        @endif
+                        @if ($d['offers'] == '0.00')
+                        @else
+                        <p class="text-sm  text-green-400"> offers {{ $d['offers']}}%</p>
+                        @endif
+                    </div>
+                </div>
+            </a>
+            @endif
+                
             @endforeach
         </div>
     @endsection

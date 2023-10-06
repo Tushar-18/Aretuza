@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Orders;
 use App\Models\Game;
+use App\Models\Member;
 class ordercontroller extends Controller
 {
     public function order($id)
@@ -18,6 +19,7 @@ class ordercontroller extends Controller
             $cart = new Orders();
             $cart->email = session('email');
             $cart->fullname = session('name');
+            $cart->user_id = session('id');
             $cart->game_id = $result['game_id'];
             $cart->game_pic = $result['game_pic'];
             $cart->game_name = $result['game_name'];
@@ -31,6 +33,8 @@ class ordercontroller extends Controller
     public function fetch_orders()
     {
         $data = Orders::select()->get();
-        return view('admin/orders', compact('data'));
+        $member = Member::select()->get();
+        return view('admin/orders', compact('data','member'));
     }
+    
 }
