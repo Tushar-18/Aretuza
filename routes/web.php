@@ -87,7 +87,8 @@ Route::get('admin/rating',[ratingcontroller::class, 'fetch_review']);
 Route::get('delete-review/{id}', [ratingcontroller::class, 'delete_review']);
 
 Route::get('order/{id}', [ordercontroller::class, 'order']);
-Route::view('admin/aboutus', 'admin/aboutus');
+// Route::view('admin/aboutus', 'admin/aboutus');
+Route::get('admin/contactus', [contactuscontroller::class,'fetch_data']);
 Route::post('admin/aboutus', [aboutuscontroller::class, 'about_us']);
 
 

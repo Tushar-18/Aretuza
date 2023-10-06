@@ -28,4 +28,9 @@ class contactuscontroller extends Controller
         }
         return redirect()->back();
     }
+    public function fetch_data()
+    {
+        $data = Contactus::select()->get();
+        return view('admin/contactus', compact('data'));
+    }
 }
