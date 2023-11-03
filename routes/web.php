@@ -44,6 +44,7 @@ Route::view('buy','buy');
 Route::view('Wishlist','wishlist');
 Route::view('store','store');
 Route::view('library','library');
+Route::get('library',[gamecontroller::class,'library_data']);
 Route::get('aboutus',[aboutuscontroller::class,'fetch_about']);
 Route::view('contactus','contactus');
 Route::post('contactus_a',[contactuscontroller::class, 'contactus']);

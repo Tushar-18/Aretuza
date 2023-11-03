@@ -188,4 +188,9 @@ class gamecontroller extends Controller
         $pdf = Pdf::loadView('inpdf', ['data' => $data])->setOptions(['defaultFont' => 'sans-serif']);
         return $pdf->download('dow.pdf');
     }
+
+    public function library_data(){
+        $data = Orders::select()->get();
+        return view('library', compact('data'));
+    }
 }
