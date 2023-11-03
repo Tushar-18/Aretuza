@@ -34,9 +34,10 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </div>
-
+                    <form action="{{URL::to('/')}}/search_item">
                     <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text"
-                        id="search" placeholder="Search something.." />
+                        id="search" placeholder="Search something.." name="search"/>
+                        </form>
                 </div>
             </div>
             <div class="profile">

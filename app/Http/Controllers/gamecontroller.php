@@ -193,4 +193,9 @@ class gamecontroller extends Controller
         $data = Orders::select()->get();
         return view('library', compact('data'));
     }
+    public function search_item(Request $request)
+    {
+        $game = DB::table('Games')->where('game_name', 'LIKE', '%' . $request->search . "%")->get();
+        return view('search', compact('game'));
+    }
 }
