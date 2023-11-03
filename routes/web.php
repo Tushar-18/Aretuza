@@ -43,7 +43,7 @@ Route::view('footer','footer');
 Route::view('buy','buy');
 Route::view('Wishlist','wishlist');
 Route::view('store','store');
-// Route::view('library','library');
+Route::view('library','library');
 Route::get('aboutus',[aboutuscontroller::class,'fetch_about']);
 Route::view('contactus','contactus');
 Route::post('contactus_a',[contactuscontroller::class, 'contactus']);
@@ -51,7 +51,7 @@ Route::post('contactus_a',[contactuscontroller::class, 'contactus']);
 Route::post('edit-profile',[memberscontroller::class,'edit_profile']);
 Route::get('edit_profile/{id}',[memberscontroller::class,'fetch_users']);
 Route::view('change_password','change_pwd');
-Route::post('change_password',[memberscontroller::class,'change_pwd']);
+Route::post('change_password',[validate::class,'edit_profile']);
 Route::get('account_activation/{email}', [memberscontroller::class, 'account_activation']);
 
 Route::post('add-review',[ratingcontroller::class, 'add_review']);
