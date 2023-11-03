@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\file;
-use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 class gamecontroller extends Controller
 {
     public function add_games(Request $req)
@@ -184,8 +184,8 @@ class gamecontroller extends Controller
         return view('store', compact('id', 'popular', 'pop'));
     }
     public function pdfdownload(){
-        $data = Game::select()->get();
-        $pdf = PDF::loadView('inpdf',$data);
+        $data = Game::select()->get()->toArray();
+        $pdf = Pdf::loadView('inpdf', ['data' => $data])->setOptions(['defaultFont' => 'sans-serif']);
         return $pdf->download('dow.pdf');
     }
 }
