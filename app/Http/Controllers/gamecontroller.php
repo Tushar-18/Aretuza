@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Game;
 use App\Models\Catagories;
 use App\Models\Member;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\file;
-
+use Barryvdh\DomPDF\PDF;
 class gamecontroller extends Controller
 {
     public function add_games(Request $req)
@@ -45,7 +46,8 @@ class gamecontroller extends Controller
         }
         return $this->fetch_games();
     }
-    public function feth_cat(){
+    public function feth_cat()
+    {
         $data = Catagories::select()->get();
         return view('admin/add-categories', compact('data'));
     }
@@ -64,7 +66,7 @@ class gamecontroller extends Controller
             session()->flash('err', 'error in saving data');
         }
         $data = Catagories::select()->get();
-        return view('admin/add-categories',compact('data'));
+        return view('admin/add-categories', compact('data'));
     }
     public function fetch_games()
     {
@@ -77,38 +79,39 @@ class gamecontroller extends Controller
         $data = game::where('game_id', $id)->first();
         if ($data['status'] == "Active") {
             DB::table('games')
-            ->where('game_id', $id)
+                ->where('game_id', $id)
                 ->update(['status' => 'Inactive']);
             return redirect('admin/game-list');
         } else {
             DB::table('games')
-            ->where('game_id', $id)
+                ->where('game_id', $id)
                 ->update(['status' => 'Active']);
             return redirect('admin/game-list');
         }
     }
     public function delete_game($id)
     {
-            DB::table('games')
+        DB::table('games')
             ->where('game_id', $id)
-                ->update(['status' => 'Deleted']);
-            return redirect('admin/game-list');
+            ->update(['status' => 'Deleted']);
+        return redirect('admin/game-list');
     }
-    public function chack_user(){
-        if(session()->has('email')){
+    public function chack_user()
+    {
+        if (session()->has('email')) {
             return view("items");
-        }
-        else{
+        } else {
             return view("login");
         }
     }
-    public function game_pro($id){
-        $data=Game::where('game_id',$id)->first();
+    public function game_pro($id)
+    {
+        $data = Game::where('game_id', $id)->first();
         $rat = Rating::where('game_id', $id)->get();
-        $orders=Orders::where('user_id',session()->get('id'))->where('game_id', $id)->first();
+        $orders = Orders::where('user_id', session()->get('id'))->where('game_id', $id)->first();
         // $member=Member::where('email',session()->get('email'))->first();
-     
-        return view('items',compact('data','rat','orders'));
+
+        return view('items', compact('data', 'rat', 'orders'));
     }
     public function edit_game($id)
     {
@@ -123,9 +126,9 @@ class gamecontroller extends Controller
             'age_req' => 'required',
             'dec' => 'required',
             'offers' => 'required',
-            
+
             'age_req' => 'required'
-            
+
 
         ]);
         $result = game::where('game_id', $req->id)->first();
@@ -140,15 +143,15 @@ class gamecontroller extends Controller
             $pic_name = uniqid() . $req->file('pic')->getClientOriginalName();
             $req->pic->move('images/game_pic/', $pic_name);
             $off =  $req->offers;
-            $total= $req->price;
-            $offer = ($off/$total)*100;
-            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price,'description' => $req->dec,'offers' => $req->offers,'new_price' => $offer,  'age_req' => $req->age_req, 'game_pic' => $pic_name));
+            $total = $req->price;
+            $offer = ($off / $total) * 100;
+            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price, 'description' => $req->dec, 'offers' => $req->offers, 'new_price' => $offer,  'age_req' => $req->age_req, 'game_pic' => $pic_name));
             session()->flash('succ', 'Data Updated successfully');
         } else {
             $off =  $req->offers;
             $total = $req->price;
-            $offer = $total-(($off / 100) * $total);
-            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price,'description' => $req->dec,'offers' => $req->offers, 'new_price' => $offer, 'age_req' => $req->age_req));
+            $offer = $total - (($off / 100) * $total);
+            $result->where('game_id', $req->id)->update(array('game_name' => $req->game, 'game_price' => $req->price, 'description' => $req->dec, 'offers' => $req->offers, 'new_price' => $offer, 'age_req' => $req->age_req));
             session()->flash('succ', 'Data Updated successfully');
         }
         return $this->edit_game($req->id);
@@ -157,9 +160,10 @@ class gamecontroller extends Controller
     {
         $data = Catagories::select()->get();
         $data1 = game::where('game_id', $id)->first();
-        return view('admin/allocate_category', compact('data','data1'));
+        return view('admin/allocate_category', compact('data', 'data1'));
     }
-    public function allocate_catagories(Request $req){
+    public function allocate_catagories(Request $req)
+    {
         $result = game::where('game_id', $req->id)->first();
         // return $result;
         // $result->catagories = json_encode($req->cat);
@@ -167,15 +171,21 @@ class gamecontroller extends Controller
         $result->where('game_id', $req->id)->update(array('catagories' => json_encode($req->cat)));
         return redirect()->back();
     }
-    public function store(){
+    public function store()
+    {
         $id = Game::select()->latest()->get();
-        $popular = Orders::select( DB::raw('COUNT(game_id) as count'))
-->groupBy('game_id')
-->orderBy('count', 'desc')
-// ->take(10)
-->get();
-$pop = Game::select('game_id',DB::raw('COUNT(game_id) as count'))->groupBy('game_id')->orderBy('count','desc')->get();
-// return dd($pop);
-        return view('store',compact('id','popular','pop'));
+        $popular = Orders::select(DB::raw('COUNT(game_id) as count'))
+            ->groupBy('game_id')
+            ->orderBy('count', 'desc')
+            // ->take(10)
+            ->get();
+        $pop = Game::select('game_id', DB::raw('COUNT(game_id) as count'))->groupBy('game_id')->orderBy('count', 'desc')->get();
+        // return dd($pop);
+        return view('store', compact('id', 'popular', 'pop'));
+    }
+    public function pdfdownload(){
+        $data = Game::select()->get();
+        $pdf = PDF::loadView('inpdf',$data);
+        return $pdf->download('dow.pdf');
     }
 }

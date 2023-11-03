@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Orders;
 use App\Models\Game;
 use App\Models\Member;
+use PDF;
 class ordercontroller extends Controller
 {
     public function order($id)
