@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
         @vite('resources/css/app.css')
-
 </head>
 <body>
    <div class="bg-white border rounded-lg shadow-lg px-6 py-8 max-w-md mx-auto mt-8">
-    <h1 class="font-bold text-2xl my-4 text-center text-blue-600">KRP Services</h1>
+    <h1 style="background: rgb(0, 0, 0); color: white; padding: 10px">SPIRIT GAMES</h1>
     <hr class="mb-2">
     <div class="flex justify-between mb-6">
-        <h1 class="text-lg font-bold">Invoice</h1>
-        <div class="text-gray-700">
+        <h1 class="text-lg font-bold" style="margin-left: 320px">Invoice</h1>
+        <div class="text-gray-700" style="margin-left: 560px">
             <div>Date: 01/05/2023</div>
-            <div>Invoice #: INV12345</div>
+            <div>Invoice No: {{rand(100,100000)}}</div>
         </div>
     </div>
+<div  style="margin-top: -60px">
     <div class="mb-8">
         <h2 class="text-lg font-bold mb-4">Bill To:</h2>
         <div class="text-gray-700 mb-2">John Doe</div>
@@ -56,6 +56,7 @@
     </table>
     <div class="text-gray-700 mb-2">Thank you for your business!</div>
     <div class="text-gray-700 text-sm">Please remit payment within 30 days.</div>
+</div>
 </div>
 </body>
 </html>
