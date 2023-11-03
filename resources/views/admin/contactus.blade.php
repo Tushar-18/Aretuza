@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Orders</title>
+    <title>Contact us</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -34,12 +34,12 @@
             <table class="min-w-full">
                 <thead>
                     <tr>
-                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">Image</th>
-                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Game Name</th>
-                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">User name</th>
-                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Price</th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">Emaol</th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Subject </th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Message</th>
+                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Date</th>
                         
-                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Email</th>
+                        
                         <th class="px-6 py-3 border-b-2 border-gray-300"></th>
                     </tr>
                 </thead>
@@ -47,20 +47,14 @@
                     @foreach ($data as $d)
                         
                         <tr>
+                           
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10">
-                                        <img src="../Images/Destiny_2.jpg" alt="error">
-                                    </div>
-                                </div>
+                                <div class="text-sm leading-5 text-blue-900">{{$d['email']}}</div>
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">{{$d['game_name']}}</div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{$d['fullname']}}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{$d['game_price']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{$d['subject']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">{{$d['message']}}</td>
                             
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">{{$d['email']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">{{$d['created_at']}}</td>
                             {{-- <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
                                 <a href="{{URL::to('/')}}/admin/admin-orders"
                 class="px-5 py-2 my-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">ADD ORDER</a>
