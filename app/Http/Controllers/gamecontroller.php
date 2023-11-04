@@ -7,6 +7,7 @@ use App\Models\Catagories;
 use App\Models\Member;
 use App\Models\Orders;
 use App\Models\Rating;
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -199,5 +200,32 @@ class gamecontroller extends Controller
     {
         $game = DB::table('Games')->where('game_name', 'LIKE', '%' . $request->search . "%")->get();
         return view('search', compact('game'));
+    }
+
+
+    public function wishlist($id)
+    {
+        if (session()->has('email')) {
+            $data = Wishlist::where('user_id', session('user_id'))->where('product_id', $id)->first();
+            // return $data;
+            if (empty($data)) {
+                $result = Game::where('product_id', $id)->first();
+                $cart = new Wishlist();
+                $cart->user_id = session('user_id');
+                $cart->product_id = $result['product_id'];
+                $cart->product_pic = $result['product_images'];
+                $cart->product_name = $result['product_name'];
+                $cart->user_email = session('email');
+                $cart->user_name = session('name');
+                $cart->order_price = $result['product_price'];
+                $cart->save();
+                return redirect()->back();
+            } else {
+                $data = Wishlist::where('user_id', session('user_id'))->delete();
+                return redirect()->back();
+            }
+        } else {
+            return view('login');
+        }
     }
 }
