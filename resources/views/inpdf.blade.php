@@ -22,40 +22,30 @@
     <div class="mb-8">
         <h2 class="text-lg font-bold mb-4">Bill To:</h2>
         <div class="text-gray-700 mb-2">{{$data['fullname']}}</div>
-        <div class="text-gray-700 mb-2">123 Main St.</div>
-        <div class="text-gray-700 mb-2">Anytown, USA 12345</div>
-        <div class="text-gray-700">johndoe@example.com</div>
+        
+        <div class="text-gray-700">{{$data['email']}}</div>
     </div>
     <table class="w-full mb-8">
         <thead>
             <tr>
-                <th class="text-left font-bold text-gray-700">Description</th>
-                <th class="text-right font-bold text-gray-700">Amount</th>
+                <th class="text-left font-bold text-gray-700">Game</th>
+                <th style="margin-left: 200px">Amount</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="text-left text-gray-700">Product 1</td>
-                <td class="text-right text-gray-700">$100.00</td>
-            </tr>
-            <tr>
-                <td class="text-left text-gray-700">Product 2</td>
-                <td class="text-right text-gray-700">$50.00</td>
-            </tr>
-            <tr>
-                <td class="text-left text-gray-700">Product 3</td>
-                <td class="text-right text-gray-700">$75.00</td>
+                <td class="text-left text-gray-700">{{$data['game_name']}}</td>
+                <td class="text-right text-gray-700">{{$data['game_price']}}</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <td class="text-left font-bold text-gray-700">Total</td>
-                <td class="text-right font-bold text-gray-700">$225.00</td>
+                <td style="margin-left: 200px">{{$data['game_price']}}</td>
             </tr>
         </tfoot>
     </table>
-    <div class="text-gray-700 mb-2">Thank you for your business!</div>
-    <div class="text-gray-700 text-sm">Please remit payment within 30 days.</div>
+    <div class="text-gray-700 mb-2">Thank you for your Purchase !</div>
 </div>
 </div>
 </body>
