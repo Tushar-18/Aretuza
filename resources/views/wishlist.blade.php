@@ -18,30 +18,22 @@
 </div>
 <div class="box-border first-part bg-zinc-800 rounded-md">
      
-   <div class="box-border games">
-      <div class="games-img m-3">
-         <img src="images/Remnant.jpg" alt="errer">
-      </div>
-      <div class="games-name">
-         <p class="big">Remnant</p>
-         <p class="small text-white"> price: ₹400</p>
-         <a href="" class="bg-red-700 items-center my-2 flex w-full h-10 justify-center rounded-lg text-white hover:bg-red-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Remove</a>
-      </div>
-      
-   </div>
-
-
-   <div class="box-border games">
-      <div class="games-img m-3">
-        <img src="images/Destiny_2.jpg" alt="errer">
-      </div>
-      <div class="games-name">
-         <p class="big">Destiny 2</p>
-         <p class="text-white"> price: ₹400</p>
-         <a class="bg-red-700 items-center my-2 flex w-full h-10 justify-center rounded-lg text-white hover:bg-red-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1" href="">Remove</a>
-      </div>
-  
-   </div>
+  @foreach ($data as $d)
+                    
+                        <a href="{{ URL::to('/') }}/items_a/{{ $d['game_id'] }}">
+                            <div class="box-border games">
+                                <div class="games-img m-3">
+                                    <img src="{{ URL::to('/') }}/images/game_pic/{{ $d['game_pic'] }}" alt="errer">
+                                </div>
+                                <div class="games-name">
+                                    <p class="big">{{ $d['game_name'] }}</p>
+                                        <a href="{{URL::to('/')}}/wishlist/{{$d['game_id']}}"
+                                            class="bg-red-700 items-center my-2 flex w-full h-10 justify-center rounded-lg text-white hover:bg-red-800 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">remove</a>
+                                </div>
+                            </div>
+                        </a>
+                    
+                @endforeach
 
  </div>
 </div>

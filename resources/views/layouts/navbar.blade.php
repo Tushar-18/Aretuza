@@ -53,7 +53,7 @@
                         </div>
                         <div class="log mt-30"><a href="{{ URL::to('/') }}/change_password" class="mt-6">Change
                                 Password</a></div>
-                        <div class="log" style="margin-top: 94px"><a href="{{ URL::to('/') }}/Wishlist" class="mt-6">Wishlist</a></div>
+                        <div class="log" style="margin-top: 94px"><a href="{{ URL::to('/') }}/mywishlist" class="mt-6">Wishlist</a></div>
                     </div>
                     <label for="signin" style="margin-right: 10px;color:#fff;">{{ session('name') }}</label>
                 @else

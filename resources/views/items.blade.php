@@ -102,7 +102,7 @@ $cat = json_decode($data['catagories']);
                     @endif
                         
                               
-                              <a href="{{URL::to('/')}}/Wishlist"><div class="bg-none border items-center flex w-80 h-10 mt-20 mb-20 justify-center rounded-lg text-white hover:bg-zinc-200/10 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Add to Wish List</div></a> 
+                              <a href="{{URL::to('/')}}/wishlist/{{$data['game_id']}}"><div class="bg-none border items-center flex w-80 h-10 mt-20 mb-20 justify-center rounded-lg text-white hover:bg-zinc-200/10 hover:transition delay-75 duration-300 ease-in-out hover:-translate-y-1">Add to Wish List</div></a> 
             </div>
             
       </div>
