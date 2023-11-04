@@ -59,7 +59,7 @@ Route::post('add-review',[ratingcontroller::class, 'add_review']);
 
 Route::get('download_pdf/{id}',[gamecontroller::class, 'pdfdownload']);
 Route::get('search_item', [gamecontroller::class, 'search_item']);
-
+Route::get('thanks',[ordercontroller::class,'thanks']);
 // admin
 Route::view('admin/admin-sidebar','admin/admin-sidebar');
 Route::view('admin/user-list','admin/user-list');

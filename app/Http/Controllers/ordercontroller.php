@@ -7,6 +7,7 @@ use App\Models\Orders;
 use App\Models\Game;
 use App\Models\Member;
 use PDF;
+use Illuminate\Support\Facades\Mail;
 class ordercontroller extends Controller
 {
     public function order($id)
@@ -25,7 +26,21 @@ class ordercontroller extends Controller
             $cart->game_pic = $result['game_pic'];
             $cart->game_name = $result['game_name'];
             $cart->game_price = $result['new_price'];
+
             $cart->save();
+            if ($cart->save()) {
+                session()->flash('succ', 'Data saved successfully');
+                $email = session('email');
+                $fullname = session('name');
+                $data = ['em' => $email, 'fullname' => $fullname,'id' => $result['game_id']];
+                Mail::send('thanks', ["data" => $data], function ($message) use ($data) {
+    
+                    $message->to($data['id'], $data['fullname']);
+                    $message->from("travaliya519@rku.ac.in", "Tushar");
+                });
+            } else {
+                session()->flash('err', 'error in saving data');
+            }
             return redirect()->back();
         } else {
             return view('login');
@@ -37,5 +52,9 @@ class ordercontroller extends Controller
         $member = Member::select()->get();
         return view('admin/orders', compact('data','member'));
     }
-    
+    public function thanks($id){
+       
+        $data = Orders::where('user_id', session()->get('id'))->where('game_id', $id)->first()->toArray();
+        return view('thanks', compact('data'));
+    }
 }
