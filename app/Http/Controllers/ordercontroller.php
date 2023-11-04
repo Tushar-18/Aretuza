@@ -26,16 +26,15 @@ class ordercontroller extends Controller
             $cart->game_pic = $result['game_pic'];
             $cart->game_name = $result['game_name'];
             $cart->game_price = $result['new_price'];
-
             $cart->save();
             if ($cart->save()) {
                 session()->flash('succ', 'Data saved successfully');
                 $email = session('email');
-                $fullname = session('name');
-                $data = ['em' => $email, 'fullname' => $fullname,'id' => $result['game_id']];
-                Mail::send('thanks', ["data" => $data], function ($message) use ($data) {
+                $fn = session()->get('name');
+                $data = ['em' => $email, 'fn' => $fn];
+                Mail::send('register_template', ["data1" => $data], function ($message) use ($data) {
     
-                    $message->to($data['id'], $data['fullname']);
+                    $message->to($data['em'], $data['fn']);
                     $message->from("travaliya519@rku.ac.in", "Tushar");
                 });
             } else {
@@ -52,7 +51,7 @@ class ordercontroller extends Controller
         $member = Member::select()->get();
         return view('admin/orders', compact('data','member'));
     }
-    public function thanks($id){
+    public function pdfdownload($id){
        
         $data = Orders::where('user_id', session()->get('id'))->where('game_id', $id)->first()->toArray();
         return view('thanks', compact('data'));
