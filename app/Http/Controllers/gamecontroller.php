@@ -183,14 +183,16 @@ class gamecontroller extends Controller
         // return dd($pop);
         return view('store', compact('id', 'popular', 'pop'));
     }
-    public function pdfdownload(){
-        $data = Game::select()->get()->toArray();
+    public function pdfdownload($id){
+        // $data = Game::select()->get()->toArray();
+        $data = Orders::where('user_id', session()->get('id'))->where('game_id', $id)->first()->toArray();
         $pdf = Pdf::loadView('inpdf', ['data' => $data])->setOptions(['defaultFont' => 'sans-serif']);
         return $pdf->download('dow.pdf');
     }
 
     public function library_data(){
         $data = Orders::select()->get();
+        
         return view('library', compact('data'));
     }
     public function search_item(Request $request)

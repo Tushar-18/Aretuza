@@ -57,7 +57,7 @@ Route::get('account_activation/{email}', [memberscontroller::class, 'account_act
 
 Route::post('add-review',[ratingcontroller::class, 'add_review']);
 
-Route::get('download_pdf',[gamecontroller::class, 'pdfdownload']);
+Route::get('download_pdf/{id}',[gamecontroller::class, 'pdfdownload']);
 Route::get('search_item', [gamecontroller::class, 'search_item']);
 
 // admin

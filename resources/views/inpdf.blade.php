@@ -21,7 +21,7 @@
 <div  style="margin-top: -60px">
     <div class="mb-8">
         <h2 class="text-lg font-bold mb-4">Bill To:</h2>
-        <div class="text-gray-700 mb-2">John Doe</div>
+        <div class="text-gray-700 mb-2">{{$data['fullname']}}</div>
         <div class="text-gray-700 mb-2">123 Main St.</div>
         <div class="text-gray-700 mb-2">Anytown, USA 12345</div>
         <div class="text-gray-700">johndoe@example.com</div>
