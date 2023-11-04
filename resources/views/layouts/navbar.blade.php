@@ -19,8 +19,8 @@
                         alt="error"></a></div>
             <nav class="nav px-5">
                 <ul>
-                    <li><a class="nav-hover" href="{{URL::to('/')}}">Home</a></li>
-                    <li><a class="nav-hover" href="{{URL::to('/')}}/store">store</a></li>
+                    <li><a class="nav-hover" href="{{ URL::to('/') }}">Home</a></li>
+                    <li><a class="nav-hover" href="{{ URL::to('/') }}/store">store</a></li>
                 </ul>
             </nav>
             <!-- component -->
@@ -34,10 +34,10 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </div>
-                    <form action="{{URL::to('/')}}/search_item">
-                    <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text"
-                        id="search" placeholder="Search something.." name="search"/>
-                        </form>
+                    <form action="{{ URL::to('/') }}/search_item">
+                        <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2" type="text"
+                            id="search" placeholder="Search something.." name="search" />
+                    </form>
                 </div>
             </div>
             <div class="profile">
@@ -45,17 +45,19 @@
                     <div class="pro-in">
 
                         <img src="{{ URL::to('/') }}/Images/profile_pictures/{{ session('pic') }}" id="signin">
-                        <div class="log mt-6"><a href="{{URL::to('/')}}/logout_action">Logout</a></div>
+                        <div class="log mt-6"><a href="{{ URL::to('/') }}/logout_action">Logout</a></div>
 
-                        <div class="log mt-12"><a href="{{URL::to('/')}}/library" class="mt-6">Library</a></div>
-                        <div class="log " style="margin-top: 4.5rem"><a href="{{URL::to('/')}}/edit_profile/{{session('id')}}" class="mt-6">Profile</a>
+                        <div class="log mt-12"><a href="{{ URL::to('/') }}/library" class="mt-6">Library</a></div>
+                        <div class="log " style="margin-top: 4.5rem"><a
+                                href="{{ URL::to('/') }}/edit_profile/{{ session('id') }}" class="mt-6">Profile</a>
                         </div>
-                        <div class="log mt-30"><a href="{{URL::to('/')}}/change_password" class="mt-6">Change Password</a></div>
-
+                        <div class="log mt-30"><a href="{{ URL::to('/') }}/change_password" class="mt-6">Change
+                                Password</a></div>
+                        <div class="log" style="margin-top: 94px"><a href="{{ URL::to('/') }}/Wishlist" class="mt-6">Wishlist</a></div>
                     </div>
                     <label for="signin" style="margin-right: 10px;color:#fff;">{{ session('name') }}</label>
                 @else
-                    <div class="log"><a href="{{URL::to('/')}}/login" class="mt-6 text-white">Login</a></div>
+                    <div class="log"><a href="{{ URL::to('/') }}/login" class="mt-6 text-white">Login</a></div>
                 @endif
                 <div class="menutoggle">
                     <span></span>
@@ -77,17 +79,18 @@
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="{{URL::to('/')}}/" class="text-base leading-6 text-gray-500 hover:text-gray-600">
+                    <a href="{{ URL::to('/') }}/" class="text-base leading-6 text-gray-500 hover:text-gray-600">
                         Home
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="{{URL::to('/')}}/library" class="text-base leading-6 text-gray-500 hover:text-gray-600">
+                    <a href="{{ URL::to('/') }}/library"
+                        class="text-base leading-6 text-gray-500 hover:text-gray-600">
                         Library
                     </a>
                 </div>
                 <div class="px-5 py-2">
-                    <a href="{{URL::to('/')}}/" class="text-base leading-6 text-gray-500 hover:text-gray-600">
+                    <a href="{{ URL::to('/') }}/" class="text-base leading-6 text-gray-500 hover:text-gray-600">
                         store
                     </a>
                 </div>
@@ -96,7 +99,7 @@
                         Contact
                     </a>
                 </div>
-                
+
             </nav>
             <div class="flex justify-center mt-8 space-x-6">
                 <a href="#" class="text-gray-400 hover:text-gray-500">
