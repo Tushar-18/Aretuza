@@ -31,8 +31,8 @@ class ordercontroller extends Controller
                 session()->flash('succ', 'Data saved successfully');
                 $email = session('email');
                 $fn = session()->get('name');
-                $data = ['em' => $email, 'fn' => $fn];
-                Mail::send('register_template', ["data1" => $data], function ($message) use ($data) {
+                $data = ['em' => $email, 'fn' => $fn,'id' =>$result['game_id']];
+                Mail::send('thanks', ["data1" => $data], function ($message) use ($data) {
     
                     $message->to($data['em'], $data['fn']);
                     $message->from("travaliya519@rku.ac.in", "Tushar");

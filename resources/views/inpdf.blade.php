@@ -14,7 +14,7 @@
     <div class="flex justify-between mb-6">
         <h1 class="text-lg font-bold" style="margin-left: 320px">Invoice</h1>
         <div class="text-gray-700" style="margin-left: 560px">
-            <div>Date: 01/05/2023</div>
+            <div>Date: {{ date('Y-m-d') }}</div>
             <div>Invoice No: {{rand(100,100000)}}</div>
         </div>
     </div>

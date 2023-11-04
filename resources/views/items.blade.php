@@ -61,7 +61,7 @@
                   <div class="second-part pl-14  w-96 text-white">
                         <div class="flex flex-col">
                               <label class="text-5xl">{{$data->game_name}}</label><br>
-                              @if ($data['game_price']== '0.00')
+                              @if ($data['new_price'] == '0.00')
                                 <label class="pt-5 text-lg">Price <label class=" text-green-500"> Free</label></label>
                               @else
                               {{-- <label class=" text-green-400">{{$data['offers']}}% off</label> --}}
@@ -69,6 +69,7 @@
                                 {{-- <label >Price ₹{{$data['new_price']}}</label> --}}
                               @endif
                               @if ($data['offers'] == '0.00')
+                              
                               @else
                               <label class=" text-green-400">{{$data['offers']}}% off</label>  
                               <label >Price ₹{{$data['new_price']}}</label>
